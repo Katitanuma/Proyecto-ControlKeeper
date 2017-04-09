@@ -1,0 +1,551 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D1DAF4BD-27B6-4F95-B9C8-378C4C70E0C0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>ControlKeeper.My.MyApplication</StartupObject>
+    <RootNamespace>ControlKeeper</RootNamespace>
+    <AssemblyName>ControlKeeper</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>ControlKeeper.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>ControlKeeper.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Conexion.vb" />
+    <Compile Include="Catálogos\FrmDepartamento.Designer.vb">
+      <DependentUpon>FrmDepartamento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Catálogos\FrmDepartamento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catálogos\FrmCapacidadDiscoDuro.Designer.vb">
+      <DependentUpon>FrmCapacidadDiscoDuro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Catálogos\FrmCapacidadDiscoDuro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catálogos\FrmCapacidadRAM.Designer.vb">
+      <DependentUpon>FrmCapacidadRAM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Catálogos\FrmCapacidadRAM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catálogos\FrmCiudad.Designer.vb">
+      <DependentUpon>FrmCiudad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Catálogos\FrmCiudad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmComputadora.Designer.vb">
+      <DependentUpon>FrmComputadora.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmComputadora.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmComputadoraUsuario.Designer.vb">
+      <DependentUpon>FrmComputadoraUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmComputadoraUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catálogos\FrmDesarrollador.Designer.vb">
+      <DependentUpon>FrmDesarrollador.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Catálogos\FrmDesarrollador.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmEmpleado.Designer.vb">
+      <DependentUpon>FrmEmpleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmEmpleado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmLicencia.Designer.vb">
+      <DependentUpon>FrmLicencia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmLicencia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmLogin.Designer.vb">
+      <DependentUpon>FrmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmMantenimiento.Designer.vb">
+      <DependentUpon>FrmMantenimiento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmMantenimiento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catálogos\FrmMarca.Designer.vb">
+      <DependentUpon>FrmMarca.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Catálogos\FrmMarca.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catálogos\FrmModelo.Designer.vb">
+      <DependentUpon>FrmModelo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Catálogos\FrmModelo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catálogos\FrmProfesion.Designer.vb">
+      <DependentUpon>FrmProfesion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Catálogos\FrmProfesion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmSoftware.Designer.vb">
+      <DependentUpon>FrmSoftware.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmSoftware.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmSoftwareComputadora.Designer.vb">
+      <DependentUpon>FrmSoftwareComputadora.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmSoftwareComputadora.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catálogos\FrmTipoSoftware.Designer.vb">
+      <DependentUpon>FrmTipoSoftware.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Catálogos\FrmTipoSoftware.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmUsuario.Designer.vb">
+      <DependentUpon>FrmUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\MDIControlKeeper.Designer.vb">
+      <DependentUpon>MDIControlKeeper.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\MDIControlKeeper.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Splash.Designer.vb">
+      <DependentUpon>Splash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Splash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Catálogos\FrmDepartamento.resx">
+      <DependentUpon>FrmDepartamento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catálogos\FrmCapacidadDiscoDuro.resx">
+      <DependentUpon>FrmCapacidadDiscoDuro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catálogos\FrmCapacidadRAM.resx">
+      <DependentUpon>FrmCapacidadRAM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catálogos\FrmCiudad.resx">
+      <DependentUpon>FrmCiudad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmComputadora.resx">
+      <DependentUpon>FrmComputadora.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmComputadoraUsuario.resx">
+      <DependentUpon>FrmComputadoraUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catálogos\FrmDesarrollador.resx">
+      <DependentUpon>FrmDesarrollador.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmEmpleado.resx">
+      <DependentUpon>FrmEmpleado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmLicencia.resx">
+      <DependentUpon>FrmLicencia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmLogin.resx">
+      <DependentUpon>FrmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmMantenimiento.resx">
+      <DependentUpon>FrmMantenimiento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catálogos\FrmMarca.resx">
+      <DependentUpon>FrmMarca.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catálogos\FrmModelo.resx">
+      <DependentUpon>FrmModelo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catálogos\FrmProfesion.resx">
+      <DependentUpon>FrmProfesion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmSoftware.resx">
+      <DependentUpon>FrmSoftware.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmSoftwareComputadora.resx">
+      <DependentUpon>FrmSoftwareComputadora.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catálogos\FrmTipoSoftware.resx">
+      <DependentUpon>FrmTipoSoftware.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmUsuario.resx">
+      <DependentUpon>FrmUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\MDIControlKeeper.resx">
+      <DependentUpon>MDIControlKeeper.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Splash.resx">
+      <DependentUpon>Splash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo Control Keeper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plash d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\google-material-design-wallpaper-9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ultimate-Material-Lollipop-Collection1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calculadora_color-ojos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_permission.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin_person_user_man_2839.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_refresh_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computadora.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\software.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Software-Development-Free-PNG-Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Box-03-Software-Web-no-Text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Install1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\laptop-png-laptop-hi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sofware.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\05daeb86e5e52cdfa4ef31ae0e29c47f.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sesiones.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagen1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagen3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagen5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagen14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagen13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagen15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagen17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagen16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagen18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagen22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagen21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boton1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boton3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nuevo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\masarreglado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Guardar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\actualizar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancelar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guardar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actualizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancelar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\N3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\G3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\C3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tachuela2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\br.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fond.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hd_hard_165 - copia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo mdi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ram-98420_960_720.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconoPC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aguascalientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Francisco-Morazan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mdi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mdi1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\md.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\md1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\despliegue para mdi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\software %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Software-Development-Free-PNG-Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_permission1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\naranj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nara.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barra naranja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bnar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fin barn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnUSUARIO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btemple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btcomp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btMANTENIMIENTO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btSoftware.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\archiv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen prueb.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
