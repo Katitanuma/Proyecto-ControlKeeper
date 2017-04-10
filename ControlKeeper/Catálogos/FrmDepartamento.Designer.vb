@@ -22,12 +22,16 @@ Partial Class FrmDepartamento
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmDepartamento))
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
-        Me.TextBox24 = New System.Windows.Forms.TextBox()
+        Me.DgvDepartamento = New System.Windows.Forms.DataGridView()
+        Me.CMSDepartamento = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PnlDepartamento = New System.Windows.Forms.GroupBox()
+        Me.TxtDepartamento = New System.Windows.Forms.TextBox()
         Me.Label50 = New System.Windows.Forms.Label()
-        Me.TextBox25 = New System.Windows.Forms.TextBox()
+        Me.TxtIdDepartamento = New System.Windows.Forms.TextBox()
         Me.Label51 = New System.Windows.Forms.Label()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnGuardar = New System.Windows.Forms.Button()
@@ -36,40 +40,65 @@ Partial Class FrmDepartamento
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label45 = New System.Windows.Forms.Label()
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox7.SuspendLayout()
+        CType(Me.DgvDepartamento, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CMSDepartamento.SuspendLayout()
+        Me.PnlDepartamento.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DataGridView1
+        'DgvDepartamento
         '
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(23, 234)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(479, 219)
-        Me.DataGridView1.TabIndex = 79
+        Me.DgvDepartamento.AllowUserToAddRows = False
+        Me.DgvDepartamento.AllowUserToDeleteRows = False
+        Me.DgvDepartamento.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgvDepartamento.BackgroundColor = System.Drawing.Color.White
+        Me.DgvDepartamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvDepartamento.ContextMenuStrip = Me.CMSDepartamento
+        Me.DgvDepartamento.Location = New System.Drawing.Point(23, 234)
+        Me.DgvDepartamento.Name = "DgvDepartamento"
+        Me.DgvDepartamento.ReadOnly = True
+        Me.DgvDepartamento.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvDepartamento.Size = New System.Drawing.Size(479, 219)
+        Me.DgvDepartamento.TabIndex = 79
         '
-        'GroupBox7
+        'CMSDepartamento
         '
-        Me.GroupBox7.Controls.Add(Me.TextBox24)
-        Me.GroupBox7.Controls.Add(Me.Label50)
-        Me.GroupBox7.Controls.Add(Me.TextBox25)
-        Me.GroupBox7.Controls.Add(Me.Label51)
-        Me.GroupBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox7.Location = New System.Drawing.Point(23, 78)
-        Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(479, 90)
-        Me.GroupBox7.TabIndex = 78
-        Me.GroupBox7.TabStop = False
+        Me.CMSDepartamento.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
+        Me.CMSDepartamento.Name = "CMSDepartamento"
+        Me.CMSDepartamento.Size = New System.Drawing.Size(118, 48)
         '
-        'TextBox24
+        'EditarToolStripMenuItem
         '
-        Me.TextBox24.Location = New System.Drawing.Point(171, 51)
-        Me.TextBox24.Name = "TextBox24"
-        Me.TextBox24.Size = New System.Drawing.Size(234, 22)
-        Me.TextBox24.TabIndex = 27
+        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EditarToolStripMenuItem.Text = "Editar"
+        '
+        'EliminarToolStripMenuItem
+        '
+        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EliminarToolStripMenuItem.Text = "Eliminar"
+        '
+        'PnlDepartamento
+        '
+        Me.PnlDepartamento.Controls.Add(Me.TxtDepartamento)
+        Me.PnlDepartamento.Controls.Add(Me.Label50)
+        Me.PnlDepartamento.Controls.Add(Me.TxtIdDepartamento)
+        Me.PnlDepartamento.Controls.Add(Me.Label51)
+        Me.PnlDepartamento.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PnlDepartamento.Location = New System.Drawing.Point(23, 78)
+        Me.PnlDepartamento.Name = "PnlDepartamento"
+        Me.PnlDepartamento.Size = New System.Drawing.Size(479, 90)
+        Me.PnlDepartamento.TabIndex = 78
+        Me.PnlDepartamento.TabStop = False
+        '
+        'TxtDepartamento
+        '
+        Me.TxtDepartamento.Location = New System.Drawing.Point(171, 51)
+        Me.TxtDepartamento.Name = "TxtDepartamento"
+        Me.TxtDepartamento.Size = New System.Drawing.Size(234, 22)
+        Me.TxtDepartamento.TabIndex = 27
         '
         'Label50
         '
@@ -81,13 +110,13 @@ Partial Class FrmDepartamento
         Me.Label50.TabIndex = 23
         Me.Label50.Text = "Departamento"
         '
-        'TextBox25
+        'TxtIdDepartamento
         '
-        Me.TextBox25.Location = New System.Drawing.Point(171, 19)
-        Me.TextBox25.Name = "TextBox25"
-        Me.TextBox25.ReadOnly = True
-        Me.TextBox25.Size = New System.Drawing.Size(142, 22)
-        Me.TextBox25.TabIndex = 22
+        Me.TxtIdDepartamento.Location = New System.Drawing.Point(171, 19)
+        Me.TxtIdDepartamento.Name = "TxtIdDepartamento"
+        Me.TxtIdDepartamento.ReadOnly = True
+        Me.TxtIdDepartamento.Size = New System.Drawing.Size(142, 22)
+        Me.TxtIdDepartamento.TabIndex = 22
         '
         'Label51
         '
@@ -211,20 +240,21 @@ Partial Class FrmDepartamento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(527, 467)
         Me.Controls.Add(Me.BtnCancelar)
         Me.Controls.Add(Me.BtnGuardar)
         Me.Controls.Add(Me.BtnModificar)
         Me.Controls.Add(Me.BtnNuevo)
-        Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.GroupBox7)
+        Me.Controls.Add(Me.DgvDepartamento)
+        Me.Controls.Add(Me.PnlDepartamento)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "FrmDepartamento"
         Me.Text = "Gestión de Departamento"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox7.ResumeLayout(False)
-        Me.GroupBox7.PerformLayout()
+        CType(Me.DgvDepartamento, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.CMSDepartamento.ResumeLayout(False)
+        Me.PnlDepartamento.ResumeLayout(False)
+        Me.PnlDepartamento.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
@@ -236,13 +266,16 @@ Partial Class FrmDepartamento
     Friend WithEvents BtnGuardar As Button
     Friend WithEvents BtnModificar As Button
     Friend WithEvents BtnNuevo As Button
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents GroupBox7 As GroupBox
-    Friend WithEvents TextBox24 As TextBox
+    Friend WithEvents DgvDepartamento As DataGridView
+    Friend WithEvents PnlDepartamento As GroupBox
+    Friend WithEvents TxtDepartamento As TextBox
     Friend WithEvents Label50 As Label
-    Friend WithEvents TextBox25 As TextBox
+    Friend WithEvents TxtIdDepartamento As TextBox
     Friend WithEvents Label51 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label45 As Label
     Friend WithEvents PictureBox10 As PictureBox
+    Friend WithEvents CMSDepartamento As ContextMenuStrip
+    Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
 End Class

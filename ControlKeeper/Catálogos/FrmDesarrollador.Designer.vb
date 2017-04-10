@@ -22,15 +22,19 @@ Partial Class FrmDesarrollador
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmDesarrollador))
-        Me.DataGridView5 = New System.Windows.Forms.DataGridView()
+        Me.DgvDesarrollador = New System.Windows.Forms.DataGridView()
+        Me.CMSDesarrollador = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label34 = New System.Windows.Forms.Label()
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.TextBox16 = New System.Windows.Forms.TextBox()
-        Me.TextBox18 = New System.Windows.Forms.TextBox()
+        Me.PnlDesarrollador = New System.Windows.Forms.GroupBox()
+        Me.TxtPaginaWeb = New System.Windows.Forms.TextBox()
+        Me.TxtNombreDesarrollador = New System.Windows.Forms.TextBox()
         Me.Label38 = New System.Windows.Forms.Label()
         Me.Label39 = New System.Windows.Forms.Label()
-        Me.TextBox19 = New System.Windows.Forms.TextBox()
+        Me.TxtIdDesarrollador = New System.Windows.Forms.TextBox()
         Me.Label40 = New System.Windows.Forms.Label()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -38,20 +42,45 @@ Partial Class FrmDesarrollador
         Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.BtnModificar = New System.Windows.Forms.Button()
         Me.BtnNuevo = New System.Windows.Forms.Button()
-        CType(Me.DataGridView5, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox5.SuspendLayout()
+        CType(Me.DgvDesarrollador, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CMSDesarrollador.SuspendLayout()
+        Me.PnlDesarrollador.SuspendLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
-        'DataGridView5
+        'DgvDesarrollador
         '
-        Me.DataGridView5.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView5.Location = New System.Drawing.Point(16, 284)
-        Me.DataGridView5.Name = "DataGridView5"
-        Me.DataGridView5.Size = New System.Drawing.Size(601, 203)
-        Me.DataGridView5.TabIndex = 41
+        Me.DgvDesarrollador.AllowUserToAddRows = False
+        Me.DgvDesarrollador.AllowUserToDeleteRows = False
+        Me.DgvDesarrollador.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgvDesarrollador.BackgroundColor = System.Drawing.Color.White
+        Me.DgvDesarrollador.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvDesarrollador.ContextMenuStrip = Me.CMSDesarrollador
+        Me.DgvDesarrollador.Location = New System.Drawing.Point(16, 284)
+        Me.DgvDesarrollador.Name = "DgvDesarrollador"
+        Me.DgvDesarrollador.ReadOnly = True
+        Me.DgvDesarrollador.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvDesarrollador.Size = New System.Drawing.Size(601, 203)
+        Me.DgvDesarrollador.TabIndex = 41
+        '
+        'CMSDesarrollador
+        '
+        Me.CMSDesarrollador.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
+        Me.CMSDesarrollador.Name = "CMSDesarrollador"
+        Me.CMSDesarrollador.Size = New System.Drawing.Size(118, 48)
+        '
+        'EditarToolStripMenuItem
+        '
+        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EditarToolStripMenuItem.Text = "Editar"
+        '
+        'EliminarToolStripMenuItem
+        '
+        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EliminarToolStripMenuItem.Text = "Eliminar"
         '
         'Label34
         '
@@ -65,34 +94,34 @@ Partial Class FrmDesarrollador
         Me.Label34.TabIndex = 40
         Me.Label34.Text = "Desarrollador de Software"
         '
-        'GroupBox5
+        'PnlDesarrollador
         '
-        Me.GroupBox5.Controls.Add(Me.TextBox16)
-        Me.GroupBox5.Controls.Add(Me.TextBox18)
-        Me.GroupBox5.Controls.Add(Me.Label38)
-        Me.GroupBox5.Controls.Add(Me.Label39)
-        Me.GroupBox5.Controls.Add(Me.TextBox19)
-        Me.GroupBox5.Controls.Add(Me.Label40)
-        Me.GroupBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox5.Location = New System.Drawing.Point(15, 76)
-        Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(602, 137)
-        Me.GroupBox5.TabIndex = 39
-        Me.GroupBox5.TabStop = False
+        Me.PnlDesarrollador.Controls.Add(Me.TxtPaginaWeb)
+        Me.PnlDesarrollador.Controls.Add(Me.TxtNombreDesarrollador)
+        Me.PnlDesarrollador.Controls.Add(Me.Label38)
+        Me.PnlDesarrollador.Controls.Add(Me.Label39)
+        Me.PnlDesarrollador.Controls.Add(Me.TxtIdDesarrollador)
+        Me.PnlDesarrollador.Controls.Add(Me.Label40)
+        Me.PnlDesarrollador.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PnlDesarrollador.Location = New System.Drawing.Point(15, 76)
+        Me.PnlDesarrollador.Name = "PnlDesarrollador"
+        Me.PnlDesarrollador.Size = New System.Drawing.Size(602, 137)
+        Me.PnlDesarrollador.TabIndex = 39
+        Me.PnlDesarrollador.TabStop = False
         '
-        'TextBox16
+        'TxtPaginaWeb
         '
-        Me.TextBox16.Location = New System.Drawing.Point(204, 92)
-        Me.TextBox16.Name = "TextBox16"
-        Me.TextBox16.Size = New System.Drawing.Size(376, 22)
-        Me.TextBox16.TabIndex = 28
+        Me.TxtPaginaWeb.Location = New System.Drawing.Point(204, 92)
+        Me.TxtPaginaWeb.Name = "TxtPaginaWeb"
+        Me.TxtPaginaWeb.Size = New System.Drawing.Size(376, 22)
+        Me.TxtPaginaWeb.TabIndex = 28
         '
-        'TextBox18
+        'TxtNombreDesarrollador
         '
-        Me.TextBox18.Location = New System.Drawing.Point(204, 59)
-        Me.TextBox18.Name = "TextBox18"
-        Me.TextBox18.Size = New System.Drawing.Size(376, 22)
-        Me.TextBox18.TabIndex = 27
+        Me.TxtNombreDesarrollador.Location = New System.Drawing.Point(204, 59)
+        Me.TxtNombreDesarrollador.Name = "TxtNombreDesarrollador"
+        Me.TxtNombreDesarrollador.Size = New System.Drawing.Size(376, 22)
+        Me.TxtNombreDesarrollador.TabIndex = 27
         '
         'Label38
         '
@@ -114,13 +143,13 @@ Partial Class FrmDesarrollador
         Me.Label39.TabIndex = 23
         Me.Label39.Text = "Nombre de Desarrollador"
         '
-        'TextBox19
+        'TxtIdDesarrollador
         '
-        Me.TextBox19.Location = New System.Drawing.Point(204, 25)
-        Me.TextBox19.Name = "TextBox19"
-        Me.TextBox19.ReadOnly = True
-        Me.TextBox19.Size = New System.Drawing.Size(194, 22)
-        Me.TextBox19.TabIndex = 22
+        Me.TxtIdDesarrollador.Location = New System.Drawing.Point(204, 25)
+        Me.TxtIdDesarrollador.Name = "TxtIdDesarrollador"
+        Me.TxtIdDesarrollador.ReadOnly = True
+        Me.TxtIdDesarrollador.Size = New System.Drawing.Size(194, 22)
+        Me.TxtIdDesarrollador.TabIndex = 22
         '
         'Label40
         '
@@ -232,20 +261,21 @@ Partial Class FrmDesarrollador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(636, 508)
         Me.Controls.Add(Me.BtnCancelar)
         Me.Controls.Add(Me.BtnGuardar)
         Me.Controls.Add(Me.BtnModificar)
         Me.Controls.Add(Me.BtnNuevo)
         Me.Controls.Add(Me.Panel3)
-        Me.Controls.Add(Me.DataGridView5)
-        Me.Controls.Add(Me.GroupBox5)
+        Me.Controls.Add(Me.DgvDesarrollador)
+        Me.Controls.Add(Me.PnlDesarrollador)
         Me.Name = "FrmDesarrollador"
         Me.Text = "Gestión de Desarrollador"
-        CType(Me.DataGridView5, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox5.ResumeLayout(False)
-        Me.GroupBox5.PerformLayout()
+        CType(Me.DgvDesarrollador, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.CMSDesarrollador.ResumeLayout(False)
+        Me.PnlDesarrollador.ResumeLayout(False)
+        Me.PnlDesarrollador.PerformLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
@@ -253,18 +283,21 @@ Partial Class FrmDesarrollador
 
     End Sub
     Friend WithEvents PictureBox6 As PictureBox
-    Friend WithEvents DataGridView5 As DataGridView
+    Friend WithEvents DgvDesarrollador As DataGridView
     Friend WithEvents Label34 As Label
-    Friend WithEvents GroupBox5 As GroupBox
-    Friend WithEvents TextBox16 As TextBox
-    Friend WithEvents TextBox18 As TextBox
+    Friend WithEvents PnlDesarrollador As GroupBox
+    Friend WithEvents TxtPaginaWeb As TextBox
+    Friend WithEvents TxtNombreDesarrollador As TextBox
     Friend WithEvents Label38 As Label
     Friend WithEvents Label39 As Label
-    Friend WithEvents TextBox19 As TextBox
+    Friend WithEvents TxtIdDesarrollador As TextBox
     Friend WithEvents Label40 As Label
     Friend WithEvents Panel3 As Panel
     Friend WithEvents BtnCancelar As Button
     Friend WithEvents BtnGuardar As Button
     Friend WithEvents BtnModificar As Button
     Friend WithEvents BtnNuevo As Button
+    Friend WithEvents CMSDesarrollador As ContextMenuStrip
+    Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
 End Class

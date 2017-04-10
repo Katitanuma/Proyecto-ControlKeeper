@@ -292,4 +292,5 @@ Public Class FrmUsuario
         End Using
         Return Valor
     End Function
+
 End Class

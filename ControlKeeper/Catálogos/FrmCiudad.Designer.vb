@@ -22,15 +22,19 @@ Partial Class FrmCiudad
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmCiudad))
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.DgvCiudad = New System.Windows.Forms.DataGridView()
+        Me.CMSCiudad = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PnlCiudad = New System.Windows.Forms.GroupBox()
+        Me.BtnBusqueDepartamento = New System.Windows.Forms.Button()
+        Me.CboDepartamento = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox24 = New System.Windows.Forms.TextBox()
+        Me.TxtCiudad = New System.Windows.Forms.TextBox()
         Me.Label50 = New System.Windows.Forms.Label()
-        Me.TextBox25 = New System.Windows.Forms.TextBox()
+        Me.TxtIdCiudad = New System.Windows.Forms.TextBox()
         Me.Label51 = New System.Windows.Forms.Label()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnGuardar = New System.Windows.Forms.Button()
@@ -39,53 +43,78 @@ Partial Class FrmCiudad
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label45 = New System.Windows.Forms.Label()
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox7.SuspendLayout()
+        CType(Me.DgvCiudad, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CMSCiudad.SuspendLayout()
+        Me.PnlCiudad.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DataGridView1
+        'DgvCiudad
         '
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(23, 250)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(479, 203)
-        Me.DataGridView1.TabIndex = 72
+        Me.DgvCiudad.AllowUserToAddRows = False
+        Me.DgvCiudad.AllowUserToDeleteRows = False
+        Me.DgvCiudad.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgvCiudad.BackgroundColor = System.Drawing.Color.White
+        Me.DgvCiudad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvCiudad.ContextMenuStrip = Me.CMSCiudad
+        Me.DgvCiudad.Location = New System.Drawing.Point(23, 250)
+        Me.DgvCiudad.Name = "DgvCiudad"
+        Me.DgvCiudad.ReadOnly = True
+        Me.DgvCiudad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvCiudad.Size = New System.Drawing.Size(479, 203)
+        Me.DgvCiudad.TabIndex = 72
         '
-        'GroupBox7
+        'CMSCiudad
         '
-        Me.GroupBox7.Controls.Add(Me.Button1)
-        Me.GroupBox7.Controls.Add(Me.ComboBox1)
-        Me.GroupBox7.Controls.Add(Me.Label1)
-        Me.GroupBox7.Controls.Add(Me.TextBox24)
-        Me.GroupBox7.Controls.Add(Me.Label50)
-        Me.GroupBox7.Controls.Add(Me.TextBox25)
-        Me.GroupBox7.Controls.Add(Me.Label51)
-        Me.GroupBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox7.Location = New System.Drawing.Point(23, 75)
-        Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(479, 111)
-        Me.GroupBox7.TabIndex = 71
-        Me.GroupBox7.TabStop = False
+        Me.CMSCiudad.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
+        Me.CMSCiudad.Name = "ContextMenuStrip1"
+        Me.CMSCiudad.Size = New System.Drawing.Size(118, 48)
         '
-        'Button1
+        'EditarToolStripMenuItem
         '
-        Me.Button1.Location = New System.Drawing.Point(383, 75)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(36, 27)
-        Me.Button1.TabIndex = 60
-        Me.Button1.Text = "..."
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EditarToolStripMenuItem.Text = "Editar"
         '
-        'ComboBox1
+        'EliminarToolStripMenuItem
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(123, 77)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(251, 24)
-        Me.ComboBox1.TabIndex = 29
+        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EliminarToolStripMenuItem.Text = "Eliminar"
+        '
+        'PnlCiudad
+        '
+        Me.PnlCiudad.Controls.Add(Me.BtnBusqueDepartamento)
+        Me.PnlCiudad.Controls.Add(Me.CboDepartamento)
+        Me.PnlCiudad.Controls.Add(Me.Label1)
+        Me.PnlCiudad.Controls.Add(Me.TxtCiudad)
+        Me.PnlCiudad.Controls.Add(Me.Label50)
+        Me.PnlCiudad.Controls.Add(Me.TxtIdCiudad)
+        Me.PnlCiudad.Controls.Add(Me.Label51)
+        Me.PnlCiudad.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PnlCiudad.Location = New System.Drawing.Point(23, 76)
+        Me.PnlCiudad.Name = "PnlCiudad"
+        Me.PnlCiudad.Size = New System.Drawing.Size(479, 111)
+        Me.PnlCiudad.TabIndex = 71
+        Me.PnlCiudad.TabStop = False
+        '
+        'BtnBusqueDepartamento
+        '
+        Me.BtnBusqueDepartamento.Location = New System.Drawing.Point(383, 75)
+        Me.BtnBusqueDepartamento.Name = "BtnBusqueDepartamento"
+        Me.BtnBusqueDepartamento.Size = New System.Drawing.Size(36, 27)
+        Me.BtnBusqueDepartamento.TabIndex = 60
+        Me.BtnBusqueDepartamento.Text = "..."
+        Me.BtnBusqueDepartamento.UseVisualStyleBackColor = True
+        '
+        'CboDepartamento
+        '
+        Me.CboDepartamento.FormattingEnabled = True
+        Me.CboDepartamento.Location = New System.Drawing.Point(123, 77)
+        Me.CboDepartamento.Name = "CboDepartamento"
+        Me.CboDepartamento.Size = New System.Drawing.Size(251, 24)
+        Me.CboDepartamento.TabIndex = 29
         '
         'Label1
         '
@@ -97,12 +126,12 @@ Partial Class FrmCiudad
         Me.Label1.TabIndex = 28
         Me.Label1.Text = "Departamento "
         '
-        'TextBox24
+        'TxtCiudad
         '
-        Me.TextBox24.Location = New System.Drawing.Point(123, 47)
-        Me.TextBox24.Name = "TextBox24"
-        Me.TextBox24.Size = New System.Drawing.Size(234, 22)
-        Me.TextBox24.TabIndex = 27
+        Me.TxtCiudad.Location = New System.Drawing.Point(123, 47)
+        Me.TxtCiudad.Name = "TxtCiudad"
+        Me.TxtCiudad.Size = New System.Drawing.Size(234, 22)
+        Me.TxtCiudad.TabIndex = 27
         '
         'Label50
         '
@@ -114,13 +143,13 @@ Partial Class FrmCiudad
         Me.Label50.TabIndex = 23
         Me.Label50.Text = "Ciudad"
         '
-        'TextBox25
+        'TxtIdCiudad
         '
-        Me.TextBox25.Location = New System.Drawing.Point(123, 15)
-        Me.TextBox25.Name = "TextBox25"
-        Me.TextBox25.ReadOnly = True
-        Me.TextBox25.Size = New System.Drawing.Size(142, 22)
-        Me.TextBox25.TabIndex = 22
+        Me.TxtIdCiudad.Location = New System.Drawing.Point(123, 15)
+        Me.TxtIdCiudad.Name = "TxtIdCiudad"
+        Me.TxtIdCiudad.ReadOnly = True
+        Me.TxtIdCiudad.Size = New System.Drawing.Size(142, 22)
+        Me.TxtIdCiudad.TabIndex = 22
         '
         'Label51
         '
@@ -250,14 +279,15 @@ Partial Class FrmCiudad
         Me.Controls.Add(Me.BtnGuardar)
         Me.Controls.Add(Me.BtnModificar)
         Me.Controls.Add(Me.BtnNuevo)
-        Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.GroupBox7)
+        Me.Controls.Add(Me.DgvCiudad)
+        Me.Controls.Add(Me.PnlCiudad)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "FrmCiudad"
         Me.Text = "Gestión de Ciudad"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox7.ResumeLayout(False)
-        Me.GroupBox7.PerformLayout()
+        CType(Me.DgvCiudad, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.CMSCiudad.ResumeLayout(False)
+        Me.PnlCiudad.ResumeLayout(False)
+        Me.PnlCiudad.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
@@ -269,16 +299,19 @@ Partial Class FrmCiudad
     Friend WithEvents BtnGuardar As Button
     Friend WithEvents BtnModificar As Button
     Friend WithEvents BtnNuevo As Button
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents GroupBox7 As GroupBox
+    Friend WithEvents DgvCiudad As DataGridView
+    Friend WithEvents PnlCiudad As GroupBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox24 As TextBox
+    Friend WithEvents TxtCiudad As TextBox
     Friend WithEvents Label50 As Label
-    Friend WithEvents TextBox25 As TextBox
+    Friend WithEvents TxtIdCiudad As TextBox
     Friend WithEvents Label51 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label45 As Label
     Friend WithEvents PictureBox10 As PictureBox
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents CboDepartamento As ComboBox
+    Friend WithEvents BtnBusqueDepartamento As Button
+    Friend WithEvents CMSCiudad As ContextMenuStrip
+    Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
 End Class

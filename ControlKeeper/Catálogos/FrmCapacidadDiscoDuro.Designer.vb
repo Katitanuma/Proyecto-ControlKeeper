@@ -22,12 +22,16 @@ Partial Class FrmCapacidadDiscoDuro
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmCapacidadDiscoDuro))
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
-        Me.TextBox24 = New System.Windows.Forms.TextBox()
+        Me.DgvCapacidadDiscoDuro = New System.Windows.Forms.DataGridView()
+        Me.CMSCapacidadDiscoDuro = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GboCapacidadDiscoDuro = New System.Windows.Forms.GroupBox()
+        Me.TxtCapacidadDiscoDuro = New System.Windows.Forms.TextBox()
         Me.Label50 = New System.Windows.Forms.Label()
-        Me.TextBox25 = New System.Windows.Forms.TextBox()
+        Me.TxtIdCapacidadDiscoDuro = New System.Windows.Forms.TextBox()
         Me.Label51 = New System.Windows.Forms.Label()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnGuardar = New System.Windows.Forms.Button()
@@ -36,40 +40,65 @@ Partial Class FrmCapacidadDiscoDuro
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label45 = New System.Windows.Forms.Label()
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox7.SuspendLayout()
+        CType(Me.DgvCapacidadDiscoDuro, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CMSCapacidadDiscoDuro.SuspendLayout()
+        Me.GboCapacidadDiscoDuro.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DataGridView1
+        'DgvCapacidadDiscoDuro
         '
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(24, 240)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(479, 205)
-        Me.DataGridView1.TabIndex = 64
+        Me.DgvCapacidadDiscoDuro.AllowUserToAddRows = False
+        Me.DgvCapacidadDiscoDuro.AllowUserToDeleteRows = False
+        Me.DgvCapacidadDiscoDuro.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgvCapacidadDiscoDuro.BackgroundColor = System.Drawing.Color.White
+        Me.DgvCapacidadDiscoDuro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvCapacidadDiscoDuro.ContextMenuStrip = Me.CMSCapacidadDiscoDuro
+        Me.DgvCapacidadDiscoDuro.Location = New System.Drawing.Point(24, 240)
+        Me.DgvCapacidadDiscoDuro.Name = "DgvCapacidadDiscoDuro"
+        Me.DgvCapacidadDiscoDuro.ReadOnly = True
+        Me.DgvCapacidadDiscoDuro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvCapacidadDiscoDuro.Size = New System.Drawing.Size(479, 205)
+        Me.DgvCapacidadDiscoDuro.TabIndex = 64
         '
-        'GroupBox7
+        'CMSCapacidadDiscoDuro
         '
-        Me.GroupBox7.Controls.Add(Me.TextBox24)
-        Me.GroupBox7.Controls.Add(Me.Label50)
-        Me.GroupBox7.Controls.Add(Me.TextBox25)
-        Me.GroupBox7.Controls.Add(Me.Label51)
-        Me.GroupBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox7.Location = New System.Drawing.Point(24, 84)
-        Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(479, 85)
-        Me.GroupBox7.TabIndex = 63
-        Me.GroupBox7.TabStop = False
+        Me.CMSCapacidadDiscoDuro.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
+        Me.CMSCapacidadDiscoDuro.Name = "CMSCapacidadDiscoDuro"
+        Me.CMSCapacidadDiscoDuro.Size = New System.Drawing.Size(118, 48)
         '
-        'TextBox24
+        'EditarToolStripMenuItem
         '
-        Me.TextBox24.Location = New System.Drawing.Point(224, 53)
-        Me.TextBox24.Name = "TextBox24"
-        Me.TextBox24.Size = New System.Drawing.Size(198, 22)
-        Me.TextBox24.TabIndex = 27
+        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EditarToolStripMenuItem.Text = "Editar"
+        '
+        'EliminarToolStripMenuItem
+        '
+        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EliminarToolStripMenuItem.Text = "Eliminar"
+        '
+        'GboCapacidadDiscoDuro
+        '
+        Me.GboCapacidadDiscoDuro.Controls.Add(Me.TxtCapacidadDiscoDuro)
+        Me.GboCapacidadDiscoDuro.Controls.Add(Me.Label50)
+        Me.GboCapacidadDiscoDuro.Controls.Add(Me.TxtIdCapacidadDiscoDuro)
+        Me.GboCapacidadDiscoDuro.Controls.Add(Me.Label51)
+        Me.GboCapacidadDiscoDuro.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GboCapacidadDiscoDuro.Location = New System.Drawing.Point(24, 84)
+        Me.GboCapacidadDiscoDuro.Name = "GboCapacidadDiscoDuro"
+        Me.GboCapacidadDiscoDuro.Size = New System.Drawing.Size(479, 85)
+        Me.GboCapacidadDiscoDuro.TabIndex = 63
+        Me.GboCapacidadDiscoDuro.TabStop = False
+        '
+        'TxtCapacidadDiscoDuro
+        '
+        Me.TxtCapacidadDiscoDuro.Location = New System.Drawing.Point(224, 53)
+        Me.TxtCapacidadDiscoDuro.Name = "TxtCapacidadDiscoDuro"
+        Me.TxtCapacidadDiscoDuro.Size = New System.Drawing.Size(198, 22)
+        Me.TxtCapacidadDiscoDuro.TabIndex = 27
         '
         'Label50
         '
@@ -81,13 +110,13 @@ Partial Class FrmCapacidadDiscoDuro
         Me.Label50.TabIndex = 23
         Me.Label50.Text = "Capacidad de Disco Duro"
         '
-        'TextBox25
+        'TxtIdCapacidadDiscoDuro
         '
-        Me.TextBox25.Location = New System.Drawing.Point(224, 21)
-        Me.TextBox25.Name = "TextBox25"
-        Me.TextBox25.ReadOnly = True
-        Me.TextBox25.Size = New System.Drawing.Size(142, 22)
-        Me.TextBox25.TabIndex = 22
+        Me.TxtIdCapacidadDiscoDuro.Location = New System.Drawing.Point(224, 21)
+        Me.TxtIdCapacidadDiscoDuro.Name = "TxtIdCapacidadDiscoDuro"
+        Me.TxtIdCapacidadDiscoDuro.ReadOnly = True
+        Me.TxtIdCapacidadDiscoDuro.Size = New System.Drawing.Size(142, 22)
+        Me.TxtIdCapacidadDiscoDuro.TabIndex = 22
         '
         'Label51
         '
@@ -211,31 +240,32 @@ Partial Class FrmCapacidadDiscoDuro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(527, 467)
         Me.Controls.Add(Me.BtnCancelar)
         Me.Controls.Add(Me.BtnGuardar)
         Me.Controls.Add(Me.BtnModificar)
         Me.Controls.Add(Me.BtnNuevo)
-        Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.GroupBox7)
+        Me.Controls.Add(Me.DgvCapacidadDiscoDuro)
+        Me.Controls.Add(Me.GboCapacidadDiscoDuro)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "FrmCapacidadDiscoDuro"
         Me.Text = "Gestión de Capacidad de Disco Duro"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox7.ResumeLayout(False)
-        Me.GroupBox7.PerformLayout()
+        CType(Me.DgvCapacidadDiscoDuro, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.CMSCapacidadDiscoDuro.ResumeLayout(False)
+        Me.GboCapacidadDiscoDuro.ResumeLayout(False)
+        Me.GboCapacidadDiscoDuro.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents GroupBox7 As GroupBox
-    Friend WithEvents TextBox24 As TextBox
+    Friend WithEvents DgvCapacidadDiscoDuro As DataGridView
+    Friend WithEvents GboCapacidadDiscoDuro As GroupBox
+    Friend WithEvents TxtCapacidadDiscoDuro As TextBox
     Friend WithEvents Label50 As Label
-    Friend WithEvents TextBox25 As TextBox
+    Friend WithEvents TxtIdCapacidadDiscoDuro As TextBox
     Friend WithEvents Label51 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label45 As Label
@@ -244,4 +274,7 @@ Partial Class FrmCapacidadDiscoDuro
     Friend WithEvents BtnGuardar As Button
     Friend WithEvents BtnModificar As Button
     Friend WithEvents BtnNuevo As Button
+    Friend WithEvents CMSCapacidadDiscoDuro As ContextMenuStrip
+    Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
 End Class

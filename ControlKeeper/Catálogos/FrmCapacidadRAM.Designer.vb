@@ -22,54 +22,83 @@ Partial Class FrmCapacidadRAM
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmCapacidadRAM))
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
-        Me.TextBox24 = New System.Windows.Forms.TextBox()
+        Me.DgvCapacidadMemoriaRAM = New System.Windows.Forms.DataGridView()
+        Me.CMSCapacidadRAM = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PnlCapacidadMemoriaRAM = New System.Windows.Forms.GroupBox()
+        Me.TxtCapacidadRAM = New System.Windows.Forms.TextBox()
         Me.Label50 = New System.Windows.Forms.Label()
-        Me.TextBox25 = New System.Windows.Forms.TextBox()
+        Me.TxtIdCapacidadRAM = New System.Windows.Forms.TextBox()
         Me.Label51 = New System.Windows.Forms.Label()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.BtnModificar = New System.Windows.Forms.Button()
         Me.BtnNuevo = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label45 = New System.Windows.Forms.Label()
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox7.SuspendLayout()
+        Me.Label45 = New System.Windows.Forms.Label()
+        CType(Me.DgvCapacidadMemoriaRAM, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CMSCapacidadRAM.SuspendLayout()
+        Me.PnlCapacidadMemoriaRAM.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DataGridView1
+        'DgvCapacidadMemoriaRAM
         '
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(39, 245)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(448, 205)
-        Me.DataGridView1.TabIndex = 72
+        Me.DgvCapacidadMemoriaRAM.AllowUserToAddRows = False
+        Me.DgvCapacidadMemoriaRAM.AllowUserToDeleteRows = False
+        Me.DgvCapacidadMemoriaRAM.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgvCapacidadMemoriaRAM.BackgroundColor = System.Drawing.Color.White
+        Me.DgvCapacidadMemoriaRAM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvCapacidadMemoriaRAM.ContextMenuStrip = Me.CMSCapacidadRAM
+        Me.DgvCapacidadMemoriaRAM.Location = New System.Drawing.Point(39, 245)
+        Me.DgvCapacidadMemoriaRAM.Name = "DgvCapacidadMemoriaRAM"
+        Me.DgvCapacidadMemoriaRAM.ReadOnly = True
+        Me.DgvCapacidadMemoriaRAM.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvCapacidadMemoriaRAM.Size = New System.Drawing.Size(448, 205)
+        Me.DgvCapacidadMemoriaRAM.TabIndex = 72
         '
-        'GroupBox7
+        'CMSCapacidadRAM
         '
-        Me.GroupBox7.Controls.Add(Me.TextBox24)
-        Me.GroupBox7.Controls.Add(Me.Label50)
-        Me.GroupBox7.Controls.Add(Me.TextBox25)
-        Me.GroupBox7.Controls.Add(Me.Label51)
-        Me.GroupBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox7.Location = New System.Drawing.Point(37, 80)
-        Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(448, 85)
-        Me.GroupBox7.TabIndex = 71
-        Me.GroupBox7.TabStop = False
+        Me.CMSCapacidadRAM.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
+        Me.CMSCapacidadRAM.Name = "CMSCapacidadRAM"
+        Me.CMSCapacidadRAM.Size = New System.Drawing.Size(118, 48)
         '
-        'TextBox24
+        'EditarToolStripMenuItem
         '
-        Me.TextBox24.Location = New System.Drawing.Point(210, 53)
-        Me.TextBox24.Name = "TextBox24"
-        Me.TextBox24.Size = New System.Drawing.Size(198, 22)
-        Me.TextBox24.TabIndex = 27
+        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EditarToolStripMenuItem.Text = "Editar"
+        '
+        'EliminarToolStripMenuItem
+        '
+        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EliminarToolStripMenuItem.Text = "Eliminar"
+        '
+        'PnlCapacidadMemoriaRAM
+        '
+        Me.PnlCapacidadMemoriaRAM.Controls.Add(Me.TxtCapacidadRAM)
+        Me.PnlCapacidadMemoriaRAM.Controls.Add(Me.Label50)
+        Me.PnlCapacidadMemoriaRAM.Controls.Add(Me.TxtIdCapacidadRAM)
+        Me.PnlCapacidadMemoriaRAM.Controls.Add(Me.Label51)
+        Me.PnlCapacidadMemoriaRAM.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PnlCapacidadMemoriaRAM.Location = New System.Drawing.Point(37, 80)
+        Me.PnlCapacidadMemoriaRAM.Name = "PnlCapacidadMemoriaRAM"
+        Me.PnlCapacidadMemoriaRAM.Size = New System.Drawing.Size(448, 85)
+        Me.PnlCapacidadMemoriaRAM.TabIndex = 71
+        Me.PnlCapacidadMemoriaRAM.TabStop = False
+        '
+        'TxtCapacidadRAM
+        '
+        Me.TxtCapacidadRAM.Location = New System.Drawing.Point(210, 53)
+        Me.TxtCapacidadRAM.Name = "TxtCapacidadRAM"
+        Me.TxtCapacidadRAM.Size = New System.Drawing.Size(198, 22)
+        Me.TxtCapacidadRAM.TabIndex = 27
         '
         'Label50
         '
@@ -81,13 +110,13 @@ Partial Class FrmCapacidadRAM
         Me.Label50.TabIndex = 23
         Me.Label50.Text = "Capacidad de Memoria RAM"
         '
-        'TextBox25
+        'TxtIdCapacidadRAM
         '
-        Me.TextBox25.Location = New System.Drawing.Point(210, 21)
-        Me.TextBox25.Name = "TextBox25"
-        Me.TextBox25.ReadOnly = True
-        Me.TextBox25.Size = New System.Drawing.Size(142, 22)
-        Me.TextBox25.TabIndex = 22
+        Me.TxtIdCapacidadRAM.Location = New System.Drawing.Point(210, 21)
+        Me.TxtIdCapacidadRAM.Name = "TxtIdCapacidadRAM"
+        Me.TxtIdCapacidadRAM.ReadOnly = True
+        Me.TxtIdCapacidadRAM.Size = New System.Drawing.Size(142, 22)
+        Me.TxtIdCapacidadRAM.TabIndex = 22
         '
         'Label51
         '
@@ -184,6 +213,17 @@ Partial Class FrmCapacidadRAM
         Me.Panel1.Size = New System.Drawing.Size(527, 74)
         Me.Panel1.TabIndex = 70
         '
+        'PictureBox10
+        '
+        Me.PictureBox10.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox10.BackgroundImage = Global.ControlKeeper.My.Resources.Resources.ram_98420_960_720
+        Me.PictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox10.Location = New System.Drawing.Point(15, 0)
+        Me.PictureBox10.Name = "PictureBox10"
+        Me.PictureBox10.Size = New System.Drawing.Size(83, 62)
+        Me.PictureBox10.TabIndex = 39
+        Me.PictureBox10.TabStop = False
+        '
         'Label45
         '
         Me.Label45.AutoSize = True
@@ -196,35 +236,25 @@ Partial Class FrmCapacidadRAM
         Me.Label45.TabIndex = 25
         Me.Label45.Text = "Capacidad de Memoria RAM"
         '
-        'PictureBox10
-        '
-        Me.PictureBox10.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox10.BackgroundImage = Global.ControlKeeper.My.Resources.Resources.ram_98420_960_720
-        Me.PictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox10.Location = New System.Drawing.Point(15, 0)
-        Me.PictureBox10.Name = "PictureBox10"
-        Me.PictureBox10.Size = New System.Drawing.Size(83, 62)
-        Me.PictureBox10.TabIndex = 39
-        Me.PictureBox10.TabStop = False
-        '
         'FrmCapacidadRAM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(526, 467)
         Me.Controls.Add(Me.BtnCancelar)
         Me.Controls.Add(Me.BtnGuardar)
         Me.Controls.Add(Me.BtnModificar)
         Me.Controls.Add(Me.BtnNuevo)
-        Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.GroupBox7)
+        Me.Controls.Add(Me.DgvCapacidadMemoriaRAM)
+        Me.Controls.Add(Me.PnlCapacidadMemoriaRAM)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "FrmCapacidadRAM"
         Me.Text = "Gestión de Capacidad de RAM"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox7.ResumeLayout(False)
-        Me.GroupBox7.PerformLayout()
+        CType(Me.DgvCapacidadMemoriaRAM, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.CMSCapacidadRAM.ResumeLayout(False)
+        Me.PnlCapacidadMemoriaRAM.ResumeLayout(False)
+        Me.PnlCapacidadMemoriaRAM.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
@@ -236,13 +266,16 @@ Partial Class FrmCapacidadRAM
     Friend WithEvents BtnGuardar As Button
     Friend WithEvents BtnModificar As Button
     Friend WithEvents BtnNuevo As Button
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents GroupBox7 As GroupBox
-    Friend WithEvents TextBox24 As TextBox
+    Friend WithEvents DgvCapacidadMemoriaRAM As DataGridView
+    Friend WithEvents PnlCapacidadMemoriaRAM As GroupBox
+    Friend WithEvents TxtCapacidadRAM As TextBox
     Friend WithEvents Label50 As Label
-    Friend WithEvents TextBox25 As TextBox
+    Friend WithEvents TxtIdCapacidadRAM As TextBox
     Friend WithEvents Label51 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label45 As Label
     Friend WithEvents PictureBox10 As PictureBox
+    Friend WithEvents CMSCapacidadRAM As ContextMenuStrip
+    Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
 End Class
