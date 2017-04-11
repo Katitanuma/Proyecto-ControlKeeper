@@ -22,15 +22,16 @@ Partial Class FrmModelo
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmModelo))
-        Me.DataGridView7 = New System.Windows.Forms.DataGridView()
-        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
+        Me.DgvModelo = New System.Windows.Forms.DataGridView()
+        Me.PnlModelo = New System.Windows.Forms.GroupBox()
         Me.Button29 = New System.Windows.Forms.Button()
-        Me.ComboBox12 = New System.Windows.Forms.ComboBox()
-        Me.TextBox24 = New System.Windows.Forms.TextBox()
+        Me.CboMarca = New System.Windows.Forms.ComboBox()
+        Me.TxtModelo = New System.Windows.Forms.TextBox()
         Me.Label47 = New System.Windows.Forms.Label()
         Me.Label50 = New System.Windows.Forms.Label()
-        Me.TextBox25 = New System.Windows.Forms.TextBox()
+        Me.TxtCodigoModelo = New System.Windows.Forms.TextBox()
         Me.Label51 = New System.Windows.Forms.Label()
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -39,36 +40,46 @@ Partial Class FrmModelo
         Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.BtnModificar = New System.Windows.Forms.Button()
         Me.BtnNuevo = New System.Windows.Forms.Button()
-        CType(Me.DataGridView7, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox7.SuspendLayout()
+        Me.CmsModelo = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        CType(Me.DgvModelo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PnlModelo.SuspendLayout()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
+        Me.CmsModelo.SuspendLayout()
         Me.SuspendLayout()
         '
-        'DataGridView7
+        'DgvModelo
         '
-        Me.DataGridView7.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView7.Location = New System.Drawing.Point(27, 277)
-        Me.DataGridView7.Name = "DataGridView7"
-        Me.DataGridView7.Size = New System.Drawing.Size(551, 216)
-        Me.DataGridView7.TabIndex = 49
+        Me.DgvModelo.AllowUserToAddRows = False
+        Me.DgvModelo.AllowUserToDeleteRows = False
+        Me.DgvModelo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgvModelo.BackgroundColor = System.Drawing.Color.White
+        Me.DgvModelo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvModelo.ContextMenuStrip = Me.CmsModelo
+        Me.DgvModelo.Location = New System.Drawing.Point(27, 277)
+        Me.DgvModelo.Name = "DgvModelo"
+        Me.DgvModelo.ReadOnly = True
+        Me.DgvModelo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvModelo.Size = New System.Drawing.Size(551, 216)
+        Me.DgvModelo.TabIndex = 49
         '
-        'GroupBox7
+        'PnlModelo
         '
-        Me.GroupBox7.Controls.Add(Me.Button29)
-        Me.GroupBox7.Controls.Add(Me.ComboBox12)
-        Me.GroupBox7.Controls.Add(Me.TextBox24)
-        Me.GroupBox7.Controls.Add(Me.Label47)
-        Me.GroupBox7.Controls.Add(Me.Label50)
-        Me.GroupBox7.Controls.Add(Me.TextBox25)
-        Me.GroupBox7.Controls.Add(Me.Label51)
-        Me.GroupBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox7.Location = New System.Drawing.Point(27, 72)
-        Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(551, 139)
-        Me.GroupBox7.TabIndex = 47
-        Me.GroupBox7.TabStop = False
+        Me.PnlModelo.Controls.Add(Me.Button29)
+        Me.PnlModelo.Controls.Add(Me.CboMarca)
+        Me.PnlModelo.Controls.Add(Me.TxtModelo)
+        Me.PnlModelo.Controls.Add(Me.Label47)
+        Me.PnlModelo.Controls.Add(Me.Label50)
+        Me.PnlModelo.Controls.Add(Me.TxtCodigoModelo)
+        Me.PnlModelo.Controls.Add(Me.Label51)
+        Me.PnlModelo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PnlModelo.Location = New System.Drawing.Point(27, 72)
+        Me.PnlModelo.Name = "PnlModelo"
+        Me.PnlModelo.Size = New System.Drawing.Size(551, 139)
+        Me.PnlModelo.TabIndex = 47
+        Me.PnlModelo.TabStop = False
         '
         'Button29
         '
@@ -79,22 +90,22 @@ Partial Class FrmModelo
         Me.Button29.Text = "..."
         Me.Button29.UseVisualStyleBackColor = True
         '
-        'ComboBox12
+        'CboMarca
         '
-        Me.ComboBox12.BackColor = System.Drawing.Color.White
-        Me.ComboBox12.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox12.FormattingEnabled = True
-        Me.ComboBox12.Location = New System.Drawing.Point(133, 92)
-        Me.ComboBox12.Name = "ComboBox12"
-        Me.ComboBox12.Size = New System.Drawing.Size(234, 24)
-        Me.ComboBox12.TabIndex = 31
+        Me.CboMarca.BackColor = System.Drawing.Color.White
+        Me.CboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CboMarca.FormattingEnabled = True
+        Me.CboMarca.Location = New System.Drawing.Point(133, 92)
+        Me.CboMarca.Name = "CboMarca"
+        Me.CboMarca.Size = New System.Drawing.Size(234, 24)
+        Me.CboMarca.TabIndex = 31
         '
-        'TextBox24
+        'TxtModelo
         '
-        Me.TextBox24.Location = New System.Drawing.Point(133, 58)
-        Me.TextBox24.Name = "TextBox24"
-        Me.TextBox24.Size = New System.Drawing.Size(376, 22)
-        Me.TextBox24.TabIndex = 27
+        Me.TxtModelo.Location = New System.Drawing.Point(133, 58)
+        Me.TxtModelo.Name = "TxtModelo"
+        Me.TxtModelo.Size = New System.Drawing.Size(376, 22)
+        Me.TxtModelo.TabIndex = 27
         '
         'Label47
         '
@@ -116,13 +127,13 @@ Partial Class FrmModelo
         Me.Label50.TabIndex = 23
         Me.Label50.Text = "Modelo"
         '
-        'TextBox25
+        'TxtCodigoModelo
         '
-        Me.TextBox25.Location = New System.Drawing.Point(133, 26)
-        Me.TextBox25.Name = "TextBox25"
-        Me.TextBox25.ReadOnly = True
-        Me.TextBox25.Size = New System.Drawing.Size(155, 22)
-        Me.TextBox25.TabIndex = 22
+        Me.TxtCodigoModelo.Location = New System.Drawing.Point(133, 26)
+        Me.TxtCodigoModelo.Name = "TxtCodigoModelo"
+        Me.TxtCodigoModelo.ReadOnly = True
+        Me.TxtCodigoModelo.Size = New System.Drawing.Size(155, 22)
+        Me.TxtCodigoModelo.TabIndex = 22
         '
         'Label51
         '
@@ -242,39 +253,58 @@ Partial Class FrmModelo
         Me.BtnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnNuevo.UseVisualStyleBackColor = False
         '
+        'CmsModelo
+        '
+        Me.CmsModelo.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
+        Me.CmsModelo.Name = "CmsModelo"
+        Me.CmsModelo.Size = New System.Drawing.Size(118, 48)
+        '
+        'EditarToolStripMenuItem
+        '
+        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EditarToolStripMenuItem.Text = "Editar"
+        '
+        'EliminarToolStripMenuItem
+        '
+        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EliminarToolStripMenuItem.Text = "Eliminar"
+        '
         'FrmModelo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(605, 508)
         Me.Controls.Add(Me.BtnCancelar)
         Me.Controls.Add(Me.BtnGuardar)
         Me.Controls.Add(Me.BtnModificar)
         Me.Controls.Add(Me.BtnNuevo)
         Me.Controls.Add(Me.Panel3)
-        Me.Controls.Add(Me.DataGridView7)
-        Me.Controls.Add(Me.GroupBox7)
+        Me.Controls.Add(Me.DgvModelo)
+        Me.Controls.Add(Me.PnlModelo)
         Me.Name = "FrmModelo"
         Me.Text = "Gestión de Modelo"
-        CType(Me.DataGridView7, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox7.ResumeLayout(False)
-        Me.GroupBox7.PerformLayout()
+        CType(Me.DgvModelo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PnlModelo.ResumeLayout(False)
+        Me.PnlModelo.PerformLayout()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        Me.CmsModelo.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents PictureBox8 As PictureBox
-    Friend WithEvents DataGridView7 As DataGridView
-    Friend WithEvents GroupBox7 As GroupBox
+    Friend WithEvents DgvModelo As DataGridView
+    Friend WithEvents PnlModelo As GroupBox
     Friend WithEvents Button29 As Button
-    Friend WithEvents ComboBox12 As ComboBox
-    Friend WithEvents TextBox24 As TextBox
+    Friend WithEvents CboMarca As ComboBox
+    Friend WithEvents TxtModelo As TextBox
     Friend WithEvents Label47 As Label
     Friend WithEvents Label50 As Label
-    Friend WithEvents TextBox25 As TextBox
+    Friend WithEvents TxtCodigoModelo As TextBox
     Friend WithEvents Label51 As Label
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label13 As Label
@@ -282,4 +312,7 @@ Partial Class FrmModelo
     Friend WithEvents BtnGuardar As Button
     Friend WithEvents BtnModificar As Button
     Friend WithEvents BtnNuevo As Button
+    Friend WithEvents CmsModelo As ContextMenuStrip
+    Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
 End Class

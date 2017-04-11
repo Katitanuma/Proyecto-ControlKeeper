@@ -22,13 +22,14 @@ Partial Class FrmProfesion
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmProfesion))
-        Me.DataGridView8 = New System.Windows.Forms.DataGridView()
-        Me.GroupBox8 = New System.Windows.Forms.GroupBox()
+        Me.DgvProfesion = New System.Windows.Forms.DataGridView()
+        Me.PnlProfesion = New System.Windows.Forms.GroupBox()
         Me.Label56 = New System.Windows.Forms.Label()
-        Me.TextBox21 = New System.Windows.Forms.TextBox()
+        Me.TxtProfesion = New System.Windows.Forms.TextBox()
         Me.Label49 = New System.Windows.Forms.Label()
-        Me.TextBox22 = New System.Windows.Forms.TextBox()
+        Me.TxtCodigoProfesion = New System.Windows.Forms.TextBox()
         Me.Label52 = New System.Windows.Forms.Label()
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -37,34 +38,44 @@ Partial Class FrmProfesion
         Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.BtnModificar = New System.Windows.Forms.Button()
         Me.BtnNuevo = New System.Windows.Forms.Button()
-        CType(Me.DataGridView8, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox8.SuspendLayout()
+        Me.CmsProfesion = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        CType(Me.DgvProfesion, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PnlProfesion.SuspendLayout()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
+        Me.CmsProfesion.SuspendLayout()
         Me.SuspendLayout()
         '
-        'DataGridView8
+        'DgvProfesion
         '
-        Me.DataGridView8.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView8.Location = New System.Drawing.Point(25, 253)
-        Me.DataGridView8.Name = "DataGridView8"
-        Me.DataGridView8.Size = New System.Drawing.Size(580, 234)
-        Me.DataGridView8.TabIndex = 50
+        Me.DgvProfesion.AllowUserToAddRows = False
+        Me.DgvProfesion.AllowUserToDeleteRows = False
+        Me.DgvProfesion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgvProfesion.BackgroundColor = System.Drawing.Color.White
+        Me.DgvProfesion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvProfesion.ContextMenuStrip = Me.CmsProfesion
+        Me.DgvProfesion.Location = New System.Drawing.Point(25, 253)
+        Me.DgvProfesion.Name = "DgvProfesion"
+        Me.DgvProfesion.ReadOnly = True
+        Me.DgvProfesion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvProfesion.Size = New System.Drawing.Size(580, 234)
+        Me.DgvProfesion.TabIndex = 50
         '
-        'GroupBox8
+        'PnlProfesion
         '
-        Me.GroupBox8.Controls.Add(Me.Label56)
-        Me.GroupBox8.Controls.Add(Me.TextBox21)
-        Me.GroupBox8.Controls.Add(Me.Label49)
-        Me.GroupBox8.Controls.Add(Me.TextBox22)
-        Me.GroupBox8.Controls.Add(Me.Label52)
-        Me.GroupBox8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox8.Location = New System.Drawing.Point(25, 76)
-        Me.GroupBox8.Name = "GroupBox8"
-        Me.GroupBox8.Size = New System.Drawing.Size(580, 105)
-        Me.GroupBox8.TabIndex = 48
-        Me.GroupBox8.TabStop = False
+        Me.PnlProfesion.Controls.Add(Me.Label56)
+        Me.PnlProfesion.Controls.Add(Me.TxtProfesion)
+        Me.PnlProfesion.Controls.Add(Me.Label49)
+        Me.PnlProfesion.Controls.Add(Me.TxtCodigoProfesion)
+        Me.PnlProfesion.Controls.Add(Me.Label52)
+        Me.PnlProfesion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PnlProfesion.Location = New System.Drawing.Point(25, 76)
+        Me.PnlProfesion.Name = "PnlProfesion"
+        Me.PnlProfesion.Size = New System.Drawing.Size(580, 105)
+        Me.PnlProfesion.TabIndex = 48
+        Me.PnlProfesion.TabStop = False
         '
         'Label56
         '
@@ -76,12 +87,12 @@ Partial Class FrmProfesion
         Me.Label56.TabIndex = 28
         Me.Label56.Text = "Profesión"
         '
-        'TextBox21
+        'TxtProfesion
         '
-        Me.TextBox21.Location = New System.Drawing.Point(158, 59)
-        Me.TextBox21.Name = "TextBox21"
-        Me.TextBox21.Size = New System.Drawing.Size(376, 22)
-        Me.TextBox21.TabIndex = 27
+        Me.TxtProfesion.Location = New System.Drawing.Point(158, 59)
+        Me.TxtProfesion.Name = "TxtProfesion"
+        Me.TxtProfesion.Size = New System.Drawing.Size(376, 22)
+        Me.TxtProfesion.TabIndex = 27
         '
         'Label49
         '
@@ -92,13 +103,13 @@ Partial Class FrmProfesion
         Me.Label49.Size = New System.Drawing.Size(0, 20)
         Me.Label49.TabIndex = 23
         '
-        'TextBox22
+        'TxtCodigoProfesion
         '
-        Me.TextBox22.Location = New System.Drawing.Point(158, 25)
-        Me.TextBox22.Name = "TextBox22"
-        Me.TextBox22.ReadOnly = True
-        Me.TextBox22.Size = New System.Drawing.Size(173, 22)
-        Me.TextBox22.TabIndex = 22
+        Me.TxtCodigoProfesion.Location = New System.Drawing.Point(158, 25)
+        Me.TxtCodigoProfesion.Name = "TxtCodigoProfesion"
+        Me.TxtCodigoProfesion.ReadOnly = True
+        Me.TxtCodigoProfesion.Size = New System.Drawing.Size(173, 22)
+        Me.TxtCodigoProfesion.TabIndex = 22
         '
         'Label52
         '
@@ -218,37 +229,56 @@ Partial Class FrmProfesion
         Me.BtnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnNuevo.UseVisualStyleBackColor = False
         '
+        'CmsProfesion
+        '
+        Me.CmsProfesion.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
+        Me.CmsProfesion.Name = "CmsProfesion"
+        Me.CmsProfesion.Size = New System.Drawing.Size(118, 48)
+        '
+        'EditarToolStripMenuItem
+        '
+        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EditarToolStripMenuItem.Text = "Editar"
+        '
+        'EliminarToolStripMenuItem
+        '
+        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EliminarToolStripMenuItem.Text = "Eliminar"
+        '
         'FrmProfesion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(633, 508)
         Me.Controls.Add(Me.BtnCancelar)
         Me.Controls.Add(Me.BtnGuardar)
         Me.Controls.Add(Me.BtnModificar)
         Me.Controls.Add(Me.BtnNuevo)
         Me.Controls.Add(Me.Panel3)
-        Me.Controls.Add(Me.DataGridView8)
-        Me.Controls.Add(Me.GroupBox8)
+        Me.Controls.Add(Me.DgvProfesion)
+        Me.Controls.Add(Me.PnlProfesion)
         Me.Name = "FrmProfesion"
         Me.Text = "Gestión de Profesión"
-        CType(Me.DataGridView8, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox8.ResumeLayout(False)
-        Me.GroupBox8.PerformLayout()
+        CType(Me.DgvProfesion, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PnlProfesion.ResumeLayout(False)
+        Me.PnlProfesion.PerformLayout()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        Me.CmsProfesion.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents PictureBox9 As PictureBox
-    Friend WithEvents DataGridView8 As DataGridView
-    Friend WithEvents GroupBox8 As GroupBox
+    Friend WithEvents DgvProfesion As DataGridView
+    Friend WithEvents PnlProfesion As GroupBox
     Friend WithEvents Label56 As Label
-    Friend WithEvents TextBox21 As TextBox
+    Friend WithEvents TxtProfesion As TextBox
     Friend WithEvents Label49 As Label
-    Friend WithEvents TextBox22 As TextBox
+    Friend WithEvents TxtCodigoProfesion As TextBox
     Friend WithEvents Label52 As Label
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label13 As Label
@@ -256,4 +286,7 @@ Partial Class FrmProfesion
     Friend WithEvents BtnGuardar As Button
     Friend WithEvents BtnModificar As Button
     Friend WithEvents BtnNuevo As Button
+    Friend WithEvents CmsProfesion As ContextMenuStrip
+    Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
 End Class
