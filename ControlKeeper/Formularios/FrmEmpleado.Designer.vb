@@ -22,10 +22,14 @@ Partial Class FrmEmpleado
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmEmpleado))
-        Me.DgvUsuario = New System.Windows.Forms.DataGridView()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.DgvEmpleado = New System.Windows.Forms.DataGridView()
+        Me.CmsEmpleado = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PlEmpleado = New System.Windows.Forms.GroupBox()
+        Me.ChkEstado = New System.Windows.Forms.CheckBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.CboCiudad = New System.Windows.Forms.ComboBox()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -54,58 +58,86 @@ Partial Class FrmEmpleado
         Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.BtnModificar = New System.Windows.Forms.Button()
         Me.BtnNuevo = New System.Windows.Forms.Button()
-        CType(Me.DgvUsuario, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox1.SuspendLayout()
+        CType(Me.DgvEmpleado, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CmsEmpleado.SuspendLayout()
+        Me.PlEmpleado.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
-        'DgvUsuario
+        'DgvEmpleado
         '
-        Me.DgvUsuario.BackgroundColor = System.Drawing.Color.White
-        Me.DgvUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvUsuario.Location = New System.Drawing.Point(21, 314)
-        Me.DgvUsuario.Name = "DgvUsuario"
-        Me.DgvUsuario.Size = New System.Drawing.Size(1021, 176)
-        Me.DgvUsuario.TabIndex = 12
+        Me.DgvEmpleado.AllowUserToAddRows = False
+        Me.DgvEmpleado.AllowUserToDeleteRows = False
+        Me.DgvEmpleado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgvEmpleado.BackgroundColor = System.Drawing.Color.White
+        Me.DgvEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvEmpleado.ContextMenuStrip = Me.CmsEmpleado
+        Me.DgvEmpleado.Location = New System.Drawing.Point(21, 314)
+        Me.DgvEmpleado.Name = "DgvEmpleado"
+        Me.DgvEmpleado.ReadOnly = True
+        Me.DgvEmpleado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvEmpleado.Size = New System.Drawing.Size(1021, 176)
+        Me.DgvEmpleado.TabIndex = 12
         '
-        'GroupBox1
+        'CmsEmpleado
         '
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
-        Me.GroupBox1.Controls.Add(Me.Label8)
-        Me.GroupBox1.Controls.Add(Me.CboCiudad)
-        Me.GroupBox1.Controls.Add(Me.Label12)
-        Me.GroupBox1.Controls.Add(Me.CboProfesion)
-        Me.GroupBox1.Controls.Add(Me.Label10)
-        Me.GroupBox1.Controls.Add(Me.CboEstadoCivil)
-        Me.GroupBox1.Controls.Add(Me.Label11)
-        Me.GroupBox1.Controls.Add(Me.CboSexo)
-        Me.GroupBox1.Controls.Add(Me.Label9)
-        Me.GroupBox1.Controls.Add(Me.TxtDireccion)
-        Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Controls.Add(Me.TxtCorreo)
-        Me.GroupBox1.Controls.Add(Me.MtbTelefono)
-        Me.GroupBox1.Controls.Add(Me.TxtApellido)
-        Me.GroupBox1.Controls.Add(Me.TxtNombre)
-        Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.MtbCodigo)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(22, 66)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1021, 180)
-        Me.GroupBox1.TabIndex = 10
-        Me.GroupBox1.TabStop = False
+        Me.CmsEmpleado.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
+        Me.CmsEmpleado.Name = "CmsEmpleado"
+        Me.CmsEmpleado.Size = New System.Drawing.Size(118, 48)
         '
-        'TextBox1
+        'EditarToolStripMenuItem
         '
-        Me.TextBox1.Location = New System.Drawing.Point(546, 134)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(460, 22)
-        Me.TextBox1.TabIndex = 23
+        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EditarToolStripMenuItem.Text = "Editar"
+        '
+        'EliminarToolStripMenuItem
+        '
+        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EliminarToolStripMenuItem.Text = "Eliminar"
+        '
+        'PlEmpleado
+        '
+        Me.PlEmpleado.Controls.Add(Me.ChkEstado)
+        Me.PlEmpleado.Controls.Add(Me.Label8)
+        Me.PlEmpleado.Controls.Add(Me.CboCiudad)
+        Me.PlEmpleado.Controls.Add(Me.Label12)
+        Me.PlEmpleado.Controls.Add(Me.CboProfesion)
+        Me.PlEmpleado.Controls.Add(Me.Label10)
+        Me.PlEmpleado.Controls.Add(Me.CboEstadoCivil)
+        Me.PlEmpleado.Controls.Add(Me.Label11)
+        Me.PlEmpleado.Controls.Add(Me.CboSexo)
+        Me.PlEmpleado.Controls.Add(Me.Label9)
+        Me.PlEmpleado.Controls.Add(Me.TxtDireccion)
+        Me.PlEmpleado.Controls.Add(Me.Label7)
+        Me.PlEmpleado.Controls.Add(Me.TxtCorreo)
+        Me.PlEmpleado.Controls.Add(Me.MtbTelefono)
+        Me.PlEmpleado.Controls.Add(Me.TxtApellido)
+        Me.PlEmpleado.Controls.Add(Me.TxtNombre)
+        Me.PlEmpleado.Controls.Add(Me.Label6)
+        Me.PlEmpleado.Controls.Add(Me.Label5)
+        Me.PlEmpleado.Controls.Add(Me.Label4)
+        Me.PlEmpleado.Controls.Add(Me.Label3)
+        Me.PlEmpleado.Controls.Add(Me.MtbCodigo)
+        Me.PlEmpleado.Controls.Add(Me.Label2)
+        Me.PlEmpleado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PlEmpleado.Location = New System.Drawing.Point(22, 66)
+        Me.PlEmpleado.Name = "PlEmpleado"
+        Me.PlEmpleado.Size = New System.Drawing.Size(1021, 180)
+        Me.PlEmpleado.TabIndex = 10
+        Me.PlEmpleado.TabStop = False
+        '
+        'ChkEstado
+        '
+        Me.ChkEstado.AutoSize = True
+        Me.ChkEstado.Location = New System.Drawing.Point(550, 135)
+        Me.ChkEstado.Name = "ChkEstado"
+        Me.ChkEstado.Size = New System.Drawing.Size(64, 20)
+        Me.ChkEstado.TabIndex = 23
+        Me.ChkEstado.Text = "Activo"
+        Me.ChkEstado.UseVisualStyleBackColor = True
         '
         'Label8
         '
@@ -229,7 +261,6 @@ Partial Class FrmEmpleado
         Me.MtbTelefono.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
         Me.MtbTelefono.Size = New System.Drawing.Size(126, 22)
         Me.MtbTelefono.TabIndex = 8
-        Me.MtbTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TxtApellido
         '
@@ -293,7 +324,6 @@ Partial Class FrmEmpleado
         Me.MtbCodigo.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
         Me.MtbCodigo.Size = New System.Drawing.Size(126, 22)
         Me.MtbCodigo.TabIndex = 1
-        Me.MtbCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label2
         '
@@ -424,14 +454,15 @@ Partial Class FrmEmpleado
         Me.Controls.Add(Me.BtnModificar)
         Me.Controls.Add(Me.BtnNuevo)
         Me.Controls.Add(Me.Panel3)
-        Me.Controls.Add(Me.DgvUsuario)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.DgvEmpleado)
+        Me.Controls.Add(Me.PlEmpleado)
         Me.Name = "FrmEmpleado"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Empleado"
-        CType(Me.DgvUsuario, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
+        CType(Me.DgvEmpleado, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.CmsEmpleado.ResumeLayout(False)
+        Me.PlEmpleado.ResumeLayout(False)
+        Me.PlEmpleado.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
@@ -440,9 +471,8 @@ Partial Class FrmEmpleado
     End Sub
 
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents DgvUsuario As DataGridView
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents DgvEmpleado As DataGridView
+    Friend WithEvents PlEmpleado As GroupBox
     Friend WithEvents Label8 As Label
     Friend WithEvents CboCiudad As ComboBox
     Friend WithEvents Label12 As Label
@@ -470,4 +500,8 @@ Partial Class FrmEmpleado
     Friend WithEvents BtnGuardar As Button
     Friend WithEvents BtnModificar As Button
     Friend WithEvents BtnNuevo As Button
+    Friend WithEvents CmsEmpleado As ContextMenuStrip
+    Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ChkEstado As CheckBox
 End Class

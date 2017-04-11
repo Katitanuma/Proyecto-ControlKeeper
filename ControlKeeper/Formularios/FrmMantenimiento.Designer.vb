@@ -22,23 +22,25 @@ Partial Class FrmMantenimiento
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMantenimiento))
-        Me.DataGridView4 = New System.Windows.Forms.DataGridView()
+        Me.DgvMantenimiento = New System.Windows.Forms.DataGridView()
+        Me.CmsMantenimiento = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label26 = New System.Windows.Forms.Label()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.ComboBox9 = New System.Windows.Forms.ComboBox()
+        Me.PlMantemiento = New System.Windows.Forms.GroupBox()
+        Me.CboUsuario = New System.Windows.Forms.ComboBox()
         Me.Label33 = New System.Windows.Forms.Label()
-        Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.DtpFechaMantenimiento = New System.Windows.Forms.DateTimePicker()
+        Me.DtpHoraFinalizacion = New System.Windows.Forms.DateTimePicker()
+        Me.DtpHoraInicio = New System.Windows.Forms.DateTimePicker()
         Me.Label27 = New System.Windows.Forms.Label()
-        Me.ComboBox8 = New System.Windows.Forms.ComboBox()
-        Me.TextBox15 = New System.Windows.Forms.TextBox()
+        Me.TxtDescripcion = New System.Windows.Forms.TextBox()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.Label30 = New System.Windows.Forms.Label()
-        Me.Label31 = New System.Windows.Forms.Label()
-        Me.TextBox17 = New System.Windows.Forms.TextBox()
+        Me.TxtIdMantenimiento = New System.Windows.Forms.TextBox()
         Me.Label32 = New System.Windows.Forms.Label()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -46,20 +48,45 @@ Partial Class FrmMantenimiento
         Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.BtnModificar = New System.Windows.Forms.Button()
         Me.BtnNuevo = New System.Windows.Forms.Button()
-        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox4.SuspendLayout()
+        CType(Me.DgvMantenimiento, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CmsMantenimiento.SuspendLayout()
+        Me.PlMantemiento.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
-        'DataGridView4
+        'DgvMantenimiento
         '
-        Me.DataGridView4.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView4.Location = New System.Drawing.Point(17, 318)
-        Me.DataGridView4.Name = "DataGridView4"
-        Me.DataGridView4.Size = New System.Drawing.Size(690, 178)
-        Me.DataGridView4.TabIndex = 34
+        Me.DgvMantenimiento.AllowUserToAddRows = False
+        Me.DgvMantenimiento.AllowUserToDeleteRows = False
+        Me.DgvMantenimiento.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgvMantenimiento.BackgroundColor = System.Drawing.Color.White
+        Me.DgvMantenimiento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvMantenimiento.ContextMenuStrip = Me.CmsMantenimiento
+        Me.DgvMantenimiento.Location = New System.Drawing.Point(17, 285)
+        Me.DgvMantenimiento.Name = "DgvMantenimiento"
+        Me.DgvMantenimiento.ReadOnly = True
+        Me.DgvMantenimiento.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvMantenimiento.Size = New System.Drawing.Size(690, 211)
+        Me.DgvMantenimiento.TabIndex = 34
+        '
+        'CmsMantenimiento
+        '
+        Me.CmsMantenimiento.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
+        Me.CmsMantenimiento.Name = "CmsMantenimiento"
+        Me.CmsMantenimiento.Size = New System.Drawing.Size(118, 48)
+        '
+        'EditarToolStripMenuItem
+        '
+        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EditarToolStripMenuItem.Text = "Editar"
+        '
+        'EliminarToolStripMenuItem
+        '
+        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EliminarToolStripMenuItem.Text = "Eliminar"
         '
         'Label26
         '
@@ -73,105 +100,93 @@ Partial Class FrmMantenimiento
         Me.Label26.TabIndex = 33
         Me.Label26.Text = "Mantenimiento"
         '
-        'GroupBox4
+        'PlMantemiento
         '
-        Me.GroupBox4.Controls.Add(Me.ComboBox9)
-        Me.GroupBox4.Controls.Add(Me.Label33)
-        Me.GroupBox4.Controls.Add(Me.DateTimePicker3)
-        Me.GroupBox4.Controls.Add(Me.DateTimePicker2)
-        Me.GroupBox4.Controls.Add(Me.DateTimePicker1)
-        Me.GroupBox4.Controls.Add(Me.Label27)
-        Me.GroupBox4.Controls.Add(Me.ComboBox8)
-        Me.GroupBox4.Controls.Add(Me.TextBox15)
-        Me.GroupBox4.Controls.Add(Me.Label28)
-        Me.GroupBox4.Controls.Add(Me.Label29)
-        Me.GroupBox4.Controls.Add(Me.Label30)
-        Me.GroupBox4.Controls.Add(Me.Label31)
-        Me.GroupBox4.Controls.Add(Me.TextBox17)
-        Me.GroupBox4.Controls.Add(Me.Label32)
-        Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox4.Location = New System.Drawing.Point(19, 73)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(688, 180)
-        Me.GroupBox4.TabIndex = 32
-        Me.GroupBox4.TabStop = False
+        Me.PlMantemiento.Controls.Add(Me.CboUsuario)
+        Me.PlMantemiento.Controls.Add(Me.Label33)
+        Me.PlMantemiento.Controls.Add(Me.DtpFechaMantenimiento)
+        Me.PlMantemiento.Controls.Add(Me.DtpHoraFinalizacion)
+        Me.PlMantemiento.Controls.Add(Me.DtpHoraInicio)
+        Me.PlMantemiento.Controls.Add(Me.Label27)
+        Me.PlMantemiento.Controls.Add(Me.TxtDescripcion)
+        Me.PlMantemiento.Controls.Add(Me.Label28)
+        Me.PlMantemiento.Controls.Add(Me.Label29)
+        Me.PlMantemiento.Controls.Add(Me.Label30)
+        Me.PlMantemiento.Controls.Add(Me.TxtIdMantenimiento)
+        Me.PlMantemiento.Controls.Add(Me.Label32)
+        Me.PlMantemiento.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PlMantemiento.Location = New System.Drawing.Point(19, 73)
+        Me.PlMantemiento.Name = "PlMantemiento"
+        Me.PlMantemiento.Size = New System.Drawing.Size(688, 149)
+        Me.PlMantemiento.TabIndex = 32
+        Me.PlMantemiento.TabStop = False
         '
-        'ComboBox9
+        'CboUsuario
         '
-        Me.ComboBox9.BackColor = System.Drawing.Color.White
-        Me.ComboBox9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox9.FormattingEnabled = True
-        Me.ComboBox9.Location = New System.Drawing.Point(482, 142)
-        Me.ComboBox9.Name = "ComboBox9"
-        Me.ComboBox9.Size = New System.Drawing.Size(198, 24)
-        Me.ComboBox9.TabIndex = 38
+        Me.CboUsuario.BackColor = System.Drawing.Color.White
+        Me.CboUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CboUsuario.FormattingEnabled = True
+        Me.CboUsuario.Location = New System.Drawing.Point(482, 110)
+        Me.CboUsuario.Name = "CboUsuario"
+        Me.CboUsuario.Size = New System.Drawing.Size(198, 24)
+        Me.CboUsuario.TabIndex = 38
         '
         'Label33
         '
         Me.Label33.AutoSize = True
         Me.Label33.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label33.Location = New System.Drawing.Point(417, 143)
+        Me.Label33.Location = New System.Drawing.Point(417, 111)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(62, 20)
         Me.Label33.TabIndex = 37
         Me.Label33.Text = "Usuario"
         '
-        'DateTimePicker3
+        'DtpFechaMantenimiento
         '
-        Me.DateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker3.Location = New System.Drawing.Point(576, 111)
-        Me.DateTimePicker3.Name = "DateTimePicker3"
-        Me.DateTimePicker3.Size = New System.Drawing.Size(104, 22)
-        Me.DateTimePicker3.TabIndex = 36
+        Me.DtpFechaMantenimiento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DtpFechaMantenimiento.Location = New System.Drawing.Point(576, 79)
+        Me.DtpFechaMantenimiento.Name = "DtpFechaMantenimiento"
+        Me.DtpFechaMantenimiento.Size = New System.Drawing.Size(104, 22)
+        Me.DtpFechaMantenimiento.TabIndex = 36
         '
-        'DateTimePicker2
+        'DtpHoraFinalizacion
         '
-        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.DateTimePicker2.Location = New System.Drawing.Point(175, 140)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(114, 22)
-        Me.DateTimePicker2.TabIndex = 35
+        Me.DtpHoraFinalizacion.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.DtpHoraFinalizacion.Location = New System.Drawing.Point(175, 108)
+        Me.DtpHoraFinalizacion.Name = "DtpHoraFinalizacion"
+        Me.DtpHoraFinalizacion.Size = New System.Drawing.Size(114, 22)
+        Me.DtpHoraFinalizacion.TabIndex = 35
         '
-        'DateTimePicker1
+        'DtpHoraInicio
         '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.DateTimePicker1.Location = New System.Drawing.Point(175, 111)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(114, 22)
-        Me.DateTimePicker1.TabIndex = 34
+        Me.DtpHoraInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.DtpHoraInicio.Location = New System.Drawing.Point(175, 79)
+        Me.DtpHoraInicio.Name = "DtpHoraInicio"
+        Me.DtpHoraInicio.Size = New System.Drawing.Size(114, 22)
+        Me.DtpHoraInicio.TabIndex = 34
         '
         'Label27
         '
         Me.Label27.AutoSize = True
         Me.Label27.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.Location = New System.Drawing.Point(396, 111)
+        Me.Label27.Location = New System.Drawing.Point(396, 79)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(177, 20)
         Me.Label27.TabIndex = 32
         Me.Label27.Text = "Fecha de Mantenimiento"
         '
-        'ComboBox8
+        'TxtDescripcion
         '
-        Me.ComboBox8.BackColor = System.Drawing.Color.White
-        Me.ComboBox8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox8.FormattingEnabled = True
-        Me.ComboBox8.Location = New System.Drawing.Point(176, 49)
-        Me.ComboBox8.Name = "ComboBox8"
-        Me.ComboBox8.Size = New System.Drawing.Size(266, 24)
-        Me.ComboBox8.TabIndex = 31
-        '
-        'TextBox15
-        '
-        Me.TextBox15.Location = New System.Drawing.Point(175, 80)
-        Me.TextBox15.Name = "TextBox15"
-        Me.TextBox15.Size = New System.Drawing.Size(505, 22)
-        Me.TextBox15.TabIndex = 28
+        Me.TxtDescripcion.Location = New System.Drawing.Point(175, 48)
+        Me.TxtDescripcion.Name = "TxtDescripcion"
+        Me.TxtDescripcion.Size = New System.Drawing.Size(505, 22)
+        Me.TxtDescripcion.TabIndex = 28
         '
         'Label28
         '
         Me.Label28.AutoSize = True
         Me.Label28.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label28.Location = New System.Drawing.Point(63, 110)
+        Me.Label28.Location = New System.Drawing.Point(63, 78)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(109, 20)
         Me.Label28.TabIndex = 26
@@ -181,7 +196,7 @@ Partial Class FrmMantenimiento
         '
         Me.Label29.AutoSize = True
         Me.Label29.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.Location = New System.Drawing.Point(22, 140)
+        Me.Label29.Location = New System.Drawing.Point(22, 108)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(150, 20)
         Me.Label29.TabIndex = 25
@@ -191,29 +206,19 @@ Partial Class FrmMantenimiento
         '
         Me.Label30.AutoSize = True
         Me.Label30.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label30.Location = New System.Drawing.Point(81, 80)
+        Me.Label30.Location = New System.Drawing.Point(81, 48)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(90, 20)
         Me.Label30.TabIndex = 24
         Me.Label30.Text = "Descripción"
         '
-        'Label31
+        'TxtIdMantenimiento
         '
-        Me.Label31.AutoSize = True
-        Me.Label31.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label31.Location = New System.Drawing.Point(6, 48)
-        Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(166, 20)
-        Me.Label31.TabIndex = 23
-        Me.Label31.Text = "Tipo de Mantenimiento"
-        '
-        'TextBox17
-        '
-        Me.TextBox17.Location = New System.Drawing.Point(175, 20)
-        Me.TextBox17.Name = "TextBox17"
-        Me.TextBox17.ReadOnly = True
-        Me.TextBox17.Size = New System.Drawing.Size(192, 22)
-        Me.TextBox17.TabIndex = 22
+        Me.TxtIdMantenimiento.Location = New System.Drawing.Point(175, 20)
+        Me.TxtIdMantenimiento.Name = "TxtIdMantenimiento"
+        Me.TxtIdMantenimiento.ReadOnly = True
+        Me.TxtIdMantenimiento.Size = New System.Drawing.Size(192, 22)
+        Me.TxtIdMantenimiento.TabIndex = 22
         '
         'Label32
         '
@@ -260,7 +265,7 @@ Partial Class FrmMantenimiento
         Me.BtnCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnCancelar.ForeColor = System.Drawing.Color.Black
         Me.BtnCancelar.Image = Global.ControlKeeper.My.Resources.Resources.C3
-        Me.BtnCancelar.Location = New System.Drawing.Point(471, 260)
+        Me.BtnCancelar.Location = New System.Drawing.Point(471, 228)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(67, 51)
         Me.BtnCancelar.TabIndex = 78
@@ -278,7 +283,7 @@ Partial Class FrmMantenimiento
         Me.BtnGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnGuardar.ForeColor = System.Drawing.Color.Black
         Me.BtnGuardar.Image = Global.ControlKeeper.My.Resources.Resources.G3
-        Me.BtnGuardar.Location = New System.Drawing.Point(283, 260)
+        Me.BtnGuardar.Location = New System.Drawing.Point(283, 228)
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(67, 51)
         Me.BtnGuardar.TabIndex = 77
@@ -296,7 +301,7 @@ Partial Class FrmMantenimiento
         Me.BtnModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnModificar.ForeColor = System.Drawing.Color.Black
         Me.BtnModificar.Image = Global.ControlKeeper.My.Resources.Resources.A3
-        Me.BtnModificar.Location = New System.Drawing.Point(376, 260)
+        Me.BtnModificar.Location = New System.Drawing.Point(376, 228)
         Me.BtnModificar.Name = "BtnModificar"
         Me.BtnModificar.Size = New System.Drawing.Size(67, 51)
         Me.BtnModificar.TabIndex = 76
@@ -314,7 +319,7 @@ Partial Class FrmMantenimiento
         Me.BtnNuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnNuevo.ForeColor = System.Drawing.Color.Black
         Me.BtnNuevo.Image = Global.ControlKeeper.My.Resources.Resources.N3
-        Me.BtnNuevo.Location = New System.Drawing.Point(190, 260)
+        Me.BtnNuevo.Location = New System.Drawing.Point(190, 228)
         Me.BtnNuevo.Name = "BtnNuevo"
         Me.BtnNuevo.Size = New System.Drawing.Size(67, 51)
         Me.BtnNuevo.TabIndex = 75
@@ -332,13 +337,14 @@ Partial Class FrmMantenimiento
         Me.Controls.Add(Me.BtnModificar)
         Me.Controls.Add(Me.BtnNuevo)
         Me.Controls.Add(Me.Panel3)
-        Me.Controls.Add(Me.DataGridView4)
-        Me.Controls.Add(Me.GroupBox4)
+        Me.Controls.Add(Me.DgvMantenimiento)
+        Me.Controls.Add(Me.PlMantemiento)
         Me.Name = "FrmMantenimiento"
         Me.Text = "Mantenimiento"
-        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
+        CType(Me.DgvMantenimiento, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.CmsMantenimiento.ResumeLayout(False)
+        Me.PlMantemiento.ResumeLayout(False)
+        Me.PlMantemiento.PerformLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
@@ -346,26 +352,27 @@ Partial Class FrmMantenimiento
 
     End Sub
     Friend WithEvents PictureBox5 As PictureBox
-    Friend WithEvents DataGridView4 As DataGridView
+    Friend WithEvents DgvMantenimiento As DataGridView
     Friend WithEvents Label26 As Label
-    Friend WithEvents GroupBox4 As GroupBox
-    Friend WithEvents ComboBox9 As ComboBox
+    Friend WithEvents PlMantemiento As GroupBox
+    Friend WithEvents CboUsuario As ComboBox
     Friend WithEvents Label33 As Label
-    Friend WithEvents DateTimePicker3 As DateTimePicker
-    Friend WithEvents DateTimePicker2 As DateTimePicker
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents DtpFechaMantenimiento As DateTimePicker
+    Friend WithEvents DtpHoraFinalizacion As DateTimePicker
+    Friend WithEvents DtpHoraInicio As DateTimePicker
     Friend WithEvents Label27 As Label
-    Friend WithEvents ComboBox8 As ComboBox
-    Friend WithEvents TextBox15 As TextBox
+    Friend WithEvents TxtDescripcion As TextBox
     Friend WithEvents Label28 As Label
     Friend WithEvents Label29 As Label
     Friend WithEvents Label30 As Label
-    Friend WithEvents Label31 As Label
-    Friend WithEvents TextBox17 As TextBox
+    Friend WithEvents TxtIdMantenimiento As TextBox
     Friend WithEvents Label32 As Label
     Friend WithEvents Panel3 As Panel
     Friend WithEvents BtnCancelar As Button
     Friend WithEvents BtnGuardar As Button
     Friend WithEvents BtnModificar As Button
     Friend WithEvents BtnNuevo As Button
+    Friend WithEvents CmsMantenimiento As ContextMenuStrip
+    Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
 End Class

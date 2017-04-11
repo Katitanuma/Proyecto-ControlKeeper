@@ -36,7 +36,7 @@ Partial Class FrmLogin
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BtnIniciar = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -131,23 +131,23 @@ Partial Class FrmLogin
         Me.Panel1.Size = New System.Drawing.Size(563, 63)
         Me.Panel1.TabIndex = 8
         '
-        'Button1
+        'BtnIniciar
         '
-        Me.Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Image = Global.ControlKeeper.My.Resources.Resources.user_permission1
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(230, 197)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(102, 43)
-        Me.Button1.TabIndex = 9
-        Me.Button1.Text = "&Ingresar"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.BtnIniciar.BackColor = System.Drawing.Color.Transparent
+        Me.BtnIniciar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnIniciar.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.BtnIniciar.FlatAppearance.BorderSize = 0
+        Me.BtnIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnIniciar.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnIniciar.Image = Global.ControlKeeper.My.Resources.Resources.user_permission1
+        Me.BtnIniciar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnIniciar.Location = New System.Drawing.Point(230, 197)
+        Me.BtnIniciar.Name = "BtnIniciar"
+        Me.BtnIniciar.Size = New System.Drawing.Size(102, 43)
+        Me.BtnIniciar.TabIndex = 9
+        Me.BtnIniciar.Text = "&Ingresar"
+        Me.BtnIniciar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnIniciar.UseVisualStyleBackColor = False
         '
         'Panel2
         '
@@ -170,7 +170,7 @@ Partial Class FrmLogin
         Me.ClientSize = New System.Drawing.Size(497, 289)
         Me.ControlBox = False
         Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.BtnIniciar)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Cancel)
@@ -197,6 +197,6 @@ Partial Class FrmLogin
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Button1 As Button
+    Friend WithEvents BtnIniciar As Button
     Friend WithEvents Panel2 As Panel
 End Class

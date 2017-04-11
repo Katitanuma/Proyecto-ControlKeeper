@@ -27,7 +27,7 @@ Partial Class MDIControlKeeper
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
-        Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.LblUsuario = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
@@ -70,18 +70,18 @@ Partial Class MDIControlKeeper
         '
         'StatusStrip
         '
-        Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel})
+        Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LblUsuario})
         Me.StatusStrip.Location = New System.Drawing.Point(31, 707)
         Me.StatusStrip.Name = "StatusStrip"
         Me.StatusStrip.Size = New System.Drawing.Size(1318, 22)
         Me.StatusStrip.TabIndex = 7
         Me.StatusStrip.Text = "StatusStrip"
         '
-        'ToolStripStatusLabel
+        'LblUsuario
         '
-        Me.ToolStripStatusLabel.Name = "ToolStripStatusLabel"
-        Me.ToolStripStatusLabel.Size = New System.Drawing.Size(39, 17)
-        Me.ToolStripStatusLabel.Text = "Status"
+        Me.LblUsuario.Name = "LblUsuario"
+        Me.LblUsuario.Size = New System.Drawing.Size(39, 17)
+        Me.LblUsuario.Text = "Status"
         '
         'Button6
         '
@@ -278,7 +278,7 @@ Partial Class MDIControlKeeper
 
     End Sub
     Friend WithEvents ToolTip As System.Windows.Forms.ToolTip
-    Friend WithEvents ToolStripStatusLabel As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents LblUsuario As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents StatusStrip As System.Windows.Forms.StatusStrip
     Friend WithEvents MenuStrip As System.Windows.Forms.MenuStrip
     Friend WithEvents Label54 As Label
