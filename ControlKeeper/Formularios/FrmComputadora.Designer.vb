@@ -22,15 +22,26 @@ Partial Class FrmComputadora
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmComputadora))
-        Me.DgvComputadora = New System.Windows.Forms.DataGridView()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.BtnCancelar = New System.Windows.Forms.Button()
+        Me.BtnGuardar = New System.Windows.Forms.Button()
+        Me.BtnModificar = New System.Windows.Forms.Button()
+        Me.BtnNuevo = New System.Windows.Forms.Button()
+        Me.DgvComputadora = New System.Windows.Forms.DataGridView()
+        Me.PlComputadora = New System.Windows.Forms.GroupBox()
+        Me.ChkTeclado = New System.Windows.Forms.CheckBox()
+        Me.ChkMouse = New System.Windows.Forms.CheckBox()
+        Me.CboMarca = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.ChkEstado = New System.Windows.Forms.CheckBox()
+        Me.CboAño = New System.Windows.Forms.ComboBox()
         Me.Label59 = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.CboTipoComputadora = New System.Windows.Forms.ComboBox()
+        Me.CboCapacidadDiscoDuro = New System.Windows.Forms.ComboBox()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.CboModelo = New System.Windows.Forms.ComboBox()
@@ -39,26 +50,15 @@ Partial Class FrmComputadora
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.BtnCancelar = New System.Windows.Forms.Button()
-        Me.BtnGuardar = New System.Windows.Forms.Button()
-        Me.BtnModificar = New System.Windows.Forms.Button()
-        Me.BtnNuevo = New System.Windows.Forms.Button()
-        CType(Me.DgvComputadora, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox2.SuspendLayout()
+        Me.CmsComputadora = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
+        CType(Me.DgvComputadora, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PlComputadora.SuspendLayout()
+        Me.CmsComputadora.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'DgvComputadora
-        '
-        Me.DgvComputadora.BackgroundColor = System.Drawing.Color.White
-        Me.DgvComputadora.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvComputadora.Location = New System.Drawing.Point(17, 313)
-        Me.DgvComputadora.Name = "DgvComputadora"
-        Me.DgvComputadora.Size = New System.Drawing.Size(602, 182)
-        Me.DgvComputadora.TabIndex = 23
         '
         'Label13
         '
@@ -71,154 +71,6 @@ Partial Class FrmComputadora
         Me.Label13.Size = New System.Drawing.Size(195, 38)
         Me.Label13.TabIndex = 22
         Me.Label13.Text = " Computadora"
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.CheckBox1)
-        Me.GroupBox2.Controls.Add(Me.ComboBox3)
-        Me.GroupBox2.Controls.Add(Me.Label59)
-        Me.GroupBox2.Controls.Add(Me.ComboBox2)
-        Me.GroupBox2.Controls.Add(Me.ComboBox1)
-        Me.GroupBox2.Controls.Add(Me.Label20)
-        Me.GroupBox2.Controls.Add(Me.Label21)
-        Me.GroupBox2.Controls.Add(Me.CboModelo)
-        Me.GroupBox2.Controls.Add(Me.TxtSerie)
-        Me.GroupBox2.Controls.Add(Me.CboRAM)
-        Me.GroupBox2.Controls.Add(Me.Label22)
-        Me.GroupBox2.Controls.Add(Me.Label23)
-        Me.GroupBox2.Controls.Add(Me.Label24)
-        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(17, 75)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(602, 171)
-        Me.GroupBox2.TabIndex = 21
-        Me.GroupBox2.TabStop = False
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox1.Location = New System.Drawing.Point(459, 56)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(112, 24)
-        Me.CheckBox1.TabIndex = 32
-        Me.CheckBox1.Text = "No asignada"
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'ComboBox3
-        '
-        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(151, 91)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(121, 24)
-        Me.ComboBox3.TabIndex = 31
-        '
-        'Label59
-        '
-        Me.Label59.AutoSize = True
-        Me.Label59.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label59.Location = New System.Drawing.Point(319, 91)
-        Me.Label59.Name = "Label59"
-        Me.Label59.Size = New System.Drawing.Size(134, 20)
-        Me.Label59.TabIndex = 30
-        Me.Label59.Text = "Tipo Computadora"
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.BackColor = System.Drawing.Color.White
-        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(459, 91)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(133, 24)
-        Me.ComboBox2.TabIndex = 29
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(459, 131)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(133, 24)
-        Me.ComboBox1.TabIndex = 28
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(112, 91)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(36, 20)
-        Me.Label20.TabIndex = 26
-        Me.Label20.Text = "Año"
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(108, 127)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(42, 20)
-        Me.Label21.TabIndex = 25
-        Me.Label21.Text = "RAM"
-        '
-        'CboModelo
-        '
-        Me.CboModelo.BackColor = System.Drawing.Color.White
-        Me.CboModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CboModelo.FormattingEnabled = True
-        Me.CboModelo.Location = New System.Drawing.Point(151, 56)
-        Me.CboModelo.Name = "CboModelo"
-        Me.CboModelo.Size = New System.Drawing.Size(234, 24)
-        Me.CboModelo.TabIndex = 24
-        '
-        'TxtSerie
-        '
-        Me.TxtSerie.Location = New System.Drawing.Point(151, 21)
-        Me.TxtSerie.Name = "TxtSerie"
-        Me.TxtSerie.Size = New System.Drawing.Size(397, 22)
-        Me.TxtSerie.TabIndex = 22
-        '
-        'CboRAM
-        '
-        Me.CboRAM.BackColor = System.Drawing.Color.White
-        Me.CboRAM.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CboRAM.FormattingEnabled = True
-        Me.CboRAM.Location = New System.Drawing.Point(151, 127)
-        Me.CboRAM.Name = "CboRAM"
-        Me.CboRAM.Size = New System.Drawing.Size(121, 24)
-        Me.CboRAM.TabIndex = 21
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.Location = New System.Drawing.Point(290, 131)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(163, 20)
-        Me.Label22.TabIndex = 3
-        Me.Label22.Text = "Tamaño de Disco Duro"
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(89, 55)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(59, 20)
-        Me.Label23.TabIndex = 2
-        Me.Label23.Text = "Modelo"
-        '
-        'Label24
-        '
-        Me.Label24.AutoSize = True
-        Me.Label24.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label24.Location = New System.Drawing.Point(7, 20)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(141, 20)
-        Me.Label24.TabIndex = 0
-        Me.Label24.Text = "Serie Computadora"
         '
         'PictureBox3
         '
@@ -255,10 +107,10 @@ Partial Class FrmComputadora
         Me.BtnCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnCancelar.ForeColor = System.Drawing.Color.Black
         Me.BtnCancelar.Image = Global.ControlKeeper.My.Resources.Resources.C3
-        Me.BtnCancelar.Location = New System.Drawing.Point(422, 255)
+        Me.BtnCancelar.Location = New System.Drawing.Point(417, 259)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(67, 51)
-        Me.BtnCancelar.TabIndex = 74
+        Me.BtnCancelar.TabIndex = 80
         Me.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnCancelar.UseVisualStyleBackColor = False
         '
@@ -273,10 +125,10 @@ Partial Class FrmComputadora
         Me.BtnGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnGuardar.ForeColor = System.Drawing.Color.Black
         Me.BtnGuardar.Image = Global.ControlKeeper.My.Resources.Resources.G3
-        Me.BtnGuardar.Location = New System.Drawing.Point(234, 255)
+        Me.BtnGuardar.Location = New System.Drawing.Point(229, 259)
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(67, 51)
-        Me.BtnGuardar.TabIndex = 73
+        Me.BtnGuardar.TabIndex = 79
         Me.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnGuardar.UseVisualStyleBackColor = False
         '
@@ -291,10 +143,10 @@ Partial Class FrmComputadora
         Me.BtnModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnModificar.ForeColor = System.Drawing.Color.Black
         Me.BtnModificar.Image = Global.ControlKeeper.My.Resources.Resources.A3
-        Me.BtnModificar.Location = New System.Drawing.Point(327, 255)
+        Me.BtnModificar.Location = New System.Drawing.Point(322, 260)
         Me.BtnModificar.Name = "BtnModificar"
         Me.BtnModificar.Size = New System.Drawing.Size(67, 51)
-        Me.BtnModificar.TabIndex = 72
+        Me.BtnModificar.TabIndex = 78
         Me.BtnModificar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnModificar.UseVisualStyleBackColor = False
         '
@@ -309,12 +161,240 @@ Partial Class FrmComputadora
         Me.BtnNuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnNuevo.ForeColor = System.Drawing.Color.Black
         Me.BtnNuevo.Image = Global.ControlKeeper.My.Resources.Resources.N3
-        Me.BtnNuevo.Location = New System.Drawing.Point(141, 255)
+        Me.BtnNuevo.Location = New System.Drawing.Point(136, 259)
         Me.BtnNuevo.Name = "BtnNuevo"
         Me.BtnNuevo.Size = New System.Drawing.Size(67, 51)
-        Me.BtnNuevo.TabIndex = 71
+        Me.BtnNuevo.TabIndex = 77
         Me.BtnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnNuevo.UseVisualStyleBackColor = False
+        '
+        'DgvComputadora
+        '
+        Me.DgvComputadora.AllowUserToAddRows = False
+        Me.DgvComputadora.AllowUserToDeleteRows = False
+        Me.DgvComputadora.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgvComputadora.BackgroundColor = System.Drawing.Color.White
+        Me.DgvComputadora.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvComputadora.ContextMenuStrip = Me.CmsComputadora
+        Me.DgvComputadora.Location = New System.Drawing.Point(12, 313)
+        Me.DgvComputadora.Name = "DgvComputadora"
+        Me.DgvComputadora.ReadOnly = True
+        Me.DgvComputadora.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvComputadora.Size = New System.Drawing.Size(602, 182)
+        Me.DgvComputadora.TabIndex = 76
+        '
+        'PlComputadora
+        '
+        Me.PlComputadora.Controls.Add(Me.ChkTeclado)
+        Me.PlComputadora.Controls.Add(Me.ChkMouse)
+        Me.PlComputadora.Controls.Add(Me.CboMarca)
+        Me.PlComputadora.Controls.Add(Me.Label1)
+        Me.PlComputadora.Controls.Add(Me.ChkEstado)
+        Me.PlComputadora.Controls.Add(Me.CboAño)
+        Me.PlComputadora.Controls.Add(Me.Label59)
+        Me.PlComputadora.Controls.Add(Me.CboTipoComputadora)
+        Me.PlComputadora.Controls.Add(Me.CboCapacidadDiscoDuro)
+        Me.PlComputadora.Controls.Add(Me.Label20)
+        Me.PlComputadora.Controls.Add(Me.Label21)
+        Me.PlComputadora.Controls.Add(Me.CboModelo)
+        Me.PlComputadora.Controls.Add(Me.TxtSerie)
+        Me.PlComputadora.Controls.Add(Me.CboRAM)
+        Me.PlComputadora.Controls.Add(Me.Label22)
+        Me.PlComputadora.Controls.Add(Me.Label23)
+        Me.PlComputadora.Controls.Add(Me.Label24)
+        Me.PlComputadora.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PlComputadora.Location = New System.Drawing.Point(12, 75)
+        Me.PlComputadora.Name = "PlComputadora"
+        Me.PlComputadora.Size = New System.Drawing.Size(602, 179)
+        Me.PlComputadora.TabIndex = 75
+        Me.PlComputadora.TabStop = False
+        '
+        'ChkTeclado
+        '
+        Me.ChkTeclado.AutoSize = True
+        Me.ChkTeclado.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkTeclado.Location = New System.Drawing.Point(459, 63)
+        Me.ChkTeclado.Name = "ChkTeclado"
+        Me.ChkTeclado.Size = New System.Drawing.Size(83, 24)
+        Me.ChkTeclado.TabIndex = 36
+        Me.ChkTeclado.Text = "Teclado"
+        Me.ChkTeclado.UseVisualStyleBackColor = True
+        '
+        'ChkMouse
+        '
+        Me.ChkMouse.AutoSize = True
+        Me.ChkMouse.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkMouse.Location = New System.Drawing.Point(459, 42)
+        Me.ChkMouse.Name = "ChkMouse"
+        Me.ChkMouse.Size = New System.Drawing.Size(72, 24)
+        Me.ChkMouse.TabIndex = 35
+        Me.ChkMouse.Text = "Mouse"
+        Me.ChkMouse.UseVisualStyleBackColor = True
+        '
+        'CboMarca
+        '
+        Me.CboMarca.BackColor = System.Drawing.Color.White
+        Me.CboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CboMarca.FormattingEnabled = True
+        Me.CboMarca.Location = New System.Drawing.Point(151, 46)
+        Me.CboMarca.Name = "CboMarca"
+        Me.CboMarca.Size = New System.Drawing.Size(234, 24)
+        Me.CboMarca.TabIndex = 34
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(89, 46)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(53, 20)
+        Me.Label1.TabIndex = 33
+        Me.Label1.Text = "Marca"
+        '
+        'ChkEstado
+        '
+        Me.ChkEstado.AutoSize = True
+        Me.ChkEstado.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkEstado.Location = New System.Drawing.Point(459, 84)
+        Me.ChkEstado.Name = "ChkEstado"
+        Me.ChkEstado.Size = New System.Drawing.Size(112, 24)
+        Me.ChkEstado.TabIndex = 32
+        Me.ChkEstado.Text = "No asignada"
+        Me.ChkEstado.UseVisualStyleBackColor = True
+        '
+        'CboAño
+        '
+        Me.CboAño.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CboAño.FormattingEnabled = True
+        Me.CboAño.Location = New System.Drawing.Point(151, 107)
+        Me.CboAño.Name = "CboAño"
+        Me.CboAño.Size = New System.Drawing.Size(121, 24)
+        Me.CboAño.TabIndex = 31
+        '
+        'Label59
+        '
+        Me.Label59.AutoSize = True
+        Me.Label59.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label59.Location = New System.Drawing.Point(319, 107)
+        Me.Label59.Name = "Label59"
+        Me.Label59.Size = New System.Drawing.Size(134, 20)
+        Me.Label59.TabIndex = 30
+        Me.Label59.Text = "Tipo Computadora"
+        '
+        'CboTipoComputadora
+        '
+        Me.CboTipoComputadora.BackColor = System.Drawing.Color.White
+        Me.CboTipoComputadora.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CboTipoComputadora.FormattingEnabled = True
+        Me.CboTipoComputadora.Location = New System.Drawing.Point(459, 107)
+        Me.CboTipoComputadora.Name = "CboTipoComputadora"
+        Me.CboTipoComputadora.Size = New System.Drawing.Size(133, 24)
+        Me.CboTipoComputadora.TabIndex = 29
+        '
+        'CboCapacidadDiscoDuro
+        '
+        Me.CboCapacidadDiscoDuro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CboCapacidadDiscoDuro.FormattingEnabled = True
+        Me.CboCapacidadDiscoDuro.Location = New System.Drawing.Point(459, 147)
+        Me.CboCapacidadDiscoDuro.Name = "CboCapacidadDiscoDuro"
+        Me.CboCapacidadDiscoDuro.Size = New System.Drawing.Size(133, 24)
+        Me.CboCapacidadDiscoDuro.TabIndex = 28
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Location = New System.Drawing.Point(112, 107)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(36, 20)
+        Me.Label20.TabIndex = 26
+        Me.Label20.Text = "Año"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.Location = New System.Drawing.Point(108, 143)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(42, 20)
+        Me.Label21.TabIndex = 25
+        Me.Label21.Text = "RAM"
+        '
+        'CboModelo
+        '
+        Me.CboModelo.BackColor = System.Drawing.Color.White
+        Me.CboModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CboModelo.Enabled = False
+        Me.CboModelo.FormattingEnabled = True
+        Me.CboModelo.Location = New System.Drawing.Point(151, 76)
+        Me.CboModelo.Name = "CboModelo"
+        Me.CboModelo.Size = New System.Drawing.Size(234, 24)
+        Me.CboModelo.TabIndex = 24
+        '
+        'TxtSerie
+        '
+        Me.TxtSerie.Location = New System.Drawing.Point(151, 19)
+        Me.TxtSerie.Name = "TxtSerie"
+        Me.TxtSerie.Size = New System.Drawing.Size(397, 22)
+        Me.TxtSerie.TabIndex = 22
+        '
+        'CboRAM
+        '
+        Me.CboRAM.BackColor = System.Drawing.Color.White
+        Me.CboRAM.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CboRAM.FormattingEnabled = True
+        Me.CboRAM.Location = New System.Drawing.Point(151, 143)
+        Me.CboRAM.Name = "CboRAM"
+        Me.CboRAM.Size = New System.Drawing.Size(121, 24)
+        Me.CboRAM.TabIndex = 21
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.Location = New System.Drawing.Point(290, 147)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(163, 20)
+        Me.Label22.TabIndex = 3
+        Me.Label22.Text = "Tamaño de Disco Duro"
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.Location = New System.Drawing.Point(89, 76)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(59, 20)
+        Me.Label23.TabIndex = 2
+        Me.Label23.Text = "Modelo"
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.Location = New System.Drawing.Point(7, 18)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(141, 20)
+        Me.Label24.TabIndex = 0
+        Me.Label24.Text = "Serie Computadora"
+        '
+        'CmsComputadora
+        '
+        Me.CmsComputadora.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
+        Me.CmsComputadora.Name = "CmsComputadora"
+        Me.CmsComputadora.Size = New System.Drawing.Size(153, 70)
+        '
+        'EditarToolStripMenuItem
+        '
+        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EditarToolStripMenuItem.Text = "Editar"
+        '
+        'EliminarToolStripMenuItem
+        '
+        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EliminarToolStripMenuItem.Text = "Eliminar"
         '
         'FrmComputadora
         '
@@ -326,29 +406,39 @@ Partial Class FrmComputadora
         Me.Controls.Add(Me.BtnGuardar)
         Me.Controls.Add(Me.BtnModificar)
         Me.Controls.Add(Me.BtnNuevo)
-        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.DgvComputadora)
-        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.PlComputadora)
+        Me.Controls.Add(Me.Panel3)
         Me.Name = "FrmComputadora"
         Me.Text = "Gestión de Computadora"
-        CType(Me.DgvComputadora, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        CType(Me.DgvComputadora, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PlComputadora.ResumeLayout(False)
+        Me.PlComputadora.PerformLayout()
+        Me.CmsComputadora.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents DgvComputadora As DataGridView
     Friend WithEvents Label13 As Label
-    Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents ComboBox3 As ComboBox
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents BtnCancelar As Button
+    Friend WithEvents BtnGuardar As Button
+    Friend WithEvents BtnModificar As Button
+    Friend WithEvents BtnNuevo As Button
+    Friend WithEvents DgvComputadora As DataGridView
+    Friend WithEvents PlComputadora As GroupBox
+    Friend WithEvents ChkTeclado As CheckBox
+    Friend WithEvents ChkMouse As CheckBox
+    Friend WithEvents CboMarca As ComboBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents ChkEstado As CheckBox
+    Friend WithEvents CboAño As ComboBox
     Friend WithEvents Label59 As Label
-    Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents CboTipoComputadora As ComboBox
+    Friend WithEvents CboCapacidadDiscoDuro As ComboBox
     Friend WithEvents Label20 As Label
     Friend WithEvents Label21 As Label
     Friend WithEvents CboModelo As ComboBox
@@ -357,9 +447,7 @@ Partial Class FrmComputadora
     Friend WithEvents Label22 As Label
     Friend WithEvents Label23 As Label
     Friend WithEvents Label24 As Label
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents BtnCancelar As Button
-    Friend WithEvents BtnGuardar As Button
-    Friend WithEvents BtnModificar As Button
-    Friend WithEvents BtnNuevo As Button
+    Friend WithEvents CmsComputadora As ContextMenuStrip
+    Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
 End Class
