@@ -22,9 +22,15 @@ Partial Class FrmSoftware
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmSoftware))
         Me.DgvSoftware = New System.Windows.Forms.DataGridView()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.CMSSoftware = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PnlSoftware = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.CboTipoSoftware = New System.Windows.Forms.ComboBox()
         Me.TxtTamaño = New System.Windows.Forms.TextBox()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.CboEditor = New System.Windows.Forms.ComboBox()
@@ -45,46 +51,93 @@ Partial Class FrmSoftware
         Me.BtnModificar = New System.Windows.Forms.Button()
         Me.BtnNuevo = New System.Windows.Forms.Button()
         CType(Me.DgvSoftware, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox3.SuspendLayout()
+        Me.CMSSoftware.SuspendLayout()
+        Me.PnlSoftware.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DgvSoftware
         '
+        Me.DgvSoftware.AllowUserToAddRows = False
+        Me.DgvSoftware.AllowUserToDeleteRows = False
+        Me.DgvSoftware.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DgvSoftware.BackgroundColor = System.Drawing.Color.White
         Me.DgvSoftware.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvSoftware.ContextMenuStrip = Me.CMSSoftware
         Me.DgvSoftware.Location = New System.Drawing.Point(24, 294)
         Me.DgvSoftware.Name = "DgvSoftware"
+        Me.DgvSoftware.ReadOnly = True
+        Me.DgvSoftware.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DgvSoftware.Size = New System.Drawing.Size(1008, 200)
         Me.DgvSoftware.TabIndex = 27
         '
-        'GroupBox3
+        'CMSSoftware
         '
-        Me.GroupBox3.Controls.Add(Me.TxtTamaño)
-        Me.GroupBox3.Controls.Add(Me.Label25)
-        Me.GroupBox3.Controls.Add(Me.CboEditor)
-        Me.GroupBox3.Controls.Add(Me.TxtVersion)
-        Me.GroupBox3.Controls.Add(Me.TxtDescripcion)
-        Me.GroupBox3.Controls.Add(Me.TxtNombreSoftware)
-        Me.GroupBox3.Controls.Add(Me.Label15)
-        Me.GroupBox3.Controls.Add(Me.Label16)
-        Me.GroupBox3.Controls.Add(Me.Label17)
-        Me.GroupBox3.Controls.Add(Me.Label18)
-        Me.GroupBox3.Controls.Add(Me.TxtCodigoSoftware)
-        Me.GroupBox3.Controls.Add(Me.Label19)
-        Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.Location = New System.Drawing.Point(24, 75)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(1008, 156)
-        Me.GroupBox3.TabIndex = 25
-        Me.GroupBox3.TabStop = False
+        Me.CMSSoftware.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
+        Me.CMSSoftware.Name = "CMSSoftware"
+        Me.CMSSoftware.Size = New System.Drawing.Size(118, 48)
+        '
+        'EditarToolStripMenuItem
+        '
+        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EditarToolStripMenuItem.Text = "Editar"
+        '
+        'EliminarToolStripMenuItem
+        '
+        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EliminarToolStripMenuItem.Text = "Eliminar"
+        '
+        'PnlSoftware
+        '
+        Me.PnlSoftware.Controls.Add(Me.Label1)
+        Me.PnlSoftware.Controls.Add(Me.CboTipoSoftware)
+        Me.PnlSoftware.Controls.Add(Me.TxtTamaño)
+        Me.PnlSoftware.Controls.Add(Me.Label25)
+        Me.PnlSoftware.Controls.Add(Me.CboEditor)
+        Me.PnlSoftware.Controls.Add(Me.TxtVersion)
+        Me.PnlSoftware.Controls.Add(Me.TxtDescripcion)
+        Me.PnlSoftware.Controls.Add(Me.TxtNombreSoftware)
+        Me.PnlSoftware.Controls.Add(Me.Label15)
+        Me.PnlSoftware.Controls.Add(Me.Label16)
+        Me.PnlSoftware.Controls.Add(Me.Label17)
+        Me.PnlSoftware.Controls.Add(Me.Label18)
+        Me.PnlSoftware.Controls.Add(Me.TxtCodigoSoftware)
+        Me.PnlSoftware.Controls.Add(Me.Label19)
+        Me.PnlSoftware.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PnlSoftware.Location = New System.Drawing.Point(24, 75)
+        Me.PnlSoftware.Name = "PnlSoftware"
+        Me.PnlSoftware.Size = New System.Drawing.Size(1008, 156)
+        Me.PnlSoftware.TabIndex = 25
+        Me.PnlSoftware.TabStop = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(680, 113)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(110, 20)
+        Me.Label1.TabIndex = 35
+        Me.Label1.Text = "Tipo Software"
+        '
+        'CboTipoSoftware
+        '
+        Me.CboTipoSoftware.BackColor = System.Drawing.Color.White
+        Me.CboTipoSoftware.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CboTipoSoftware.FormattingEnabled = True
+        Me.CboTipoSoftware.Location = New System.Drawing.Point(796, 109)
+        Me.CboTipoSoftware.Name = "CboTipoSoftware"
+        Me.CboTipoSoftware.Size = New System.Drawing.Size(177, 24)
+        Me.CboTipoSoftware.TabIndex = 34
         '
         'TxtTamaño
         '
         Me.TxtTamaño.Location = New System.Drawing.Point(796, 21)
         Me.TxtTamaño.Name = "TxtTamaño"
-        Me.TxtTamaño.Size = New System.Drawing.Size(154, 22)
+        Me.TxtTamaño.Size = New System.Drawing.Size(177, 22)
         Me.TxtTamaño.TabIndex = 33
         '
         'Label25
@@ -306,12 +359,13 @@ Partial Class FrmSoftware
         Me.Controls.Add(Me.BtnNuevo)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.DgvSoftware)
-        Me.Controls.Add(Me.GroupBox3)
+        Me.Controls.Add(Me.PnlSoftware)
         Me.Name = "FrmSoftware"
         Me.Text = "Software"
         CType(Me.DgvSoftware, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
+        Me.CMSSoftware.ResumeLayout(False)
+        Me.PnlSoftware.ResumeLayout(False)
+        Me.PnlSoftware.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
@@ -319,7 +373,7 @@ Partial Class FrmSoftware
 
     End Sub
     Friend WithEvents DgvSoftware As DataGridView
-    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents PnlSoftware As GroupBox
     Friend WithEvents TxtTamaño As TextBox
     Friend WithEvents Label25 As Label
     Friend WithEvents CboEditor As ComboBox
@@ -339,4 +393,9 @@ Partial Class FrmSoftware
     Friend WithEvents BtnGuardar As Button
     Friend WithEvents BtnModificar As Button
     Friend WithEvents BtnNuevo As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents CboTipoSoftware As ComboBox
+    Friend WithEvents CMSSoftware As ContextMenuStrip
+    Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
 End Class

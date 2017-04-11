@@ -92,7 +92,7 @@ Public Class FrmCiudad
                     .Parameters.Add("@IdDepartamento", SqlDbType.Int).Value = CInt(CboDepartamento.SelectedValue)
                     .ExecuteNonQuery()
                 End With
-                MessageBox.Show("Ciudad almacenado con éxito", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Ciudad almacenada con éxito", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Catch ex As Exception
                 MessageBox.Show("Error al almacenar la ciudad " + ex.Message)
             Finally
@@ -103,16 +103,20 @@ Public Class FrmCiudad
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
-            If ExisteNombreUsuario() = False Then
-            Call GuardarCiudad()
-            Call MostrarTodociudad()
-            Call HabilitarControles(True, False, False, False, False)
+
+        If ValidarCiudad() = True Then
+
+
+            If ExisteCiudad() = False Then
+                Call GuardarCiudad()
+                Call MostrarTodociudad()
+                Call HabilitarControles(True, False, False, False, False)
                 Call Limpiar()
             Else
-                MessageBox.Show("Ya se encuentra registrado ese usuario", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+                MessageBox.Show("Ya se encuentra registrada esa ciudad", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
             End If
-
-        End Sub
+        End If
+    End Sub
         Private Sub Limpiar()
 
         TxtIdCiudad.Text = ""
@@ -186,10 +190,19 @@ Public Class FrmCiudad
     End Sub
 
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
-            Call EditarUsuario()
-            Call HabilitarControles(True, False, False, False, False)
-            Call Limpiar()
-        Call MostrarTodociudad()
+
+        If ValidarCiudad() = True Then
+
+            If ExisteCiudad() = False Then
+                Call EditarUsuario()
+                Call HabilitarControles(True, False, False, False, False)
+                Call Limpiar()
+                Call MostrarTodociudad()
+
+            Else
+                MessageBox.Show("Ya se encuentra registrada esa ciudad", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            End If
+        End If
     End Sub
 
         Private Sub EliminarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarToolStripMenuItem.Click
@@ -232,39 +245,71 @@ Public Class FrmCiudad
                 End Try
             End Using
         End Sub
-        Private Function ExisteNombreUsuario() As Boolean
-            If Con.State = ConnectionState.Open Then
-                Con.Close()
-            End If
+    Private Function ExisteCiudad() As Boolean
+        If Con.State = ConnectionState.Open Then
+            Con.Close()
+        End If
 
-            Dim Valor As Boolean
-            Using cmd As New SqlCommand
-                Try
-                    Con.Open()
-                    With cmd
+        Dim Valor As Boolean
+        Using cmd As New SqlCommand
+            Try
+                Con.Open()
+                With cmd
                     .CommandText = "Sp_ExisteCiudad"
                     .CommandType = CommandType.StoredProcedure
-                        .Connection = Con
+                    .Connection = Con
                     .Parameters.Add("@Ciudad", SqlDbType.NVarChar, 50).Value = TxtCiudad.Text.Trim
                 End With
-                    Dim Existe As Integer = cmd.ExecuteScalar
-                    If Existe = 0 Then
-                        Valor = False
-                    Else
-                        Valor = True
-                    End If
-                Catch ex As Exception
-                    MsgBox(ex.Message)
-                Finally
-                    Con.Close()
-                End Try
-            End Using
-            Return Valor
-        End Function
+                Dim Existe As Integer = cmd.ExecuteScalar
+                If Existe = 0 Then
+                    Valor = False
+                Else
+                    Valor = True
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            Finally
+                Con.Close()
+            End Try
+        End Using
+        Return Valor
+    End Function
 
     Private Sub BtnBusqueDepartamento_Click(sender As Object, e As EventArgs) Handles BtnBusqueDepartamento.Click
 
         FrmDepartamento.Show()
 
     End Sub
+
+    Private Function ValidarCiudad() As Boolean
+
+        Dim Estado As Boolean
+
+        If TxtCiudad.Text = Nothing And CboDepartamento.Text = Nothing Then
+
+
+            MessageBox.Show("Tiene que ingresar todos los campos", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Estado = False
+
+        ElseIf TxtCiudad.Text = Nothing Then
+
+            MessageBox.Show("Tiene que ingresar la ciudad", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Estado = False
+
+
+        ElseIf CboDepartamento.Text = Nothing Then
+
+
+            MessageBox.Show("Tiene que seleccionar un departamento", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Estado = False
+
+        Else
+            Estado = True
+
+        End If
+
+        Return Estado
+    End Function
+
+
 End Class

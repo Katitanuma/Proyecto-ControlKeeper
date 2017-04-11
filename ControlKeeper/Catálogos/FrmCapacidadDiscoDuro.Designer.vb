@@ -28,7 +28,7 @@ Partial Class FrmCapacidadDiscoDuro
         Me.CMSCapacidadDiscoDuro = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GboCapacidadDiscoDuro = New System.Windows.Forms.GroupBox()
+        Me.PnlCapacidadDiscoDuro = New System.Windows.Forms.GroupBox()
         Me.TxtCapacidadDiscoDuro = New System.Windows.Forms.TextBox()
         Me.Label50 = New System.Windows.Forms.Label()
         Me.TxtIdCapacidadDiscoDuro = New System.Windows.Forms.TextBox()
@@ -42,7 +42,7 @@ Partial Class FrmCapacidadDiscoDuro
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
         CType(Me.DgvCapacidadDiscoDuro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CMSCapacidadDiscoDuro.SuspendLayout()
-        Me.GboCapacidadDiscoDuro.SuspendLayout()
+        Me.PnlCapacidadDiscoDuro.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -80,18 +80,18 @@ Partial Class FrmCapacidadDiscoDuro
         Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
         Me.EliminarToolStripMenuItem.Text = "Eliminar"
         '
-        'GboCapacidadDiscoDuro
+        'PnlCapacidadDiscoDuro
         '
-        Me.GboCapacidadDiscoDuro.Controls.Add(Me.TxtCapacidadDiscoDuro)
-        Me.GboCapacidadDiscoDuro.Controls.Add(Me.Label50)
-        Me.GboCapacidadDiscoDuro.Controls.Add(Me.TxtIdCapacidadDiscoDuro)
-        Me.GboCapacidadDiscoDuro.Controls.Add(Me.Label51)
-        Me.GboCapacidadDiscoDuro.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GboCapacidadDiscoDuro.Location = New System.Drawing.Point(24, 84)
-        Me.GboCapacidadDiscoDuro.Name = "GboCapacidadDiscoDuro"
-        Me.GboCapacidadDiscoDuro.Size = New System.Drawing.Size(479, 85)
-        Me.GboCapacidadDiscoDuro.TabIndex = 63
-        Me.GboCapacidadDiscoDuro.TabStop = False
+        Me.PnlCapacidadDiscoDuro.Controls.Add(Me.TxtCapacidadDiscoDuro)
+        Me.PnlCapacidadDiscoDuro.Controls.Add(Me.Label50)
+        Me.PnlCapacidadDiscoDuro.Controls.Add(Me.TxtIdCapacidadDiscoDuro)
+        Me.PnlCapacidadDiscoDuro.Controls.Add(Me.Label51)
+        Me.PnlCapacidadDiscoDuro.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PnlCapacidadDiscoDuro.Location = New System.Drawing.Point(24, 84)
+        Me.PnlCapacidadDiscoDuro.Name = "PnlCapacidadDiscoDuro"
+        Me.PnlCapacidadDiscoDuro.Size = New System.Drawing.Size(479, 85)
+        Me.PnlCapacidadDiscoDuro.TabIndex = 63
+        Me.PnlCapacidadDiscoDuro.TabStop = False
         '
         'TxtCapacidadDiscoDuro
         '
@@ -247,14 +247,14 @@ Partial Class FrmCapacidadDiscoDuro
         Me.Controls.Add(Me.BtnModificar)
         Me.Controls.Add(Me.BtnNuevo)
         Me.Controls.Add(Me.DgvCapacidadDiscoDuro)
-        Me.Controls.Add(Me.GboCapacidadDiscoDuro)
+        Me.Controls.Add(Me.PnlCapacidadDiscoDuro)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "FrmCapacidadDiscoDuro"
         Me.Text = "Gestión de Capacidad de Disco Duro"
         CType(Me.DgvCapacidadDiscoDuro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.CMSCapacidadDiscoDuro.ResumeLayout(False)
-        Me.GboCapacidadDiscoDuro.ResumeLayout(False)
-        Me.GboCapacidadDiscoDuro.PerformLayout()
+        Me.PnlCapacidadDiscoDuro.ResumeLayout(False)
+        Me.PnlCapacidadDiscoDuro.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
@@ -262,7 +262,7 @@ Partial Class FrmCapacidadDiscoDuro
 
     End Sub
     Friend WithEvents DgvCapacidadDiscoDuro As DataGridView
-    Friend WithEvents GboCapacidadDiscoDuro As GroupBox
+    Friend WithEvents PnlCapacidadDiscoDuro As GroupBox
     Friend WithEvents TxtCapacidadDiscoDuro As TextBox
     Friend WithEvents Label50 As Label
     Friend WithEvents TxtIdCapacidadDiscoDuro As TextBox
