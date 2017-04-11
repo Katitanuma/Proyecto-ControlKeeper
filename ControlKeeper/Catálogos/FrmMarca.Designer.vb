@@ -22,13 +22,14 @@ Partial Class FrmMarca
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMarca))
-        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
-        Me.TextBox24 = New System.Windows.Forms.TextBox()
+        Me.PnlMarca = New System.Windows.Forms.GroupBox()
+        Me.TxtMarca = New System.Windows.Forms.TextBox()
         Me.Label50 = New System.Windows.Forms.Label()
-        Me.TextBox25 = New System.Windows.Forms.TextBox()
+        Me.TxtCodigoMarca = New System.Windows.Forms.TextBox()
         Me.Label51 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DgvMarca = New System.Windows.Forms.DataGridView()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.BtnModificar = New System.Windows.Forms.Button()
@@ -36,31 +37,35 @@ Partial Class FrmMarca
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label45 = New System.Windows.Forms.Label()
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
-        Me.GroupBox7.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CmsMarca = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PnlMarca.SuspendLayout()
+        CType(Me.DgvMarca, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CmsMarca.SuspendLayout()
         Me.SuspendLayout()
         '
-        'GroupBox7
+        'PnlMarca
         '
-        Me.GroupBox7.Controls.Add(Me.TextBox24)
-        Me.GroupBox7.Controls.Add(Me.Label50)
-        Me.GroupBox7.Controls.Add(Me.TextBox25)
-        Me.GroupBox7.Controls.Add(Me.Label51)
-        Me.GroupBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox7.Location = New System.Drawing.Point(29, 85)
-        Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(474, 85)
-        Me.GroupBox7.TabIndex = 26
-        Me.GroupBox7.TabStop = False
+        Me.PnlMarca.Controls.Add(Me.TxtMarca)
+        Me.PnlMarca.Controls.Add(Me.Label50)
+        Me.PnlMarca.Controls.Add(Me.TxtCodigoMarca)
+        Me.PnlMarca.Controls.Add(Me.Label51)
+        Me.PnlMarca.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PnlMarca.Location = New System.Drawing.Point(29, 85)
+        Me.PnlMarca.Name = "PnlMarca"
+        Me.PnlMarca.Size = New System.Drawing.Size(474, 85)
+        Me.PnlMarca.TabIndex = 26
+        Me.PnlMarca.TabStop = False
         '
-        'TextBox24
+        'TxtMarca
         '
-        Me.TextBox24.Location = New System.Drawing.Point(125, 49)
-        Me.TextBox24.Name = "TextBox24"
-        Me.TextBox24.Size = New System.Drawing.Size(289, 22)
-        Me.TextBox24.TabIndex = 27
+        Me.TxtMarca.Location = New System.Drawing.Point(125, 49)
+        Me.TxtMarca.Name = "TxtMarca"
+        Me.TxtMarca.Size = New System.Drawing.Size(289, 22)
+        Me.TxtMarca.TabIndex = 27
         '
         'Label50
         '
@@ -72,13 +77,13 @@ Partial Class FrmMarca
         Me.Label50.TabIndex = 23
         Me.Label50.Text = "Marca"
         '
-        'TextBox25
+        'TxtCodigoMarca
         '
-        Me.TextBox25.Location = New System.Drawing.Point(125, 20)
-        Me.TextBox25.Name = "TextBox25"
-        Me.TextBox25.ReadOnly = True
-        Me.TextBox25.Size = New System.Drawing.Size(142, 22)
-        Me.TextBox25.TabIndex = 22
+        Me.TxtCodigoMarca.Location = New System.Drawing.Point(125, 20)
+        Me.TxtCodigoMarca.Name = "TxtCodigoMarca"
+        Me.TxtCodigoMarca.ReadOnly = True
+        Me.TxtCodigoMarca.Size = New System.Drawing.Size(142, 22)
+        Me.TxtCodigoMarca.TabIndex = 22
         '
         'Label51
         '
@@ -90,14 +95,20 @@ Partial Class FrmMarca
         Me.Label51.TabIndex = 0
         Me.Label51.Text = "Código Marca"
         '
-        'DataGridView1
+        'DgvMarca
         '
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(29, 238)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(474, 209)
-        Me.DataGridView1.TabIndex = 34
+        Me.DgvMarca.AllowUserToAddRows = False
+        Me.DgvMarca.AllowUserToDeleteRows = False
+        Me.DgvMarca.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgvMarca.BackgroundColor = System.Drawing.Color.White
+        Me.DgvMarca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvMarca.ContextMenuStrip = Me.CmsMarca
+        Me.DgvMarca.Location = New System.Drawing.Point(29, 238)
+        Me.DgvMarca.Name = "DgvMarca"
+        Me.DgvMarca.ReadOnly = True
+        Me.DgvMarca.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvMarca.Size = New System.Drawing.Size(474, 209)
+        Me.DgvMarca.TabIndex = 34
         '
         'BtnCancelar
         '
@@ -207,44 +218,66 @@ Partial Class FrmMarca
         Me.PictureBox10.TabIndex = 39
         Me.PictureBox10.TabStop = False
         '
+        'CmsMarca
+        '
+        Me.CmsMarca.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
+        Me.CmsMarca.Name = "CmsMarca"
+        Me.CmsMarca.Size = New System.Drawing.Size(118, 48)
+        '
+        'EditarToolStripMenuItem
+        '
+        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EditarToolStripMenuItem.Text = "Editar"
+        '
+        'EliminarToolStripMenuItem
+        '
+        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EliminarToolStripMenuItem.Text = "Eliminar"
+        '
         'FrmMarca
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(527, 467)
         Me.Controls.Add(Me.BtnCancelar)
         Me.Controls.Add(Me.BtnGuardar)
         Me.Controls.Add(Me.BtnModificar)
         Me.Controls.Add(Me.BtnNuevo)
-        Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.GroupBox7)
+        Me.Controls.Add(Me.DgvMarca)
+        Me.Controls.Add(Me.PnlMarca)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "FrmMarca"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Gestión de Marca"
-        Me.GroupBox7.ResumeLayout(False)
-        Me.GroupBox7.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PnlMarca.ResumeLayout(False)
+        Me.PnlMarca.PerformLayout()
+        CType(Me.DgvMarca, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.CmsMarca.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label45 As Label
-    Friend WithEvents GroupBox7 As GroupBox
-    Friend WithEvents TextBox24 As TextBox
+    Friend WithEvents PnlMarca As GroupBox
+    Friend WithEvents TxtMarca As TextBox
     Friend WithEvents Label50 As Label
-    Friend WithEvents TextBox25 As TextBox
+    Friend WithEvents TxtCodigoMarca As TextBox
     Friend WithEvents Label51 As Label
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DgvMarca As DataGridView
     Friend WithEvents PictureBox10 As PictureBox
     Friend WithEvents BtnCancelar As Button
     Friend WithEvents BtnGuardar As Button
     Friend WithEvents BtnModificar As Button
     Friend WithEvents BtnNuevo As Button
+    Friend WithEvents CmsMarca As ContextMenuStrip
+    Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
 End Class

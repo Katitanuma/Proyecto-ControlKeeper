@@ -22,12 +22,16 @@ Partial Class FrmTipoSoftware
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmTipoSoftware))
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
-        Me.TextBox24 = New System.Windows.Forms.TextBox()
+        Me.DgvTipoSoftware = New System.Windows.Forms.DataGridView()
+        Me.CmsTipoSoftware = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PnlTipoSoftware = New System.Windows.Forms.GroupBox()
+        Me.TxtTipoSoftware = New System.Windows.Forms.TextBox()
         Me.Label50 = New System.Windows.Forms.Label()
-        Me.TextBox25 = New System.Windows.Forms.TextBox()
+        Me.TxtCodigoTipoSoftware = New System.Windows.Forms.TextBox()
         Me.Label51 = New System.Windows.Forms.Label()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnGuardar = New System.Windows.Forms.Button()
@@ -36,40 +40,65 @@ Partial Class FrmTipoSoftware
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label45 = New System.Windows.Forms.Label()
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox7.SuspendLayout()
+        CType(Me.DgvTipoSoftware, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CmsTipoSoftware.SuspendLayout()
+        Me.PnlTipoSoftware.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DataGridView1
+        'DgvTipoSoftware
         '
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(22, 235)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(479, 220)
-        Me.DataGridView1.TabIndex = 79
+        Me.DgvTipoSoftware.AllowUserToAddRows = False
+        Me.DgvTipoSoftware.AllowUserToDeleteRows = False
+        Me.DgvTipoSoftware.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgvTipoSoftware.BackgroundColor = System.Drawing.Color.White
+        Me.DgvTipoSoftware.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvTipoSoftware.ContextMenuStrip = Me.CmsTipoSoftware
+        Me.DgvTipoSoftware.Location = New System.Drawing.Point(22, 235)
+        Me.DgvTipoSoftware.Name = "DgvTipoSoftware"
+        Me.DgvTipoSoftware.ReadOnly = True
+        Me.DgvTipoSoftware.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvTipoSoftware.Size = New System.Drawing.Size(479, 220)
+        Me.DgvTipoSoftware.TabIndex = 79
         '
-        'GroupBox7
+        'CmsTipoSoftware
         '
-        Me.GroupBox7.Controls.Add(Me.TextBox24)
-        Me.GroupBox7.Controls.Add(Me.Label50)
-        Me.GroupBox7.Controls.Add(Me.TextBox25)
-        Me.GroupBox7.Controls.Add(Me.Label51)
-        Me.GroupBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox7.Location = New System.Drawing.Point(15, 75)
-        Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(500, 91)
-        Me.GroupBox7.TabIndex = 78
-        Me.GroupBox7.TabStop = False
+        Me.CmsTipoSoftware.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
+        Me.CmsTipoSoftware.Name = "CmsTipoSoftware"
+        Me.CmsTipoSoftware.Size = New System.Drawing.Size(118, 48)
         '
-        'TextBox24
+        'EditarToolStripMenuItem
         '
-        Me.TextBox24.Location = New System.Drawing.Point(168, 49)
-        Me.TextBox24.Name = "TextBox24"
-        Me.TextBox24.Size = New System.Drawing.Size(318, 22)
-        Me.TextBox24.TabIndex = 27
+        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EditarToolStripMenuItem.Text = "Editar"
+        '
+        'EliminarToolStripMenuItem
+        '
+        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EliminarToolStripMenuItem.Text = "Eliminar"
+        '
+        'PnlTipoSoftware
+        '
+        Me.PnlTipoSoftware.Controls.Add(Me.TxtTipoSoftware)
+        Me.PnlTipoSoftware.Controls.Add(Me.Label50)
+        Me.PnlTipoSoftware.Controls.Add(Me.TxtCodigoTipoSoftware)
+        Me.PnlTipoSoftware.Controls.Add(Me.Label51)
+        Me.PnlTipoSoftware.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PnlTipoSoftware.Location = New System.Drawing.Point(15, 75)
+        Me.PnlTipoSoftware.Name = "PnlTipoSoftware"
+        Me.PnlTipoSoftware.Size = New System.Drawing.Size(500, 91)
+        Me.PnlTipoSoftware.TabIndex = 78
+        Me.PnlTipoSoftware.TabStop = False
+        '
+        'TxtTipoSoftware
+        '
+        Me.TxtTipoSoftware.Location = New System.Drawing.Point(168, 49)
+        Me.TxtTipoSoftware.Name = "TxtTipoSoftware"
+        Me.TxtTipoSoftware.Size = New System.Drawing.Size(318, 22)
+        Me.TxtTipoSoftware.TabIndex = 27
         '
         'Label50
         '
@@ -81,13 +110,13 @@ Partial Class FrmTipoSoftware
         Me.Label50.TabIndex = 23
         Me.Label50.Text = "Tipo Software"
         '
-        'TextBox25
+        'TxtCodigoTipoSoftware
         '
-        Me.TextBox25.Location = New System.Drawing.Point(168, 15)
-        Me.TextBox25.Name = "TextBox25"
-        Me.TextBox25.ReadOnly = True
-        Me.TextBox25.Size = New System.Drawing.Size(151, 22)
-        Me.TextBox25.TabIndex = 22
+        Me.TxtCodigoTipoSoftware.Location = New System.Drawing.Point(168, 15)
+        Me.TxtCodigoTipoSoftware.Name = "TxtCodigoTipoSoftware"
+        Me.TxtCodigoTipoSoftware.ReadOnly = True
+        Me.TxtCodigoTipoSoftware.Size = New System.Drawing.Size(151, 22)
+        Me.TxtCodigoTipoSoftware.TabIndex = 22
         '
         'Label51
         '
@@ -211,20 +240,21 @@ Partial Class FrmTipoSoftware
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(527, 467)
         Me.Controls.Add(Me.BtnCancelar)
         Me.Controls.Add(Me.BtnGuardar)
         Me.Controls.Add(Me.BtnModificar)
         Me.Controls.Add(Me.BtnNuevo)
-        Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.GroupBox7)
+        Me.Controls.Add(Me.DgvTipoSoftware)
+        Me.Controls.Add(Me.PnlTipoSoftware)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "FrmTipoSoftware"
         Me.Text = "Gestión de Tipo de Software"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox7.ResumeLayout(False)
-        Me.GroupBox7.PerformLayout()
+        CType(Me.DgvTipoSoftware, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.CmsTipoSoftware.ResumeLayout(False)
+        Me.PnlTipoSoftware.ResumeLayout(False)
+        Me.PnlTipoSoftware.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
@@ -236,13 +266,16 @@ Partial Class FrmTipoSoftware
     Friend WithEvents BtnGuardar As Button
     Friend WithEvents BtnModificar As Button
     Friend WithEvents BtnNuevo As Button
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents GroupBox7 As GroupBox
-    Friend WithEvents TextBox24 As TextBox
+    Friend WithEvents DgvTipoSoftware As DataGridView
+    Friend WithEvents PnlTipoSoftware As GroupBox
+    Friend WithEvents TxtTipoSoftware As TextBox
     Friend WithEvents Label50 As Label
-    Friend WithEvents TextBox25 As TextBox
+    Friend WithEvents TxtCodigoTipoSoftware As TextBox
     Friend WithEvents Label51 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label45 As Label
     Friend WithEvents PictureBox10 As PictureBox
+    Friend WithEvents CmsTipoSoftware As ContextMenuStrip
+    Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
 End Class
