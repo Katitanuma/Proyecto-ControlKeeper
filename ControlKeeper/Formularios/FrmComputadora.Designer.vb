@@ -32,6 +32,9 @@ Partial Class FrmComputadora
         Me.BtnModificar = New System.Windows.Forms.Button()
         Me.BtnNuevo = New System.Windows.Forms.Button()
         Me.DgvComputadora = New System.Windows.Forms.DataGridView()
+        Me.CmsComputadora = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PlComputadora = New System.Windows.Forms.GroupBox()
         Me.ChkTeclado = New System.Windows.Forms.CheckBox()
         Me.ChkMouse = New System.Windows.Forms.CheckBox()
@@ -50,14 +53,11 @@ Partial Class FrmComputadora
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
-        Me.CmsComputadora = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         CType(Me.DgvComputadora, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PlComputadora.SuspendLayout()
         Me.CmsComputadora.SuspendLayout()
+        Me.PlComputadora.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label13
@@ -182,6 +182,24 @@ Partial Class FrmComputadora
         Me.DgvComputadora.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DgvComputadora.Size = New System.Drawing.Size(602, 182)
         Me.DgvComputadora.TabIndex = 76
+        '
+        'CmsComputadora
+        '
+        Me.CmsComputadora.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
+        Me.CmsComputadora.Name = "CmsComputadora"
+        Me.CmsComputadora.Size = New System.Drawing.Size(118, 48)
+        '
+        'EditarToolStripMenuItem
+        '
+        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EditarToolStripMenuItem.Text = "Editar"
+        '
+        'EliminarToolStripMenuItem
+        '
+        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EliminarToolStripMenuItem.Text = "Eliminar"
         '
         'PlComputadora
         '
@@ -378,24 +396,6 @@ Partial Class FrmComputadora
         Me.Label24.TabIndex = 0
         Me.Label24.Text = "Serie Computadora"
         '
-        'CmsComputadora
-        '
-        Me.CmsComputadora.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
-        Me.CmsComputadora.Name = "CmsComputadora"
-        Me.CmsComputadora.Size = New System.Drawing.Size(153, 70)
-        '
-        'EditarToolStripMenuItem
-        '
-        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
-        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.EditarToolStripMenuItem.Text = "Editar"
-        '
-        'EliminarToolStripMenuItem
-        '
-        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
-        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.EliminarToolStripMenuItem.Text = "Eliminar"
-        '
         'FrmComputadora
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -410,14 +410,15 @@ Partial Class FrmComputadora
         Me.Controls.Add(Me.PlComputadora)
         Me.Controls.Add(Me.Panel3)
         Me.Name = "FrmComputadora"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Gestión de Computadora"
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         CType(Me.DgvComputadora, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.CmsComputadora.ResumeLayout(False)
         Me.PlComputadora.ResumeLayout(False)
         Me.PlComputadora.PerformLayout()
-        Me.CmsComputadora.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub

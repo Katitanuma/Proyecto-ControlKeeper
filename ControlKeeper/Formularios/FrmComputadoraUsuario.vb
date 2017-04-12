@@ -48,7 +48,7 @@ Public Class FrmComputadoraUsuario
     End Sub
 
 
-    Private Sub LlenarComboBoxSerie()
+    Public Sub LlenarComboBoxSerie()
         If Con.State = ConnectionState.Open Then
             Con.Close()
         End If
@@ -77,7 +77,7 @@ Public Class FrmComputadoraUsuario
 
         End Using
     End Sub
-    Private Sub LlenarComboBoxUsuario()
+    Public Sub LlenarComboBoxUsuario()
         If Con.State = ConnectionState.Open Then
             Con.Close()
         End If
@@ -254,8 +254,11 @@ Public Class FrmComputadoraUsuario
     End Sub
 
     Private Sub EliminarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarToolStripMenuItem.Click
-        Call EliminarComputadoraUsuario()
-        Call MostrarTodasComputadorasUsuario()
+        If MessageBox.Show("¿Está seguro de eliminar el registro?", "Control Keeper",
+                           MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.Yes Then
+            Call EliminarComputadoraUsuario()
+            Call MostrarTodasComputadorasUsuario()
+        End If
     End Sub
 
 
@@ -299,4 +302,17 @@ Public Class FrmComputadoraUsuario
     End Sub
 
 
+    Private Sub BtnAbrirFrmUsuario_Click(sender As Object, e As EventArgs) Handles BtnAbrirFrmUsuario.Click
+        FrmUsuario.MdiParent = MDIControlKeeper
+        FrmUsuario.Location = New Point(330, 110)
+        FrmUsuario.Show()
+        FrmUsuario.Var = 1
+    End Sub
+
+    Private Sub BtnAbrirFrmComputadora_Click(sender As Object, e As EventArgs) Handles BtnAbrirFrmComputadora.Click
+        FrmComputadora.MdiParent = MDIControlKeeper
+        FrmComputadora.Show()
+        FrmComputadora.Location = New Point(320, 110)
+        FrmComputadora.Var = 1
+    End Sub
 End Class

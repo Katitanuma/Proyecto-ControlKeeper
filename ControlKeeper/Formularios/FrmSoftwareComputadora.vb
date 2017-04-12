@@ -49,7 +49,7 @@ Public Class FrmSoftwareComputadora
     End Sub
 
 
-    Private Sub LlenarComboBoxSerie()
+    Public Sub LlenarComboBoxSerie()
         If Con.State = ConnectionState.Open Then
             Con.Close()
         End If
@@ -78,7 +78,7 @@ Public Class FrmSoftwareComputadora
 
         End Using
     End Sub
-    Private Sub LlenarComboBoxUsuario()
+    Public Sub LlenarComboBoxUsuario()
         If Con.State = ConnectionState.Open Then
             Con.Close()
         End If
@@ -116,7 +116,7 @@ Public Class FrmSoftwareComputadora
         End If
         Return var
     End Function
-    Private Sub LlenarComboBoxSoftware()
+    Public Sub LlenarComboBoxSoftware()
         If Con.State = ConnectionState.Open Then
             Con.Close()
         End If
@@ -301,8 +301,11 @@ Public Class FrmSoftwareComputadora
     End Sub
 
     Private Sub EliminarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarToolStripMenuItem.Click
-        Call EliminarComputadoraUsuario()
-        Call MostrarTodasSoftwareComputadora()
+        If MessageBox.Show("¿Está seguro de eliminar el registro?", "Control Keeper",
+                           MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.Yes Then
+            Call EliminarComputadoraUsuario()
+            Call MostrarTodasSoftwareComputadora()
+        End If
     End Sub
 
 
@@ -344,5 +347,28 @@ Public Class FrmSoftwareComputadora
         Else
             ChkEstado.Text = "No instalado"
         End If
+    End Sub
+
+    Private Sub BtnAbrirFrmComputadora_Click(sender As Object, e As EventArgs) Handles BtnAbrirFrmComputadora.Click
+        FrmComputadora.MdiParent = MDIControlKeeper
+        FrmComputadora.Var = 2
+        FrmComputadora.Location = New Point(320, 110)
+        FrmComputadora.Show()
+
+    End Sub
+
+    Private Sub BtnAbrirFrmSoftware_Click(sender As Object, e As EventArgs) Handles BtnAbrirFrmSoftware.Click
+        FrmSoftware.MdiParent = MDIControlKeeper
+        FrmSoftware.var = 1
+        FrmSoftware.Location = New Point(130, 110)
+        FrmSoftware.Show()
+    End Sub
+
+    Private Sub BtnAbrirFrmUsuario_Click(sender As Object, e As EventArgs) Handles BtnAbrirFrmUsuario.Click
+        FrmUsuario.MdiParent = MDIControlKeeper
+        FrmUsuario.Var = 2
+        FrmUsuario.Location = New Point(330, 110)
+        FrmUsuario.Show()
+
     End Sub
 End Class

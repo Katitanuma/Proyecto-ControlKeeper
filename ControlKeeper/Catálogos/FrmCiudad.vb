@@ -46,7 +46,7 @@ Public Class FrmCiudad
         Call HabilitarControles(False, True, False, True, True)
         Call InvestigarCorrelativoUsuario()
         End Sub
-    Private Sub LlenarComboBoxDepartamento()
+    Public Sub LlenarComboBoxDepartamento()
         If Con.State = ConnectionState.Open Then
             Con.Close()
         End If
@@ -276,7 +276,9 @@ Public Class FrmCiudad
     End Function
 
     Private Sub BtnBusqueDepartamento_Click(sender As Object, e As EventArgs) Handles BtnBusqueDepartamento.Click
-
+        FrmDepartamento.MdiParent = MDIControlKeeper
+        FrmDepartamento.Var = 1
+        FrmDepartamento.Location = New Point(385, 110)
         FrmDepartamento.Show()
 
     End Sub

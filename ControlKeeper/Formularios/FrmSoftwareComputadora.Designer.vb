@@ -32,7 +32,11 @@ Partial Class FrmSoftwareComputadora
         Me.BtnModificar = New System.Windows.Forms.Button()
         Me.BtnNuevo = New System.Windows.Forms.Button()
         Me.DgvInstalacionSoftware = New System.Windows.Forms.DataGridView()
+        Me.CmsInstalacionSoftware = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PlInstalacionSoftware = New System.Windows.Forms.GroupBox()
+        Me.BtnAbrirFrmUsuario = New System.Windows.Forms.Button()
         Me.CboUsuario = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.DtpFechaDesinstalacion = New System.Windows.Forms.DateTimePicker()
@@ -43,8 +47,8 @@ Partial Class FrmSoftwareComputadora
         Me.Label3 = New System.Windows.Forms.Label()
         Me.CboSoftware = New System.Windows.Forms.ComboBox()
         Me.CboSerie = New System.Windows.Forms.ComboBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BtnAbrirFrmSoftware = New System.Windows.Forms.Button()
+        Me.BtnAbrirFrmComputadora = New System.Windows.Forms.Button()
         Me.ChkEstado = New System.Windows.Forms.CheckBox()
         Me.DtpFechaInstalacion = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -52,14 +56,11 @@ Partial Class FrmSoftwareComputadora
         Me.TxtObservacion = New System.Windows.Forms.TextBox()
         Me.Label50 = New System.Windows.Forms.Label()
         Me.Label51 = New System.Windows.Forms.Label()
-        Me.CmsInstalacionSoftware = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DgvInstalacionSoftware, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PlInstalacionSoftware.SuspendLayout()
         Me.CmsInstalacionSoftware.SuspendLayout()
+        Me.PlInstalacionSoftware.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -185,8 +186,27 @@ Partial Class FrmSoftwareComputadora
         Me.DgvInstalacionSoftware.Size = New System.Drawing.Size(1045, 190)
         Me.DgvInstalacionSoftware.TabIndex = 85
         '
+        'CmsInstalacionSoftware
+        '
+        Me.CmsInstalacionSoftware.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
+        Me.CmsInstalacionSoftware.Name = "CmsInstalacionSoftware"
+        Me.CmsInstalacionSoftware.Size = New System.Drawing.Size(118, 48)
+        '
+        'EditarToolStripMenuItem
+        '
+        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EditarToolStripMenuItem.Text = "Editar"
+        '
+        'EliminarToolStripMenuItem
+        '
+        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EliminarToolStripMenuItem.Text = "Eliminar"
+        '
         'PlInstalacionSoftware
         '
+        Me.PlInstalacionSoftware.Controls.Add(Me.BtnAbrirFrmUsuario)
         Me.PlInstalacionSoftware.Controls.Add(Me.CboUsuario)
         Me.PlInstalacionSoftware.Controls.Add(Me.Label6)
         Me.PlInstalacionSoftware.Controls.Add(Me.DtpFechaDesinstalacion)
@@ -197,8 +217,8 @@ Partial Class FrmSoftwareComputadora
         Me.PlInstalacionSoftware.Controls.Add(Me.Label3)
         Me.PlInstalacionSoftware.Controls.Add(Me.CboSoftware)
         Me.PlInstalacionSoftware.Controls.Add(Me.CboSerie)
-        Me.PlInstalacionSoftware.Controls.Add(Me.Button2)
-        Me.PlInstalacionSoftware.Controls.Add(Me.Button1)
+        Me.PlInstalacionSoftware.Controls.Add(Me.BtnAbrirFrmSoftware)
+        Me.PlInstalacionSoftware.Controls.Add(Me.BtnAbrirFrmComputadora)
         Me.PlInstalacionSoftware.Controls.Add(Me.ChkEstado)
         Me.PlInstalacionSoftware.Controls.Add(Me.DtpFechaInstalacion)
         Me.PlInstalacionSoftware.Controls.Add(Me.Label2)
@@ -213,13 +233,22 @@ Partial Class FrmSoftwareComputadora
         Me.PlInstalacionSoftware.TabIndex = 84
         Me.PlInstalacionSoftware.TabStop = False
         '
+        'BtnAbrirFrmUsuario
+        '
+        Me.BtnAbrirFrmUsuario.Location = New System.Drawing.Point(1004, 113)
+        Me.BtnAbrirFrmUsuario.Name = "BtnAbrirFrmUsuario"
+        Me.BtnAbrirFrmUsuario.Size = New System.Drawing.Size(36, 27)
+        Me.BtnAbrirFrmUsuario.TabIndex = 71
+        Me.BtnAbrirFrmUsuario.Text = "..."
+        Me.BtnAbrirFrmUsuario.UseVisualStyleBackColor = True
+        '
         'CboUsuario
         '
         Me.CboUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CboUsuario.FormattingEnabled = True
         Me.CboUsuario.Location = New System.Drawing.Point(749, 115)
         Me.CboUsuario.Name = "CboUsuario"
-        Me.CboUsuario.Size = New System.Drawing.Size(289, 24)
+        Me.CboUsuario.Size = New System.Drawing.Size(250, 24)
         Me.CboUsuario.TabIndex = 70
         '
         'Label6
@@ -303,23 +332,23 @@ Partial Class FrmSoftwareComputadora
         Me.CboSerie.Size = New System.Drawing.Size(351, 24)
         Me.CboSerie.TabIndex = 61
         '
-        'Button2
+        'BtnAbrirFrmSoftware
         '
-        Me.Button2.Location = New System.Drawing.Point(510, 81)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(36, 27)
-        Me.Button2.TabIndex = 60
-        Me.Button2.Text = "..."
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.BtnAbrirFrmSoftware.Location = New System.Drawing.Point(510, 81)
+        Me.BtnAbrirFrmSoftware.Name = "BtnAbrirFrmSoftware"
+        Me.BtnAbrirFrmSoftware.Size = New System.Drawing.Size(36, 27)
+        Me.BtnAbrirFrmSoftware.TabIndex = 60
+        Me.BtnAbrirFrmSoftware.Text = "..."
+        Me.BtnAbrirFrmSoftware.UseVisualStyleBackColor = True
         '
-        'Button1
+        'BtnAbrirFrmComputadora
         '
-        Me.Button1.Location = New System.Drawing.Point(512, 15)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(36, 27)
-        Me.Button1.TabIndex = 59
-        Me.Button1.Text = "..."
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.BtnAbrirFrmComputadora.Location = New System.Drawing.Point(512, 15)
+        Me.BtnAbrirFrmComputadora.Name = "BtnAbrirFrmComputadora"
+        Me.BtnAbrirFrmComputadora.Size = New System.Drawing.Size(36, 27)
+        Me.BtnAbrirFrmComputadora.TabIndex = 59
+        Me.BtnAbrirFrmComputadora.Text = "..."
+        Me.BtnAbrirFrmComputadora.UseVisualStyleBackColor = True
         '
         'ChkEstado
         '
@@ -387,24 +416,6 @@ Partial Class FrmSoftwareComputadora
         Me.Label51.TabIndex = 0
         Me.Label51.Text = "Serie Computadora"
         '
-        'CmsInstalacionSoftware
-        '
-        Me.CmsInstalacionSoftware.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
-        Me.CmsInstalacionSoftware.Name = "CmsInstalacionSoftware"
-        Me.CmsInstalacionSoftware.Size = New System.Drawing.Size(118, 48)
-        '
-        'EditarToolStripMenuItem
-        '
-        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
-        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
-        Me.EditarToolStripMenuItem.Text = "Editar"
-        '
-        'EliminarToolStripMenuItem
-        '
-        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
-        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
-        Me.EliminarToolStripMenuItem.Text = "Eliminar"
-        '
         'FrmSoftwareComputadora
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -419,14 +430,15 @@ Partial Class FrmSoftwareComputadora
         Me.Controls.Add(Me.PlInstalacionSoftware)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "FrmSoftwareComputadora"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Detalle Instalación de Software"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DgvInstalacionSoftware, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.CmsInstalacionSoftware.ResumeLayout(False)
         Me.PlInstalacionSoftware.ResumeLayout(False)
         Me.PlInstalacionSoftware.PerformLayout()
-        Me.CmsInstalacionSoftware.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -452,8 +464,8 @@ Partial Class FrmSoftwareComputadora
     Friend WithEvents Label3 As Label
     Friend WithEvents CboSoftware As ComboBox
     Friend WithEvents CboSerie As ComboBox
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents BtnAbrirFrmSoftware As Button
+    Friend WithEvents BtnAbrirFrmComputadora As Button
     Friend WithEvents ChkEstado As CheckBox
     Friend WithEvents DtpFechaInstalacion As DateTimePicker
     Friend WithEvents Label2 As Label
@@ -461,4 +473,5 @@ Partial Class FrmSoftwareComputadora
     Friend WithEvents TxtObservacion As TextBox
     Friend WithEvents Label50 As Label
     Friend WithEvents Label51 As Label
+    Friend WithEvents BtnAbrirFrmUsuario As Button
 End Class

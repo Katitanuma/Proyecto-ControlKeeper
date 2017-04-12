@@ -30,7 +30,7 @@ Partial Class FrmUsuario
         Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label66 = New System.Windows.Forms.Label()
         Me.PlUsuario = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BtnAbrirFrmEmpleado = New System.Windows.Forms.Button()
         Me.CboNombreEmpleado = New System.Windows.Forms.ComboBox()
         Me.Label65 = New System.Windows.Forms.Label()
         Me.CboTipoUsuario = New System.Windows.Forms.ComboBox()
@@ -103,7 +103,7 @@ Partial Class FrmUsuario
         'PlUsuario
         '
         Me.PlUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PlUsuario.Controls.Add(Me.Button1)
+        Me.PlUsuario.Controls.Add(Me.BtnAbrirFrmEmpleado)
         Me.PlUsuario.Controls.Add(Me.CboNombreEmpleado)
         Me.PlUsuario.Controls.Add(Me.Label65)
         Me.PlUsuario.Controls.Add(Me.CboTipoUsuario)
@@ -119,14 +119,14 @@ Partial Class FrmUsuario
         Me.PlUsuario.Size = New System.Drawing.Size(598, 192)
         Me.PlUsuario.TabIndex = 50
         '
-        'Button1
+        'BtnAbrirFrmEmpleado
         '
-        Me.Button1.Location = New System.Drawing.Point(544, 147)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(36, 27)
-        Me.Button1.TabIndex = 58
-        Me.Button1.Text = "..."
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.BtnAbrirFrmEmpleado.Location = New System.Drawing.Point(544, 147)
+        Me.BtnAbrirFrmEmpleado.Name = "BtnAbrirFrmEmpleado"
+        Me.BtnAbrirFrmEmpleado.Size = New System.Drawing.Size(36, 27)
+        Me.BtnAbrirFrmEmpleado.TabIndex = 58
+        Me.BtnAbrirFrmEmpleado.Text = "..."
+        Me.BtnAbrirFrmEmpleado.UseVisualStyleBackColor = True
         '
         'CboNombreEmpleado
         '
@@ -352,7 +352,7 @@ Partial Class FrmUsuario
     Friend WithEvents Label66 As Label
     Friend WithEvents PictureBox11 As PictureBox
     Friend WithEvents PlUsuario As Panel
-    Friend WithEvents Button1 As Button
+    Friend WithEvents BtnAbrirFrmEmpleado As Button
     Friend WithEvents CboNombreEmpleado As ComboBox
     Friend WithEvents Label65 As Label
     Friend WithEvents CboTipoUsuario As ComboBox

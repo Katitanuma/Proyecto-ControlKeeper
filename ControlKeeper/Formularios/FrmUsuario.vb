@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class FrmUsuario
+    Public Var As Integer = 0
     Private Sub FrmUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         HabilitarControles(True, False, False, False, False)
         Call MostrarTodosUsuarios()
@@ -77,7 +78,7 @@ Public Class FrmUsuario
 
         End Using
     End Sub
-    Private Sub LlenarComboBoxNombreEmpleado()
+    Public Sub LlenarComboBoxNombreEmpleado()
         If Con.State = ConnectionState.Open Then
             Con.Close()
         End If
@@ -230,8 +231,11 @@ Public Class FrmUsuario
     End Sub
 
     Private Sub EliminarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarToolStripMenuItem.Click
-        Call EliminarUsuario()
-        Call MostrarTodosUsuarios()
+        If MessageBox.Show("¿Está seguro de eliminar el registro?", "Control Keeper",
+                           MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.Yes Then
+            Call EliminarUsuario()
+            Call MostrarTodosUsuarios()
+        End If
     End Sub
 
     Private Sub InvestigarCorrelativoUsuario()
@@ -293,4 +297,24 @@ Public Class FrmUsuario
         Return Valor
     End Function
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnAbrirFrmEmpleado.Click
+        FrmEmpleado.MdiParent = MDIControlKeeper
+        FrmEmpleado.Var = 1
+        FrmEmpleado.Location = New Point(120, 110)
+        FrmEmpleado.Show()
+
+    End Sub
+
+
+    Private Sub DgvUsuario_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvUsuario.CellDoubleClick
+        If Var = 1 Then
+            FrmComputadoraUsuario.LlenarComboBoxUsuario()
+            FrmComputadoraUsuario.CboUsuario.Text = DgvUsuario.CurrentRow.Cells(1).Value.ToString
+            Me.Close()
+        ElseIf Var = 2 Then
+            FrmSoftwareComputadora.LlenarComboBoxUsuario()
+            FrmSoftwareComputadora.CboUsuario.Text = DgvUsuario.CurrentRow.Cells(1).Value.ToString
+            Me.Close()
+        End If
+    End Sub
 End Class

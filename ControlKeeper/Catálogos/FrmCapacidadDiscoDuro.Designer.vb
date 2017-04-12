@@ -250,6 +250,7 @@ Partial Class FrmCapacidadDiscoDuro
         Me.Controls.Add(Me.PnlCapacidadDiscoDuro)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "FrmCapacidadDiscoDuro"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Gestión de Capacidad de Disco Duro"
         CType(Me.DgvCapacidadDiscoDuro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.CMSCapacidadDiscoDuro.ResumeLayout(False)

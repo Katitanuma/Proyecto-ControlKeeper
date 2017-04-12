@@ -18,7 +18,7 @@ Public Class FrmCapacidadRAM
     Private Sub FrmCapacidadRAM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call HabilitarControles(True, False, False, False, False)
         Call MostrarTodoCapacidadMemoriaRAM()
-        Call InvestigarCorrelativoCapacidadMemoriaRAM()
+
 
     End Sub
 

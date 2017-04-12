@@ -221,8 +221,11 @@ Public Class FrmProfesion
     End Sub
 
     Private Sub EliminarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarToolStripMenuItem.Click
-        Call EliminarProfesion()
-        Call MostrarTodoProfesion()
+        If MessageBox.Show("¿Está seguro de eliminar el registro?", "Control Keeper",
+                           MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.Yes Then
+            Call EliminarProfesion()
+            Call MostrarTodoProfesion()
+        End If
     End Sub
 
     Private Sub EditarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditarToolStripMenuItem.Click

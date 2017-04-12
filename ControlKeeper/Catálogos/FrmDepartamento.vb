@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class FrmDepartamento
+    Public Var As Integer = 0
     Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
 
         Call HabilitarControles(False, True, False, True, True)
@@ -119,7 +120,7 @@ Public Class FrmDepartamento
 
     End Function
 
-    Private Function InsertarDepartamento()
+    Private Sub InsertarDepartamento()
 
         If Con.State = ConnectionState.Open Then
             Con.Open()
@@ -151,7 +152,7 @@ Public Class FrmDepartamento
             End Try
 
         End Using
-    End Function
+    End Sub
 
     Private Sub EliminarDepartamento()
 
@@ -268,7 +269,7 @@ Public Class FrmDepartamento
     Private Sub FrmDepartamento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Call HabilitarControles(True, False, False, False, False)
-        Call InvestigarCorrelativoDepartamento()
+
         Call MostrarTodoDepartamento()
 
     End Sub
@@ -337,23 +338,11 @@ Public Class FrmDepartamento
     End Function
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    Private Sub DgvDepartamento_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvDepartamento.CellDoubleClick
+        If Var = 1 Then
+            FrmCiudad.LlenarComboBoxDepartamento()
+            FrmCiudad.CboDepartamento.Text = DgvDepartamento.CurrentRow.Cells(1).Value.ToString
+            Me.Close()
+        End If
+    End Sub
 End Class

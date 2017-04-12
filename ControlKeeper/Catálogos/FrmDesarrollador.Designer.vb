@@ -271,6 +271,7 @@ Partial Class FrmDesarrollador
         Me.Controls.Add(Me.DgvDesarrollador)
         Me.Controls.Add(Me.PnlDesarrollador)
         Me.Name = "FrmDesarrollador"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Gestión de Desarrollador"
         CType(Me.DgvDesarrollador, System.ComponentModel.ISupportInitialize).EndInit()
         Me.CMSDesarrollador.ResumeLayout(False)

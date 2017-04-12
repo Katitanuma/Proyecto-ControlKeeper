@@ -250,6 +250,7 @@ Partial Class FrmTipoSoftware
         Me.Controls.Add(Me.PnlTipoSoftware)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "FrmTipoSoftware"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Gestión de Tipo de Software"
         CType(Me.DgvTipoSoftware, System.ComponentModel.ISupportInitialize).EndInit()
         Me.CmsTipoSoftware.ResumeLayout(False)

@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class FrmEmpleado
+    Public Var As Integer = 0
     Private Sub FrmUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         HabilitarControles(True, False, False, False, False)
         Call MostrarTodosEmpleado()
@@ -322,15 +323,30 @@ Public Class FrmEmpleado
     End Sub
 
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
-        Call EditarEmpleado()
-        Call HabilitarControles(True, False, False, False, False)
-        Call Limpiar()
-        Call MostrarTodosEmpleado()
-        MtbCodigo.Enabled = True
+        If MessageBox.Show("¿Está seguro de eliminar el registro?", "Control Keeper",
+                           MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.Yes Then
+            Call EditarEmpleado()
+            Call HabilitarControles(True, False, False, False, False)
+            Call Limpiar()
+            Call MostrarTodosEmpleado()
+            MtbCodigo.Enabled = True
+        End If
+
     End Sub
 
     Private Sub EliminarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarToolStripMenuItem.Click
-        Call EliminarEmpleado()
-        Call MostrarTodosEmpleado()
+        If MessageBox.Show("¿Está seguro de eliminar el registro?", "Control Keeper",
+                           MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.Yes Then
+            Call EliminarEmpleado()
+            Call MostrarTodosEmpleado()
+        End If
+    End Sub
+
+    Private Sub DgvEmpleado_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvEmpleado.CellDoubleClick
+        If Var = 1 Then
+            FrmUsuario.LlenarComboBoxNombreEmpleado()
+            FrmUsuario.CboNombreEmpleado.Text = DgvEmpleado.CurrentRow.Cells(1).Value.ToString + " " + DgvEmpleado.CurrentRow.Cells(2).Value.ToString
+            Me.Close()
+        End If
     End Sub
 End Class

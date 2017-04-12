@@ -25,6 +25,9 @@ Partial Class FrmProfesion
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmProfesion))
         Me.DgvProfesion = New System.Windows.Forms.DataGridView()
+        Me.CmsProfesion = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PnlProfesion = New System.Windows.Forms.GroupBox()
         Me.Label56 = New System.Windows.Forms.Label()
         Me.TxtProfesion = New System.Windows.Forms.TextBox()
@@ -38,14 +41,11 @@ Partial Class FrmProfesion
         Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.BtnModificar = New System.Windows.Forms.Button()
         Me.BtnNuevo = New System.Windows.Forms.Button()
-        Me.CmsProfesion = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DgvProfesion, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CmsProfesion.SuspendLayout()
         Me.PnlProfesion.SuspendLayout()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
-        Me.CmsProfesion.SuspendLayout()
         Me.SuspendLayout()
         '
         'DgvProfesion
@@ -62,6 +62,24 @@ Partial Class FrmProfesion
         Me.DgvProfesion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DgvProfesion.Size = New System.Drawing.Size(580, 234)
         Me.DgvProfesion.TabIndex = 50
+        '
+        'CmsProfesion
+        '
+        Me.CmsProfesion.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
+        Me.CmsProfesion.Name = "CmsProfesion"
+        Me.CmsProfesion.Size = New System.Drawing.Size(118, 48)
+        '
+        'EditarToolStripMenuItem
+        '
+        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EditarToolStripMenuItem.Text = "Editar"
+        '
+        'EliminarToolStripMenuItem
+        '
+        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EliminarToolStripMenuItem.Text = "Eliminar"
         '
         'PnlProfesion
         '
@@ -229,24 +247,6 @@ Partial Class FrmProfesion
         Me.BtnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnNuevo.UseVisualStyleBackColor = False
         '
-        'CmsProfesion
-        '
-        Me.CmsProfesion.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
-        Me.CmsProfesion.Name = "CmsProfesion"
-        Me.CmsProfesion.Size = New System.Drawing.Size(118, 48)
-        '
-        'EditarToolStripMenuItem
-        '
-        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
-        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
-        Me.EditarToolStripMenuItem.Text = "Editar"
-        '
-        'EliminarToolStripMenuItem
-        '
-        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
-        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
-        Me.EliminarToolStripMenuItem.Text = "Eliminar"
-        '
         'FrmProfesion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -261,14 +261,15 @@ Partial Class FrmProfesion
         Me.Controls.Add(Me.DgvProfesion)
         Me.Controls.Add(Me.PnlProfesion)
         Me.Name = "FrmProfesion"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Gestión de Profesión"
         CType(Me.DgvProfesion, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.CmsProfesion.ResumeLayout(False)
         Me.PnlProfesion.ResumeLayout(False)
         Me.PnlProfesion.PerformLayout()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        Me.CmsProfesion.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub

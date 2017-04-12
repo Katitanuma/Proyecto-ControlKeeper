@@ -11,7 +11,7 @@ Public Class FrmModelo
     Private Sub Limpiar()
         TxtCodigoModelo.Text = ""
         TxtModelo.Text = ""
-        CboMarca.Text = ""
+        CboMarca.Text = Nothing
     End Sub
 
     Private Sub MostrarTodoModelo()
@@ -48,7 +48,7 @@ Public Class FrmModelo
         Call Limpiar()
     End Sub
 
-    Private Sub LlenarComboBoxMarca()
+    Public Sub LlenarComboBoxMarca()
         If Con.State = ConnectionState.Open Then
             Con.Close()
         End If
@@ -275,7 +275,18 @@ Public Class FrmModelo
     End Sub
 
     Private Sub EliminarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarToolStripMenuItem.Click
-        Call EliminarModelo()
-        Call MostrarTodoModelo()
+        If MessageBox.Show("¿Está seguro de eliminar el registro?", "Control Keeper",
+                           MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.Yes Then
+            Call EliminarModelo()
+            Call MostrarTodoModelo()
+        End If
+    End Sub
+
+    Private Sub BtnAbrirFrmMarca_Click(sender As Object, e As EventArgs) Handles BtnAbrirFrmMarca.Click
+        FrmMarca.Var = 1
+        FrmMarca.MdiParent = MDIControlKeeper
+        FrmMarca.Location = New Point(380, 110)
+        FrmMarca.Show()
+
     End Sub
 End Class

@@ -32,11 +32,14 @@ Partial Class FrmComputadoraUsuario
         Me.BtnModificar = New System.Windows.Forms.Button()
         Me.BtnNuevo = New System.Windows.Forms.Button()
         Me.DgvComputadoraUsuario = New System.Windows.Forms.DataGridView()
+        Me.CmsAsignacionComputadora = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PlComputadoraUsuario = New System.Windows.Forms.GroupBox()
         Me.CboUsuario = New System.Windows.Forms.ComboBox()
         Me.CboSerie = New System.Windows.Forms.ComboBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BtnAbrirFrmUsuario = New System.Windows.Forms.Button()
+        Me.BtnAbrirFrmComputadora = New System.Windows.Forms.Button()
         Me.ChkEstado = New System.Windows.Forms.CheckBox()
         Me.DtpFechaAsignacion = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -44,14 +47,11 @@ Partial Class FrmComputadoraUsuario
         Me.TxtObservacion = New System.Windows.Forms.TextBox()
         Me.Label50 = New System.Windows.Forms.Label()
         Me.Label51 = New System.Windows.Forms.Label()
-        Me.CmsAsignacionComputadora = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DgvComputadoraUsuario, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PlComputadoraUsuario.SuspendLayout()
         Me.CmsAsignacionComputadora.SuspendLayout()
+        Me.PlComputadoraUsuario.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -177,12 +177,30 @@ Partial Class FrmComputadoraUsuario
         Me.DgvComputadoraUsuario.Size = New System.Drawing.Size(612, 195)
         Me.DgvComputadoraUsuario.TabIndex = 78
         '
+        'CmsAsignacionComputadora
+        '
+        Me.CmsAsignacionComputadora.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
+        Me.CmsAsignacionComputadora.Name = "CmsAsignacionComputadora"
+        Me.CmsAsignacionComputadora.Size = New System.Drawing.Size(118, 48)
+        '
+        'EditarToolStripMenuItem
+        '
+        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EditarToolStripMenuItem.Text = "Editar"
+        '
+        'EliminarToolStripMenuItem
+        '
+        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EliminarToolStripMenuItem.Text = "Eliminar"
+        '
         'PlComputadoraUsuario
         '
         Me.PlComputadoraUsuario.Controls.Add(Me.CboUsuario)
         Me.PlComputadoraUsuario.Controls.Add(Me.CboSerie)
-        Me.PlComputadoraUsuario.Controls.Add(Me.Button2)
-        Me.PlComputadoraUsuario.Controls.Add(Me.Button1)
+        Me.PlComputadoraUsuario.Controls.Add(Me.BtnAbrirFrmUsuario)
+        Me.PlComputadoraUsuario.Controls.Add(Me.BtnAbrirFrmComputadora)
         Me.PlComputadoraUsuario.Controls.Add(Me.ChkEstado)
         Me.PlComputadoraUsuario.Controls.Add(Me.DtpFechaAsignacion)
         Me.PlComputadoraUsuario.Controls.Add(Me.Label2)
@@ -215,23 +233,23 @@ Partial Class FrmComputadoraUsuario
         Me.CboSerie.Size = New System.Drawing.Size(383, 24)
         Me.CboSerie.TabIndex = 61
         '
-        'Button2
+        'BtnAbrirFrmUsuario
         '
-        Me.Button2.Location = New System.Drawing.Point(514, 81)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(36, 27)
-        Me.Button2.TabIndex = 60
-        Me.Button2.Text = "..."
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.BtnAbrirFrmUsuario.Location = New System.Drawing.Point(514, 81)
+        Me.BtnAbrirFrmUsuario.Name = "BtnAbrirFrmUsuario"
+        Me.BtnAbrirFrmUsuario.Size = New System.Drawing.Size(36, 27)
+        Me.BtnAbrirFrmUsuario.TabIndex = 60
+        Me.BtnAbrirFrmUsuario.Text = "..."
+        Me.BtnAbrirFrmUsuario.UseVisualStyleBackColor = True
         '
-        'Button1
+        'BtnAbrirFrmComputadora
         '
-        Me.Button1.Location = New System.Drawing.Point(548, 15)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(36, 27)
-        Me.Button1.TabIndex = 59
-        Me.Button1.Text = "..."
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.BtnAbrirFrmComputadora.Location = New System.Drawing.Point(548, 15)
+        Me.BtnAbrirFrmComputadora.Name = "BtnAbrirFrmComputadora"
+        Me.BtnAbrirFrmComputadora.Size = New System.Drawing.Size(36, 27)
+        Me.BtnAbrirFrmComputadora.TabIndex = 59
+        Me.BtnAbrirFrmComputadora.Text = "..."
+        Me.BtnAbrirFrmComputadora.UseVisualStyleBackColor = True
         '
         'ChkEstado
         '
@@ -299,29 +317,11 @@ Partial Class FrmComputadoraUsuario
         Me.Label51.TabIndex = 0
         Me.Label51.Text = "Serie Computadora"
         '
-        'CmsAsignacionComputadora
-        '
-        Me.CmsAsignacionComputadora.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
-        Me.CmsAsignacionComputadora.Name = "CmsAsignacionComputadora"
-        Me.CmsAsignacionComputadora.Size = New System.Drawing.Size(118, 48)
-        '
-        'EditarToolStripMenuItem
-        '
-        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
-        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
-        Me.EditarToolStripMenuItem.Text = "Editar"
-        '
-        'EliminarToolStripMenuItem
-        '
-        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
-        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
-        Me.EliminarToolStripMenuItem.Text = "Eliminar"
-        '
         'FrmComputadoraUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(636, 508)
         Me.Controls.Add(Me.BtnCancelar)
         Me.Controls.Add(Me.BtnGuardar)
@@ -331,14 +331,15 @@ Partial Class FrmComputadoraUsuario
         Me.Controls.Add(Me.PlComputadoraUsuario)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "FrmComputadoraUsuario"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Detalle Asignación de Computadora"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DgvComputadoraUsuario, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.CmsAsignacionComputadora.ResumeLayout(False)
         Me.PlComputadoraUsuario.ResumeLayout(False)
         Me.PlComputadoraUsuario.PerformLayout()
-        Me.CmsAsignacionComputadora.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -353,8 +354,8 @@ Partial Class FrmComputadoraUsuario
     Friend WithEvents PlComputadoraUsuario As GroupBox
     Friend WithEvents CboUsuario As ComboBox
     Friend WithEvents CboSerie As ComboBox
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents BtnAbrirFrmUsuario As Button
+    Friend WithEvents BtnAbrirFrmComputadora As Button
     Friend WithEvents ChkEstado As CheckBox
     Friend WithEvents DtpFechaAsignacion As DateTimePicker
     Friend WithEvents Label2 As Label

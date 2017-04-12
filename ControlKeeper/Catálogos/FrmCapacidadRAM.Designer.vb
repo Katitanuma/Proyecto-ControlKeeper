@@ -250,6 +250,7 @@ Partial Class FrmCapacidadRAM
         Me.Controls.Add(Me.PnlCapacidadMemoriaRAM)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "FrmCapacidadRAM"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Gestión de Capacidad de RAM"
         CType(Me.DgvCapacidadMemoriaRAM, System.ComponentModel.ISupportInitialize).EndInit()
         Me.CMSCapacidadRAM.ResumeLayout(False)

@@ -110,6 +110,7 @@ Partial Class FrmCiudad
         '
         'CboDepartamento
         '
+        Me.CboDepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CboDepartamento.FormattingEnabled = True
         Me.CboDepartamento.Location = New System.Drawing.Point(123, 77)
         Me.CboDepartamento.Name = "CboDepartamento"
@@ -235,7 +236,6 @@ Partial Class FrmCiudad
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.DeepSkyBlue
         Me.Panel1.BackgroundImage = Global.ControlKeeper.My.Resources.Resources.br
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
@@ -273,7 +273,7 @@ Partial Class FrmCiudad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(527, 467)
         Me.Controls.Add(Me.BtnCancelar)
         Me.Controls.Add(Me.BtnGuardar)
@@ -283,6 +283,7 @@ Partial Class FrmCiudad
         Me.Controls.Add(Me.PnlCiudad)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "FrmCiudad"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Gestión de Ciudad"
         CType(Me.DgvCiudad, System.ComponentModel.ISupportInitialize).EndInit()
         Me.CMSCiudad.ResumeLayout(False)

@@ -301,7 +301,7 @@ Public Class FrmCapacidadDiscoDuro
 
         Call MostrarTodoCapacidadDiscoDuro()
         Call HabilitarControles(True, False, False, False, False)
-        Call InvestigarCorrelativoCapacidadDiscoDuro()
+
 
     End Sub
 

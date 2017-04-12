@@ -30,6 +30,9 @@ Partial Class FrmMarca
         Me.TxtCodigoMarca = New System.Windows.Forms.TextBox()
         Me.Label51 = New System.Windows.Forms.Label()
         Me.DgvMarca = New System.Windows.Forms.DataGridView()
+        Me.CmsMarca = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.BtnModificar = New System.Windows.Forms.Button()
@@ -37,14 +40,11 @@ Partial Class FrmMarca
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label45 = New System.Windows.Forms.Label()
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
-        Me.CmsMarca = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PnlMarca.SuspendLayout()
         CType(Me.DgvMarca, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CmsMarca.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.CmsMarca.SuspendLayout()
         Me.SuspendLayout()
         '
         'PnlMarca
@@ -109,6 +109,24 @@ Partial Class FrmMarca
         Me.DgvMarca.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DgvMarca.Size = New System.Drawing.Size(474, 209)
         Me.DgvMarca.TabIndex = 34
+        '
+        'CmsMarca
+        '
+        Me.CmsMarca.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
+        Me.CmsMarca.Name = "CmsMarca"
+        Me.CmsMarca.Size = New System.Drawing.Size(118, 48)
+        '
+        'EditarToolStripMenuItem
+        '
+        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EditarToolStripMenuItem.Text = "Editar"
+        '
+        'EliminarToolStripMenuItem
+        '
+        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EliminarToolStripMenuItem.Text = "Eliminar"
         '
         'BtnCancelar
         '
@@ -218,24 +236,6 @@ Partial Class FrmMarca
         Me.PictureBox10.TabIndex = 39
         Me.PictureBox10.TabStop = False
         '
-        'CmsMarca
-        '
-        Me.CmsMarca.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem, Me.EliminarToolStripMenuItem})
-        Me.CmsMarca.Name = "CmsMarca"
-        Me.CmsMarca.Size = New System.Drawing.Size(118, 48)
-        '
-        'EditarToolStripMenuItem
-        '
-        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
-        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
-        Me.EditarToolStripMenuItem.Text = "Editar"
-        '
-        'EliminarToolStripMenuItem
-        '
-        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
-        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
-        Me.EliminarToolStripMenuItem.Text = "Eliminar"
-        '
         'FrmMarca
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -251,15 +251,15 @@ Partial Class FrmMarca
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "FrmMarca"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Gestión de Marca"
         Me.PnlMarca.ResumeLayout(False)
         Me.PnlMarca.PerformLayout()
         CType(Me.DgvMarca, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.CmsMarca.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.CmsMarca.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub

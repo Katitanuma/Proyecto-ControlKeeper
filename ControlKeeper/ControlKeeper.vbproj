@@ -129,12 +129,6 @@
     <Compile Include="Formularios\FrmEmpleado.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmLicencia.Designer.vb">
-      <DependentUpon>FrmLicencia.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\FrmLicencia.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Formularios\FrmLogin.Designer.vb">
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </Compile>
@@ -241,9 +235,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmEmpleado.resx">
       <DependentUpon>FrmEmpleado.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmLicencia.resx">
-      <DependentUpon>FrmLicencia.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmLogin.resx">
       <DependentUpon>FrmLogin.vb</DependentUpon>
@@ -539,6 +530,51 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\imagen prueb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAPACIDADISCODURObtnn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAPACIDADRAMbtnn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CCOMPUTADORAUSUARIObtnn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CIUDADbtnn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DEPARTAMENTObtnn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DESARROLLADORbtnn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EMPLEADObtnn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LICENCIAbtnn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MANTENIMIENTObtnn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MARCAbtnn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MODELObtnn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PROFESIONbtnn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SOFTWAREbtnnnn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SOFTWARECOMPUTADORAbtnn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TIPOSOFTWAREbtnn.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

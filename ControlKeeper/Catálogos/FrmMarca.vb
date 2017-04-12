@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class FrmMarca
+    Public Var As Integer = 0
     Private Sub HabilitarControles(ByVal Nuevo As Boolean, ByVal Guardar As Boolean, ByVal Modificar As Boolean, ByVal Cancelar As Boolean, ByVal Panel As Boolean)
         BtnNuevo.Enabled = Nuevo
         BtnGuardar.Enabled = Guardar
@@ -60,7 +61,7 @@ Public Class FrmMarca
                     .CommandType = CommandType.StoredProcedure
                     .Connection = Con
 
-                    .Parameters.Add("@NombreMarca", SqlDbType.NVarChar, 50).Value = TxtMarca.Text.Trim
+                    .Parameters.Add("@Marca", SqlDbType.NVarChar, 50).Value = TxtMarca.Text.Trim
                     .ExecuteNonQuery()
                 End With
                 MessageBox.Show("Marca almacenada con éxito", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -100,7 +101,7 @@ Public Class FrmMarca
                     .Connection = Con
 
                     .Parameters.Add("@IdMarca", SqlDbType.Int).Value = CInt(TxtCodigoMarca.Text)
-                    .Parameters.Add("@NombreMarca", SqlDbType.NVarChar, 50).Value = TxtMarca.Text.Trim
+                    .Parameters.Add("@Marca", SqlDbType.NVarChar, 50).Value = TxtMarca.Text.Trim
                     .ExecuteNonQuery()
                 End With
                 MessageBox.Show("Marca modificada con éxito", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -153,8 +154,11 @@ Public Class FrmMarca
     End Sub
 
     Private Sub EliminarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarToolStripMenuItem.Click
-        Call EliminarMarca()
-        Call MostrarTodoMarca()
+        If MessageBox.Show("¿Está seguro de eliminar el registro?", "Control Keeper",
+                           MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.Yes Then
+            Call EliminarMarca()
+            Call MostrarTodoMarca()
+        End If
     End Sub
 
     Private Sub EditarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditarToolStripMenuItem.Click
@@ -248,5 +252,15 @@ Public Class FrmMarca
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
         Call HabilitarControles(True, False, False, False, False)
         Call Limpiar()
+    End Sub
+
+
+
+    Private Sub DgvMarca_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvMarca.CellDoubleClick
+        If Var = 1 Then
+            FrmModelo.LlenarComboBoxMarca()
+            FrmModelo.CboMarca.Text = DgvMarca.CurrentRow.Cells(1).Value.ToString
+            Me.Close()
+        End If
     End Sub
 End Class

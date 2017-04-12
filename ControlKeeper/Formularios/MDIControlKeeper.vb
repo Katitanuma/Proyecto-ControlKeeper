@@ -2,84 +2,7 @@
 
 Public Class MDIControlKeeper
 
-    Private Sub ShowNewForm(ByVal sender As Object, ByVal e As EventArgs)
-        ' Create a new instance of the child form.
-        Dim ChildForm As New System.Windows.Forms.Form
-        ' Make it a child of this MDI form before showing it.
-        ChildForm.MdiParent = Me
 
-        m_ChildFormNumber += 1
-        ChildForm.Text = "Window " & m_ChildFormNumber
-
-        ChildForm.Show()
-    End Sub
-
-    Private Sub OpenFile(ByVal sender As Object, ByVal e As EventArgs)
-        Dim OpenFileDialog As New OpenFileDialog
-        OpenFileDialog.InitialDirectory = My.Computer.FileSystem.SpecialDirectories.MyDocuments
-        OpenFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*"
-        If (OpenFileDialog.ShowDialog(Me) = System.Windows.Forms.DialogResult.OK) Then
-            Dim FileName As String = OpenFileDialog.FileName
-            ' TODO: Add code here to open the file.
-        End If
-    End Sub
-
-    Private Sub SaveAsToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
-        Dim SaveFileDialog As New SaveFileDialog
-        SaveFileDialog.InitialDirectory = My.Computer.FileSystem.SpecialDirectories.MyDocuments
-        SaveFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*"
-
-        If (SaveFileDialog.ShowDialog(Me) = System.Windows.Forms.DialogResult.OK) Then
-            Dim FileName As String = SaveFileDialog.FileName
-            ' TODO: Add code here to save the current contents of the form to a file.
-        End If
-    End Sub
-
-
-    Private Sub ExitToolsStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
-        Me.Close()
-    End Sub
-
-    Private Sub CutToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
-        ' Use My.Computer.Clipboard to insert the selected text or images into the clipboard
-    End Sub
-
-    Private Sub CopyToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
-        ' Use My.Computer.Clipboard to insert the selected text or images into the clipboard
-    End Sub
-
-    Private Sub PasteToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
-        'Use My.Computer.Clipboard.GetText() or My.Computer.Clipboard.GetData to retrieve information from the clipboard.
-    End Sub
-
-    'Private Sub ToolBarToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles ToolBarToolStripMenuItem.Click
-    'Me.ToolStrip.Visible = Me.ToolBarToolStripMenuItem.Checked
-    'End Sub
-
-    Private Sub CascadeToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
-        Me.LayoutMdi(MdiLayout.Cascade)
-    End Sub
-
-    Private Sub TileVerticalToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
-        Me.LayoutMdi(MdiLayout.TileVertical)
-    End Sub
-
-    Private Sub TileHorizontalToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
-        Me.LayoutMdi(MdiLayout.TileHorizontal)
-    End Sub
-
-    Private Sub ArrangeIconsToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
-        Me.LayoutMdi(MdiLayout.ArrangeIcons)
-    End Sub
-
-    Private Sub CloseAllToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
-        ' Close all child forms of the parent.
-        'For Each ChildForm As Form In Me.MdiChildren
-        'ChildForm.Close()
-        'Next
-    End Sub
-
-    Private m_ChildFormNumber As Integer
 
     Private Sub MDIControlKeeper_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PnlMenu.Hide()
@@ -88,7 +11,7 @@ Public Class MDIControlKeeper
     Private Sub BtnUsuario_Click(sender As Object, e As EventArgs) Handles BtnUsuario.Click
         FrmUsuario.MdiParent = Me
         PnlMenu.Hide()
-        FrmUsuario.Location = New Point(145, 85)
+        FrmUsuario.Location = New Point(330, 110)
         'FrmUsuario.Dock = DockStyle.Fill
         'FrmUsuario.FormBorderStyle = FormBorderStyle.None
         FrmUsuario.Show()
@@ -112,7 +35,7 @@ Public Class MDIControlKeeper
         FrmEmpleado.Location = New Point(145, 85)
     End Sub
 
-    Private Sub BtnEmpleado_Click(sender As Object, e As EventArgs) Handles BtnEmpleado.Click
+    Private Sub BtnEmpleado_Click(sender As Object, e As EventArgs)
         FrmEmpleado.MdiParent = Me
         PnlMenu.Hide()
         FrmEmpleado.Location = New Point(145, 85)
@@ -121,4 +44,109 @@ Public Class MDIControlKeeper
         FrmEmpleado.Show()
     End Sub
 
+
+    Private Sub BtnTipoSoftware_Click(sender As Object, e As EventArgs) Handles BtnTipoSoftware.Click
+        FrmTipoSoftware.MdiParent = Me
+        PnlMenu.Hide()
+        FrmTipoSoftware.Location = New Point(375, 110)
+        FrmTipoSoftware.Show()
+    End Sub
+
+    Private Sub BtnDesarrollador_Click(sender As Object, e As EventArgs) Handles BtnDesarrollador.Click
+        FrmDesarrollador.MdiParent = Me
+        PnlMenu.Hide()
+        FrmDesarrollador.Location = New Point(315, 110)
+        FrmDesarrollador.Show()
+    End Sub
+
+    Private Sub BtnSoftware_Click(sender As Object, e As EventArgs) Handles BtnSoftware.Click
+        FrmSoftware.MdiParent = Me
+        PnlMenu.Hide()
+        FrmSoftware.Location = New Point(130, 110)
+        FrmSoftware.Show()
+    End Sub
+
+    Private Sub BtnComputadoraUsuario_Click(sender As Object, e As EventArgs) Handles BtnComputadoraUsuario.Click
+        FrmComputadoraUsuario.MdiParent = Me
+        PnlMenu.Hide()
+        FrmComputadoraUsuario.Location = New Point(330, 110)
+        FrmComputadoraUsuario.Show()
+    End Sub
+
+    Private Sub BtnSoftwareComputadora_Click(sender As Object, e As EventArgs) Handles BtnSoftwareComputadora.Click
+        FrmSoftwareComputadora.MdiParent = Me
+        PnlMenu.Hide()
+        FrmSoftwareComputadora.Location = New Point(120, 110)
+        FrmSoftwareComputadora.Show()
+    End Sub
+
+    Private Sub BtnDiscoDuro_Click(sender As Object, e As EventArgs) Handles BtnDiscoDuro.Click
+        FrmCapacidadDiscoDuro.MdiParent = Me
+        PnlMenu.Hide()
+        FrmCapacidadDiscoDuro.Location = New Point(375, 110)
+        FrmCapacidadDiscoDuro.Show()
+    End Sub
+
+    Private Sub BtnModelo_Click(sender As Object, e As EventArgs) Handles BtnModelo.Click
+        FrmModelo.MdiParent = Me
+        PnlMenu.Hide()
+        FrmModelo.Location = New Point(345, 110)
+        FrmModelo.Show()
+    End Sub
+
+    Private Sub BtnMarca_Click(sender As Object, e As EventArgs) Handles BtnMarca.Click
+        FrmMarca.MdiParent = Me
+        PnlMenu.Hide()
+        FrmMarca.Location = New Point(380, 110)
+        FrmMarca.Show()
+    End Sub
+
+    Private Sub BtnComputadora_Click(sender As Object, e As EventArgs) Handles BtnComputadora.Click
+        FrmComputadora.MdiParent = Me
+        PnlMenu.Hide()
+        FrmComputadora.Location = New Point(320, 110)
+        FrmComputadora.Show()
+    End Sub
+
+    Private Sub BtnMantenimiento_Click(sender As Object, e As EventArgs) Handles BtnMantenimiento.Click
+        FrmMantenimiento.MdiParent = Me
+        PnlMenu.Hide()
+        FrmMantenimiento.Location = New Point(280, 110)
+        FrmMantenimiento.Show()
+    End Sub
+
+    Private Sub BtnCapacidadRAM_Click(sender As Object, e As EventArgs) Handles BtnCapacidadRAM.Click
+        FrmCapacidadRAM.MdiParent = Me
+        PnlMenu.Hide()
+        FrmCapacidadRAM.Location = New Point(375, 110)
+        FrmCapacidadRAM.Show()
+    End Sub
+
+    Private Sub BtnCiudad_Click(sender As Object, e As EventArgs) Handles BtnCiudad.Click
+        FrmCiudad.MdiParent = Me
+        PnlMenu.Hide()
+        FrmCiudad.Location = New Point(385, 110)
+        FrmCiudad.Show()
+    End Sub
+
+    Private Sub BtnEmpleado_Click_1(sender As Object, e As EventArgs) Handles BtnEmpleado.Click
+        FrmEmpleado.MdiParent = Me
+        PnlMenu.Hide()
+        FrmEmpleado.Location = New Point(120, 110)
+        FrmEmpleado.Show()
+    End Sub
+
+    Private Sub BtnDepartamento_Click(sender As Object, e As EventArgs) Handles BtnDepartamento.Click
+        FrmDepartamento.MdiParent = Me
+        PnlMenu.Hide()
+        FrmDepartamento.Location = New Point(375, 110)
+        FrmDepartamento.Show()
+    End Sub
+
+    Private Sub BtnProfesion_Click(sender As Object, e As EventArgs) Handles BtnProfesion.Click
+        FrmProfesion.MdiParent = Me
+        PnlMenu.Hide()
+        FrmProfesion.Location = New Point(330, 110)
+        FrmProfesion.Show()
+    End Sub
 End Class

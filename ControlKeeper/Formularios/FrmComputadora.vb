@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class FrmComputadora
+    Public Var As Integer = 0
     Private Sub FrmUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         HabilitarControles(True, False, False, False, False)
         Call MostrarTodasComputadoras()
@@ -357,8 +358,11 @@ Public Class FrmComputadora
     End Sub
 
     Private Sub EliminarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarToolStripMenuItem.Click
-        Call EliminarComputadora()
-        Call MostrarTodasComputadoras()
+        If MessageBox.Show("¿Está seguro de eliminar el registro?", "Control Keeper",
+                           MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.Yes Then
+            Call EliminarComputadora()
+            Call MostrarTodasComputadoras()
+        End If
     End Sub
 
 
@@ -438,5 +442,18 @@ Public Class FrmComputadora
             CboModelo.Enabled = False
         End If
 
+    End Sub
+
+
+    Private Sub DgvComputadora_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvComputadora.CellDoubleClick
+        If Var = 1 Then
+            FrmComputadoraUsuario.LlenarComboBoxSerie()
+            FrmComputadoraUsuario.CboSerie.Text = DgvComputadora.CurrentRow.Cells(0).Value.ToString
+            Me.Close()
+        ElseIf Var = 2 Then
+            FrmSoftwareComputadora.LlenarComboBoxSerie()
+            FrmSoftwareComputadora.CboSerie.Text = DgvComputadora.CurrentRow.Cells(0).Value.ToString
+            Me.Close()
+        End If
     End Sub
 End Class

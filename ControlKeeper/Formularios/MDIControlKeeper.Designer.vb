@@ -29,12 +29,23 @@ Partial Class MDIControlKeeper
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.LblUsuario = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.BtnEmpleado = New System.Windows.Forms.Button()
+        Me.BtnComputadora = New System.Windows.Forms.Button()
         Me.BtnOcultar = New System.Windows.Forms.Button()
         Me.BtnUsuario = New System.Windows.Forms.Button()
+        Me.BtnSoftwareComputadora = New System.Windows.Forms.Button()
+        Me.BtnProfesion = New System.Windows.Forms.Button()
+        Me.BtnModelo = New System.Windows.Forms.Button()
+        Me.BtnMarca = New System.Windows.Forms.Button()
+        Me.BtnMantenimiento = New System.Windows.Forms.Button()
+        Me.BtnCiudad = New System.Windows.Forms.Button()
+        Me.BtnDepartamento = New System.Windows.Forms.Button()
+        Me.BtnEmpleado = New System.Windows.Forms.Button()
+        Me.BtnComputadoraUsuario = New System.Windows.Forms.Button()
+        Me.BtnCapacidadRAM = New System.Windows.Forms.Button()
+        Me.BtnDesarrollador = New System.Windows.Forms.Button()
+        Me.BtnDiscoDuro = New System.Windows.Forms.Button()
+        Me.BtnSoftware = New System.Windows.Forms.Button()
+        Me.BtnTipoSoftware = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.PnlDespliegue = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -42,6 +53,9 @@ Partial Class MDIControlKeeper
         Me.Label54 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PnlMenu = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.PnlDespliegue.SuspendLayout()
@@ -83,64 +97,25 @@ Partial Class MDIControlKeeper
         Me.LblUsuario.Size = New System.Drawing.Size(39, 17)
         Me.LblUsuario.Text = "Status"
         '
-        'Button6
+        'BtnComputadora
         '
-        Me.Button6.BackgroundImage = Global.ControlKeeper.My.Resources.Resources.Imagen21
-        Me.Button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button6.FlatAppearance.BorderSize = 0
-        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.Location = New System.Drawing.Point(105, 356)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(67, 65)
-        Me.Button6.TabIndex = 5
-        Me.ToolTip.SetToolTip(Me.Button6, "Software")
-        Me.Button6.UseVisualStyleBackColor = True
-        '
-        'Button5
-        '
-        Me.Button5.BackgroundImage = Global.ControlKeeper.My.Resources.Resources.Imagen22
-        Me.Button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button5.FlatAppearance.BorderSize = 0
-        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Location = New System.Drawing.Point(78, 180)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(67, 65)
-        Me.Button5.TabIndex = 4
-        Me.ToolTip.SetToolTip(Me.Button5, "Computadora")
-        Me.Button5.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.BackgroundImage = Global.ControlKeeper.My.Resources.Resources.Imagen18
-        Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button4.FlatAppearance.BorderSize = 0
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Location = New System.Drawing.Point(98, 268)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(67, 65)
-        Me.Button4.TabIndex = 3
-        Me.ToolTip.SetToolTip(Me.Button4, "Mantenimiento")
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'BtnEmpleado
-        '
-        Me.BtnEmpleado.BackgroundImage = Global.ControlKeeper.My.Resources.Resources.Imagen16
-        Me.BtnEmpleado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnEmpleado.FlatAppearance.BorderSize = 0
-        Me.BtnEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnEmpleado.Location = New System.Drawing.Point(53, 99)
-        Me.BtnEmpleado.Name = "BtnEmpleado"
-        Me.BtnEmpleado.Size = New System.Drawing.Size(67, 65)
-        Me.BtnEmpleado.TabIndex = 2
-        Me.ToolTip.SetToolTip(Me.BtnEmpleado, "Empleado")
-        Me.BtnEmpleado.UseVisualStyleBackColor = True
+        Me.BtnComputadora.BackgroundImage = Global.ControlKeeper.My.Resources.Resources.Imagen22
+        Me.BtnComputadora.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnComputadora.FlatAppearance.BorderSize = 0
+        Me.BtnComputadora.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnComputadora.Location = New System.Drawing.Point(70, 302)
+        Me.BtnComputadora.Name = "BtnComputadora"
+        Me.BtnComputadora.Size = New System.Drawing.Size(52, 50)
+        Me.BtnComputadora.TabIndex = 4
+        Me.ToolTip.SetToolTip(Me.BtnComputadora, "Computadora")
+        Me.BtnComputadora.UseVisualStyleBackColor = True
         '
         'BtnOcultar
         '
         Me.BtnOcultar.BackColor = System.Drawing.Color.White
         Me.BtnOcultar.BackgroundImage = Global.ControlKeeper.My.Resources.Resources.tachuela2
         Me.BtnOcultar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnOcultar.Location = New System.Drawing.Point(126, 18)
+        Me.BtnOcultar.Location = New System.Drawing.Point(140, 20)
         Me.BtnOcultar.Name = "BtnOcultar"
         Me.BtnOcultar.Size = New System.Drawing.Size(26, 22)
         Me.BtnOcultar.TabIndex = 1
@@ -153,12 +128,194 @@ Partial Class MDIControlKeeper
         Me.BtnUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BtnUsuario.FlatAppearance.BorderSize = 0
         Me.BtnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnUsuario.Location = New System.Drawing.Point(15, 26)
+        Me.BtnUsuario.Location = New System.Drawing.Point(57, 46)
         Me.BtnUsuario.Name = "BtnUsuario"
-        Me.BtnUsuario.Size = New System.Drawing.Size(67, 65)
+        Me.BtnUsuario.Size = New System.Drawing.Size(52, 50)
         Me.BtnUsuario.TabIndex = 0
         Me.ToolTip.SetToolTip(Me.BtnUsuario, "Usuario")
         Me.BtnUsuario.UseVisualStyleBackColor = True
+        '
+        'BtnSoftwareComputadora
+        '
+        Me.BtnSoftwareComputadora.BackgroundImage = Global.ControlKeeper.My.Resources.Resources.SOFTWARECOMPUTADORAbtnn
+        Me.BtnSoftwareComputadora.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnSoftwareComputadora.FlatAppearance.BorderSize = 0
+        Me.BtnSoftwareComputadora.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSoftwareComputadora.Location = New System.Drawing.Point(124, 484)
+        Me.BtnSoftwareComputadora.Name = "BtnSoftwareComputadora"
+        Me.BtnSoftwareComputadora.Size = New System.Drawing.Size(52, 50)
+        Me.BtnSoftwareComputadora.TabIndex = 18
+        Me.ToolTip.SetToolTip(Me.BtnSoftwareComputadora, "Instalación de Software")
+        Me.BtnSoftwareComputadora.UseVisualStyleBackColor = True
+        '
+        'BtnProfesion
+        '
+        Me.BtnProfesion.BackgroundImage = Global.ControlKeeper.My.Resources.Resources.PROFESIONbtnn
+        Me.BtnProfesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnProfesion.FlatAppearance.BorderSize = 0
+        Me.BtnProfesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnProfesion.Location = New System.Drawing.Point(12, 86)
+        Me.BtnProfesion.Name = "BtnProfesion"
+        Me.BtnProfesion.Size = New System.Drawing.Size(52, 50)
+        Me.BtnProfesion.TabIndex = 16
+        Me.ToolTip.SetToolTip(Me.BtnProfesion, "Profesión")
+        Me.BtnProfesion.UseVisualStyleBackColor = True
+        '
+        'BtnModelo
+        '
+        Me.BtnModelo.BackgroundImage = Global.ControlKeeper.My.Resources.Resources.MODELObtnn
+        Me.BtnModelo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnModelo.FlatAppearance.BorderSize = 0
+        Me.BtnModelo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnModelo.Location = New System.Drawing.Point(34, 349)
+        Me.BtnModelo.Name = "BtnModelo"
+        Me.BtnModelo.Size = New System.Drawing.Size(52, 50)
+        Me.BtnModelo.TabIndex = 15
+        Me.ToolTip.SetToolTip(Me.BtnModelo, "Modelo")
+        Me.BtnModelo.UseVisualStyleBackColor = True
+        '
+        'BtnMarca
+        '
+        Me.BtnMarca.BackgroundImage = Global.ControlKeeper.My.Resources.Resources.MARCAbtnn
+        Me.BtnMarca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnMarca.FlatAppearance.BorderSize = 0
+        Me.BtnMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnMarca.Location = New System.Drawing.Point(12, 286)
+        Me.BtnMarca.Name = "BtnMarca"
+        Me.BtnMarca.Size = New System.Drawing.Size(52, 50)
+        Me.BtnMarca.TabIndex = 14
+        Me.ToolTip.SetToolTip(Me.BtnMarca, "Marca")
+        Me.BtnMarca.UseVisualStyleBackColor = True
+        '
+        'BtnMantenimiento
+        '
+        Me.BtnMantenimiento.BackgroundImage = Global.ControlKeeper.My.Resources.Resources.MANTENIMIENTObtnn
+        Me.BtnMantenimiento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnMantenimiento.FlatAppearance.BorderSize = 0
+        Me.BtnMantenimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnMantenimiento.Location = New System.Drawing.Point(128, 286)
+        Me.BtnMantenimiento.Name = "BtnMantenimiento"
+        Me.BtnMantenimiento.Size = New System.Drawing.Size(52, 50)
+        Me.BtnMantenimiento.TabIndex = 13
+        Me.ToolTip.SetToolTip(Me.BtnMantenimiento, "Mantenimiento")
+        Me.BtnMantenimiento.UseVisualStyleBackColor = True
+        '
+        'BtnCiudad
+        '
+        Me.BtnCiudad.BackgroundImage = Global.ControlKeeper.My.Resources.Resources.CIUDADbtnn
+        Me.BtnCiudad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnCiudad.FlatAppearance.BorderSize = 0
+        Me.BtnCiudad.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnCiudad.Location = New System.Drawing.Point(91, 140)
+        Me.BtnCiudad.Name = "BtnCiudad"
+        Me.BtnCiudad.Size = New System.Drawing.Size(52, 50)
+        Me.BtnCiudad.TabIndex = 8
+        Me.ToolTip.SetToolTip(Me.BtnCiudad, "Ciudad")
+        Me.BtnCiudad.UseVisualStyleBackColor = True
+        '
+        'BtnDepartamento
+        '
+        Me.BtnDepartamento.BackgroundImage = Global.ControlKeeper.My.Resources.Resources.DEPARTAMENTObtnn
+        Me.BtnDepartamento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnDepartamento.FlatAppearance.BorderSize = 0
+        Me.BtnDepartamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnDepartamento.Location = New System.Drawing.Point(29, 140)
+        Me.BtnDepartamento.Name = "BtnDepartamento"
+        Me.BtnDepartamento.Size = New System.Drawing.Size(52, 50)
+        Me.BtnDepartamento.TabIndex = 9
+        Me.ToolTip.SetToolTip(Me.BtnDepartamento, "Departamento")
+        Me.BtnDepartamento.UseVisualStyleBackColor = True
+        '
+        'BtnEmpleado
+        '
+        Me.BtnEmpleado.BackgroundImage = Global.ControlKeeper.My.Resources.Resources.EMPLEADObtnn
+        Me.BtnEmpleado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnEmpleado.FlatAppearance.BorderSize = 0
+        Me.BtnEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnEmpleado.Location = New System.Drawing.Point(108, 86)
+        Me.BtnEmpleado.Name = "BtnEmpleado"
+        Me.BtnEmpleado.Size = New System.Drawing.Size(52, 50)
+        Me.BtnEmpleado.TabIndex = 11
+        Me.ToolTip.SetToolTip(Me.BtnEmpleado, "Empleado")
+        Me.BtnEmpleado.UseVisualStyleBackColor = True
+        '
+        'BtnComputadoraUsuario
+        '
+        Me.BtnComputadoraUsuario.BackgroundImage = Global.ControlKeeper.My.Resources.Resources.CCOMPUTADORAUSUARIObtnn
+        Me.BtnComputadoraUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnComputadoraUsuario.FlatAppearance.BorderSize = 0
+        Me.BtnComputadoraUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnComputadoraUsuario.Location = New System.Drawing.Point(74, 449)
+        Me.BtnComputadoraUsuario.Name = "BtnComputadoraUsuario"
+        Me.BtnComputadoraUsuario.Size = New System.Drawing.Size(52, 50)
+        Me.BtnComputadoraUsuario.TabIndex = 7
+        Me.ToolTip.SetToolTip(Me.BtnComputadoraUsuario, "Asignación de Computadora")
+        Me.BtnComputadoraUsuario.UseVisualStyleBackColor = True
+        '
+        'BtnCapacidadRAM
+        '
+        Me.BtnCapacidadRAM.BackgroundImage = Global.ControlKeeper.My.Resources.Resources.CAPACIDADRAMbtnn
+        Me.BtnCapacidadRAM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnCapacidadRAM.FlatAppearance.BorderSize = 0
+        Me.BtnCapacidadRAM.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnCapacidadRAM.Location = New System.Drawing.Point(70, 246)
+        Me.BtnCapacidadRAM.Name = "BtnCapacidadRAM"
+        Me.BtnCapacidadRAM.Size = New System.Drawing.Size(52, 50)
+        Me.BtnCapacidadRAM.TabIndex = 6
+        Me.ToolTip.SetToolTip(Me.BtnCapacidadRAM, "Capacidad RAM")
+        Me.BtnCapacidadRAM.UseVisualStyleBackColor = True
+        '
+        'BtnDesarrollador
+        '
+        Me.BtnDesarrollador.BackgroundImage = Global.ControlKeeper.My.Resources.Resources.DESARROLLADORbtnn
+        Me.BtnDesarrollador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnDesarrollador.FlatAppearance.BorderSize = 0
+        Me.BtnDesarrollador.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnDesarrollador.Location = New System.Drawing.Point(42, 535)
+        Me.BtnDesarrollador.Name = "BtnDesarrollador"
+        Me.BtnDesarrollador.Size = New System.Drawing.Size(52, 50)
+        Me.BtnDesarrollador.TabIndex = 10
+        Me.ToolTip.SetToolTip(Me.BtnDesarrollador, "Desarrollador")
+        Me.BtnDesarrollador.UseVisualStyleBackColor = True
+        '
+        'BtnDiscoDuro
+        '
+        Me.BtnDiscoDuro.BackgroundImage = Global.ControlKeeper.My.Resources.Resources.CAPACIDADISCODURObtnn
+        Me.BtnDiscoDuro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnDiscoDuro.FlatAppearance.BorderSize = 0
+        Me.BtnDiscoDuro.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnDiscoDuro.Location = New System.Drawing.Point(116, 347)
+        Me.BtnDiscoDuro.Name = "BtnDiscoDuro"
+        Me.BtnDiscoDuro.Size = New System.Drawing.Size(52, 50)
+        Me.BtnDiscoDuro.TabIndex = 5
+        Me.ToolTip.SetToolTip(Me.BtnDiscoDuro, "Capacidad Disco Duro")
+        Me.BtnDiscoDuro.UseVisualStyleBackColor = True
+        '
+        'BtnSoftware
+        '
+        Me.BtnSoftware.BackgroundImage = Global.ControlKeeper.My.Resources.Resources.SOFTWAREbtnnnn
+        Me.BtnSoftware.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnSoftware.FlatAppearance.BorderSize = 0
+        Me.BtnSoftware.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSoftware.Location = New System.Drawing.Point(26, 483)
+        Me.BtnSoftware.Name = "BtnSoftware"
+        Me.BtnSoftware.Size = New System.Drawing.Size(52, 50)
+        Me.BtnSoftware.TabIndex = 17
+        Me.ToolTip.SetToolTip(Me.BtnSoftware, "Software")
+        Me.BtnSoftware.UseVisualStyleBackColor = True
+        '
+        'BtnTipoSoftware
+        '
+        Me.BtnTipoSoftware.BackgroundImage = Global.ControlKeeper.My.Resources.Resources.TIPOSOFTWAREbtnn
+        Me.BtnTipoSoftware.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnTipoSoftware.FlatAppearance.BorderSize = 0
+        Me.BtnTipoSoftware.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnTipoSoftware.Location = New System.Drawing.Point(103, 535)
+        Me.BtnTipoSoftware.Name = "BtnTipoSoftware"
+        Me.BtnTipoSoftware.Size = New System.Drawing.Size(52, 50)
+        Me.BtnTipoSoftware.TabIndex = 19
+        Me.ToolTip.SetToolTip(Me.BtnTipoSoftware, "Tipo Software")
+        Me.BtnTipoSoftware.UseVisualStyleBackColor = True
         '
         'Panel3
         '
@@ -230,16 +387,60 @@ Partial Class MDIControlKeeper
         Me.PnlMenu.BackColor = System.Drawing.Color.Transparent
         Me.PnlMenu.BackgroundImage = Global.ControlKeeper.My.Resources.Resources.dar
         Me.PnlMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PnlMenu.Controls.Add(Me.Button6)
-        Me.PnlMenu.Controls.Add(Me.Button5)
-        Me.PnlMenu.Controls.Add(Me.Button4)
-        Me.PnlMenu.Controls.Add(Me.BtnEmpleado)
-        Me.PnlMenu.Controls.Add(Me.BtnOcultar)
+        Me.PnlMenu.Controls.Add(Me.Label3)
+        Me.PnlMenu.Controls.Add(Me.Label2)
+        Me.PnlMenu.Controls.Add(Me.Label1)
         Me.PnlMenu.Controls.Add(Me.BtnUsuario)
+        Me.PnlMenu.Controls.Add(Me.BtnSoftwareComputadora)
+        Me.PnlMenu.Controls.Add(Me.BtnProfesion)
+        Me.PnlMenu.Controls.Add(Me.BtnModelo)
+        Me.PnlMenu.Controls.Add(Me.BtnMarca)
+        Me.PnlMenu.Controls.Add(Me.BtnMantenimiento)
+        Me.PnlMenu.Controls.Add(Me.BtnCiudad)
+        Me.PnlMenu.Controls.Add(Me.BtnDepartamento)
+        Me.PnlMenu.Controls.Add(Me.BtnEmpleado)
+        Me.PnlMenu.Controls.Add(Me.BtnComputadoraUsuario)
+        Me.PnlMenu.Controls.Add(Me.BtnCapacidadRAM)
+        Me.PnlMenu.Controls.Add(Me.BtnDesarrollador)
+        Me.PnlMenu.Controls.Add(Me.BtnDiscoDuro)
+        Me.PnlMenu.Controls.Add(Me.BtnComputadora)
+        Me.PnlMenu.Controls.Add(Me.BtnOcultar)
+        Me.PnlMenu.Controls.Add(Me.BtnSoftware)
+        Me.PnlMenu.Controls.Add(Me.BtnTipoSoftware)
         Me.PnlMenu.Location = New System.Drawing.Point(30, 110)
         Me.PnlMenu.Name = "PnlMenu"
-        Me.PnlMenu.Size = New System.Drawing.Size(207, 619)
+        Me.PnlMenu.Size = New System.Drawing.Size(226, 619)
         Me.PnlMenu.TabIndex = 10
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(52, 24)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(57, 19)
+        Me.Label3.TabIndex = 22
+        Me.Label3.Text = "Perfiles"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(68, 430)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(67, 19)
+        Me.Label2.TabIndex = 21
+        Me.Label2.Text = "Software"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Comic Sans MS", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(54, 224)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(89, 19)
+        Me.Label1.TabIndex = 20
+        Me.Label1.Text = "Computadora"
         '
         'MDIControlKeeper
         '
@@ -273,6 +474,7 @@ Partial Class MDIControlKeeper
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PnlMenu.ResumeLayout(False)
+        Me.PnlMenu.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -287,12 +489,26 @@ Partial Class MDIControlKeeper
     Friend WithEvents BtnUsuario As Button
     Friend WithEvents PnlDespliegue As Panel
     Friend WithEvents BtnOcultar As Button
-    Friend WithEvents BtnEmpleado As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button6 As Button
+    Friend WithEvents BtnComputadora As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents PnlMenu As Panel
     Friend WithEvents ArchivoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents BtnDiscoDuro As Button
+    Friend WithEvents BtnCapacidadRAM As Button
+    Friend WithEvents BtnComputadoraUsuario As Button
+    Friend WithEvents BtnCiudad As Button
+    Friend WithEvents BtnDepartamento As Button
+    Friend WithEvents BtnDesarrollador As Button
+    Friend WithEvents BtnEmpleado As Button
+    Friend WithEvents BtnMantenimiento As Button
+    Friend WithEvents BtnMarca As Button
+    Friend WithEvents BtnModelo As Button
+    Friend WithEvents BtnProfesion As Button
+    Friend WithEvents BtnSoftware As Button
+    Friend WithEvents BtnSoftwareComputadora As Button
+    Friend WithEvents BtnTipoSoftware As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
 End Class

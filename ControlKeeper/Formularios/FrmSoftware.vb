@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class FrmSoftware
 
-
+    Public var As Integer = 0
     Private Sub FrmSoftware_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         HabilitarControles(True, False, False, False, False)
         Call MostrarTodoSoftware()
@@ -163,10 +163,10 @@ Public Class FrmSoftware
         TxtCodigoSoftware.Text = ""
         TxtDescripcion.Text = ""
         TxtNombreSoftware.Text = ""
-        CboEditor.Text = ""
-        CboTipoSoftware.Text = ""
+        CboEditor.Text = Nothing
         TxtTamaño.Text = ""
         TxtVersion.Text = ""
+        CboTipoSoftware.Text = Nothing
     End Sub
 
     Private Sub EditarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditarToolStripMenuItem.Click
@@ -472,45 +472,11 @@ Public Class FrmSoftware
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    Private Sub DgvSoftware_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvSoftware.CellDoubleClick
+        If var = 1 Then
+            FrmSoftwareComputadora.LlenarComboBoxSoftware()
+            FrmSoftwareComputadora.CboSerie.Text = DgvSoftware.CurrentRow.Cells(1).Value.ToString
+            Me.Close()
+        End If
+    End Sub
 End Class

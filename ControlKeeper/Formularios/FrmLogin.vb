@@ -49,16 +49,23 @@ Public Class FrmLogin
                     .Parameters.Add("@Contrasena", SqlDbType.NVarChar, 100).Value = PasswordTextBox.Text.Trim
                 End With
                 Dim LectorUsuario As SqlDataReader = cmd.ExecuteReader
-                If LectorUsuario.HasRows Then
-                    Me.Hide()
-                    MDIControlKeeper.LblUsuario.Text = UsernameTextBox.Text.Trim
-                    MDIControlKeeper.Show()
+                If LectorUsuario.Read Then
+                    If LectorUsuario("Estado").ToString = "Activo" Then
+                        Me.Hide()
+                        MDIControlKeeper.LblUsuario.Text = UsernameTextBox.Text.Trim
+                        MDIControlKeeper.Show()
+                    Else
+                        MsgBox("Empleado Inactivo", MsgBoxStyle.Exclamation, "Control Keeper")
+                    End If
+
                 Else
                     MsgBox("Nombre de usuario o contraseña incorrecta", MsgBoxStyle.Critical, "Control Keeper")
                 End If
             Catch ex As Exception
-                MsgBox(ex.Message)
+                MsgBox(ex.ToString)
             End Try
         End Using
     End Sub
+
+
 End Class

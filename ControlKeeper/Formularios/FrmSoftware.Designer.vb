@@ -361,6 +361,7 @@ Partial Class FrmSoftware
         Me.Controls.Add(Me.DgvSoftware)
         Me.Controls.Add(Me.PnlSoftware)
         Me.Name = "FrmSoftware"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Software"
         CType(Me.DgvSoftware, System.ComponentModel.ISupportInitialize).EndInit()
         Me.CMSSoftware.ResumeLayout(False)

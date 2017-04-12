@@ -151,12 +151,12 @@ Public Class FrmMantenimiento
     Private Sub EditarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditarToolStripMenuItem.Click
         Call HabilitarControles(False, False, True, True, True)
 
-        TxtIdMantenimiento.Text = DgvMantenimiento.CurrentRow.Cells(0).FormattedValue
-        TxtDescripcion.Text = DgvMantenimiento.CurrentRow.Cells(1).FormattedValue
-        DtpHoraInicio.Text = DgvMantenimiento.CurrentRow.Cells(2).FormattedValue
-        DtpHoraFinalizacion.Text = DgvMantenimiento.CurrentRow.Cells(3).FormattedValue
-        DtpFechaMantenimiento.Text = DgvMantenimiento.CurrentRow.Cells(4).FormattedValue
-        CboUsuario.Text = DgvMantenimiento.CurrentRow.Cells(5).FormattedValue
+        TxtIdMantenimiento.Text = DgvMantenimiento.CurrentRow.Cells(0).Value.ToString
+        TxtDescripcion.Text = DgvMantenimiento.CurrentRow.Cells(1).Value.ToString
+        DtpHoraInicio.Text = DgvMantenimiento.CurrentRow.Cells(2).Value.ToString
+        DtpHoraFinalizacion.Text = DgvMantenimiento.CurrentRow.Cells(3).Value.ToString
+        DtpFechaMantenimiento.Text = DgvMantenimiento.CurrentRow.Cells(4).Value.ToString
+        CboUsuario.Text = DgvMantenimiento.CurrentRow.Cells(5).Value.ToString
     End Sub
 
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
@@ -222,7 +222,10 @@ Public Class FrmMantenimiento
         Call MostrarTodosMantenimiento()
     End Sub
     Private Sub EliminarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarToolStripMenuItem.Click
-        Call EliminarMantenimiento()
-        Call MostrarTodosMantenimiento()
+        If MessageBox.Show("¿Está seguro de eliminar el registro?", "Control Keeper",
+                           MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.Yes Then
+            Call EliminarMantenimiento()
+            Call MostrarTodosMantenimiento()
+        End If
     End Sub
 End Class

@@ -340,6 +340,7 @@ Partial Class FrmMantenimiento
         Me.Controls.Add(Me.DgvMantenimiento)
         Me.Controls.Add(Me.PlMantemiento)
         Me.Name = "FrmMantenimiento"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Mantenimiento"
         CType(Me.DgvMantenimiento, System.ComponentModel.ISupportInitialize).EndInit()
         Me.CmsMantenimiento.ResumeLayout(False)

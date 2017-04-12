@@ -250,6 +250,7 @@ Partial Class FrmDepartamento
         Me.Controls.Add(Me.PnlDepartamento)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "FrmDepartamento"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Gestión de Departamento"
         CType(Me.DgvDepartamento, System.ComponentModel.ISupportInitialize).EndInit()
         Me.CMSDepartamento.ResumeLayout(False)
