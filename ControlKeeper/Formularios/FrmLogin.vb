@@ -50,14 +50,19 @@ Public Class FrmLogin
                 End With
                 Dim LectorUsuario As SqlDataReader = cmd.ExecuteReader
                 If LectorUsuario.Read Then
-                    If LectorUsuario("Estado").ToString = "Activo" Then
-                        Me.Hide()
-                        MDIControlKeeper.LblUsuario.Text = UsernameTextBox.Text.Trim
-                        MDIControlKeeper.Show()
+                    If LectorUsuario("TipoUsuario").ToString = "Administrador" Then
+                        If LectorUsuario("Estado").ToString = "Activo" Then
+                            PasswordTextBox.Clear()
+                            UsernameTextBox.Clear()
+                            Me.Hide()
+                            MDIControlKeeper.LblUsuario.Text = UsernameTextBox.Text.Trim
+                            MDIControlKeeper.Show()
+                        Else
+                            MsgBox("Empleado Inactivo", MsgBoxStyle.Critical, "Control Keeper")
+                        End If
                     Else
-                        MsgBox("Empleado Inactivo", MsgBoxStyle.Exclamation, "Control Keeper")
+                        MsgBox("Este usuario no tiene acceso al sistema", MsgBoxStyle.Critical, "Control Keeper")
                     End If
-
                 Else
                     MsgBox("Nombre de usuario o contraseña incorrecta", MsgBoxStyle.Critical, "Control Keeper")
                 End If
@@ -73,4 +78,6 @@ Public Class FrmLogin
             BtnIniciar.PerformClick()
         End If
     End Sub
+
+
 End Class

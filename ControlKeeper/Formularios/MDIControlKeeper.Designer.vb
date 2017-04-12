@@ -26,6 +26,7 @@ Partial Class MDIControlKeeper
         Me.components = New System.ComponentModel.Container()
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RegistrosAuditoriaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.LblUsuario = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
@@ -56,7 +57,7 @@ Partial Class MDIControlKeeper
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.RegistrosAuditoriaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.PnlDespliegue.SuspendLayout()
@@ -79,10 +80,16 @@ Partial Class MDIControlKeeper
         '
         'ArchivoToolStripMenuItem
         '
-        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RegistrosAuditoriaToolStripMenuItem})
+        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RegistrosAuditoriaToolStripMenuItem, Me.CerrarSesiónToolStripMenuItem})
         Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
         Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
         Me.ArchivoToolStripMenuItem.Text = "&Archivo"
+        '
+        'RegistrosAuditoriaToolStripMenuItem
+        '
+        Me.RegistrosAuditoriaToolStripMenuItem.Name = "RegistrosAuditoriaToolStripMenuItem"
+        Me.RegistrosAuditoriaToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.RegistrosAuditoriaToolStripMenuItem.Text = "Registros Auditoria"
         '
         'StatusStrip
         '
@@ -444,11 +451,11 @@ Partial Class MDIControlKeeper
         Me.Label1.TabIndex = 20
         Me.Label1.Text = "Computadora"
         '
-        'RegistrosAuditoriaToolStripMenuItem
+        'CerrarSesiónToolStripMenuItem
         '
-        Me.RegistrosAuditoriaToolStripMenuItem.Name = "RegistrosAuditoriaToolStripMenuItem"
-        Me.RegistrosAuditoriaToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
-        Me.RegistrosAuditoriaToolStripMenuItem.Text = "Registros Auditoria"
+        Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
+        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión"
         '
         'MDIControlKeeper
         '
@@ -520,4 +527,5 @@ Partial Class MDIControlKeeper
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents RegistrosAuditoriaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CerrarSesiónToolStripMenuItem As ToolStripMenuItem
 End Class

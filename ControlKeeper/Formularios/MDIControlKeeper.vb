@@ -162,4 +162,10 @@ Public Class MDIControlKeeper
     Private Sub MDIControlKeeper_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
         Application.Exit()
     End Sub
+
+    Private Sub CerrarSesiónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarSesiónToolStripMenuItem.Click
+        FrmLogin.Show()
+        FrmLogin.UsernameTextBox.Focus()
+        Me.Hide()
+    End Sub
 End Class
