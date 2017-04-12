@@ -42,6 +42,8 @@ Partial Class FrmDesarrollador
         Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.BtnModificar = New System.Windows.Forms.Button()
         Me.BtnNuevo = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TxtBusqueda = New System.Windows.Forms.TextBox()
         CType(Me.DgvDesarrollador, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CMSDesarrollador.SuspendLayout()
         Me.PnlDesarrollador.SuspendLayout()
@@ -57,7 +59,7 @@ Partial Class FrmDesarrollador
         Me.DgvDesarrollador.BackgroundColor = System.Drawing.Color.White
         Me.DgvDesarrollador.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvDesarrollador.ContextMenuStrip = Me.CMSDesarrollador
-        Me.DgvDesarrollador.Location = New System.Drawing.Point(16, 284)
+        Me.DgvDesarrollador.Location = New System.Drawing.Point(15, 317)
         Me.DgvDesarrollador.Name = "DgvDesarrollador"
         Me.DgvDesarrollador.ReadOnly = True
         Me.DgvDesarrollador.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -257,12 +259,31 @@ Partial Class FrmDesarrollador
         Me.BtnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnNuevo.UseVisualStyleBackColor = False
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Comic Sans MS", 11.25!)
+        Me.Label1.Location = New System.Drawing.Point(19, 289)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(78, 20)
+        Me.Label1.TabIndex = 73
+        Me.Label1.Text = "Busqueda "
+        '
+        'TxtBusqueda
+        '
+        Me.TxtBusqueda.Location = New System.Drawing.Point(98, 291)
+        Me.TxtBusqueda.Name = "TxtBusqueda"
+        Me.TxtBusqueda.Size = New System.Drawing.Size(518, 20)
+        Me.TxtBusqueda.TabIndex = 72
+        '
         'FrmDesarrollador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(636, 508)
+        Me.ClientSize = New System.Drawing.Size(636, 532)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.TxtBusqueda)
         Me.Controls.Add(Me.BtnCancelar)
         Me.Controls.Add(Me.BtnGuardar)
         Me.Controls.Add(Me.BtnModificar)
@@ -281,6 +302,7 @@ Partial Class FrmDesarrollador
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents PictureBox6 As PictureBox
@@ -301,4 +323,6 @@ Partial Class FrmDesarrollador
     Friend WithEvents CMSDesarrollador As ContextMenuStrip
     Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label1 As Label
+    Friend WithEvents TxtBusqueda As TextBox
 End Class

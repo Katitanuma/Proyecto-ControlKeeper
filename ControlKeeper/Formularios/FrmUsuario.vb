@@ -1,6 +1,28 @@
 ﻿Imports System.Data.SqlClient
 Public Class FrmUsuario
     Public Var As Integer = 0
+
+    Private Function ValidarUsuario() As Boolean
+        Dim Estado As Boolean
+        If TxtUsuario.Text = Nothing Then
+            MsgBox("Ingrese el nombre de usuario", MsgBoxStyle.Critical, "Control Keeper")
+            TxtUsuario.Focus()
+            Estado = False
+        ElseIf TxtContrasena.Text = Nothing Then
+            MsgBox("Seleccione el contraseña", MsgBoxStyle.Critical, "Control Keeper")
+            TxtContrasena.Focus()
+            Estado = False
+        ElseIf CboTipoUsuario.Text = Nothing Then
+            MsgBox("Seleccione el tipo de usuario", MsgBoxStyle.Critical, "Control Keeper")
+            Estado = False
+        ElseIf CboNombreEmpleado.Text = Nothing Then
+            MsgBox("Seleccione el empleado", MsgBoxStyle.Critical, "Control Keeper")
+            Estado = False
+        Else
+            Estado = True
+        End If
+        Return Estado
+    End Function
     Private Sub FrmUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         HabilitarControles(True, False, False, False, False)
         Call MostrarTodosUsuarios()
@@ -137,14 +159,17 @@ Public Class FrmUsuario
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
-        If ExisteNombreUsuario() = False Then
-            Call GuardarUsuario()
-            Call MostrarTodosUsuarios()
-            Call HabilitarControles(True, False, False, False, False)
-            Call Limpiar()
-        Else
-            MessageBox.Show("Ya se encuentra registrado ese usuario", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+        If ValidarUsuario() = True Then
+            If ExisteNombreUsuario() = False Then
+                Call GuardarUsuario()
+                Call MostrarTodosUsuarios()
+                Call HabilitarControles(True, False, False, False, False)
+                Call Limpiar()
+            Else
+                MessageBox.Show("Ya se encuentra registrado ese usuario", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            End If
         End If
+
 
     End Sub
     Private Sub Limpiar()
@@ -224,10 +249,12 @@ Public Class FrmUsuario
     End Sub
 
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
-        Call EditarUsuario()
-        Call HabilitarControles(True, False, False, False, False)
-        Call Limpiar()
-        Call MostrarTodosUsuarios()
+        If ValidarUsuario() = True Then
+            Call EditarUsuario()
+            Call HabilitarControles(True, False, False, False, False)
+            Call Limpiar()
+            Call MostrarTodosUsuarios()
+        End If
     End Sub
 
     Private Sub EliminarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarToolStripMenuItem.Click
@@ -315,6 +342,43 @@ Public Class FrmUsuario
             FrmSoftwareComputadora.LlenarComboBoxUsuario()
             FrmSoftwareComputadora.CboUsuario.Text = DgvUsuario.CurrentRow.Cells(1).Value.ToString
             Me.Close()
+        End If
+    End Sub
+    Private Sub BusquedaInteligenteUsuario()
+        If Con.State = ConnectionState.Open Then
+            Con.Close()
+        End If
+
+        Using cmd As New SqlCommand
+            Try
+                Con.Open()
+                With cmd
+                    .CommandText = "Sp_BusquedaUsuario"
+                    .CommandType = CommandType.StoredProcedure
+                    .Parameters.Add("@Parametro", SqlDbType.NVarChar, 50).Value = TxtBusqueda.Text.Trim
+                    .Connection = Con
+                End With
+
+                Dim AdaptadorBusqueda As New SqlDataAdapter(cmd)
+                Dim dt As New DataTable
+                AdaptadorBusqueda.Fill(dt)
+                DgvUsuario.DataSource = dt
+                DgvUsuario.Columns(4).Visible = False
+
+            Catch ex As Exception
+                MessageBox.Show("Error al mostrar los datos " + ex.Message)
+            Finally
+                Con.Close()
+            End Try
+
+        End Using
+    End Sub
+
+    Private Sub TxtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles TxtBusqueda.TextChanged
+        If TxtBusqueda.Text = Nothing Then
+            MostrarTodosUsuarios()
+        Else
+            BusquedaInteligenteUsuario()
         End If
     End Sub
 End Class

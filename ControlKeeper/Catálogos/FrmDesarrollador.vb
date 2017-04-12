@@ -306,18 +306,10 @@ Public Class FrmDesarrollador
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
 
         If ValidarDesarrollador() = True Then
-
-            If ExisteNombreDesarrollador() = False Then
-
-                Call HabilitarControles(True, False, False, False, False)
-                Call ActualizarDesarrollador()
-                Call MostrarTodoDesarrollador()
-                Call LimpiarDesarrollador()
-
-            Else
-                MessageBox.Show("Ese desarrollador o página web ya se encuentran almacenados", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-
-            End If
+            Call HabilitarControles(True, False, False, False, False)
+            Call ActualizarDesarrollador()
+            Call MostrarTodoDesarrollador()
+            Call LimpiarDesarrollador()
 
         End If
     End Sub
@@ -343,6 +335,44 @@ Public Class FrmDesarrollador
             Call HabilitarControles(True, False, False, False, False)
             Call EliminarDesarrollador()
             Call MostrarTodoDesarrollador()
+        End If
+    End Sub
+
+    Private Sub BusquedaInteligenteDesarrollador()
+        If Con.State = ConnectionState.Open Then
+            Con.Close()
+        End If
+
+        Using cmd As New SqlCommand
+            Try
+                Con.Open()
+                With cmd
+                    .CommandText = "Sp_BusquedaDesarrollador"
+                    .CommandType = CommandType.StoredProcedure
+                    .Parameters.Add("@Parametro", SqlDbType.NVarChar, 50).Value = TxtBusqueda.Text.Trim
+                    .Connection = Con
+                End With
+
+                Dim AdaptadorBusqueda As New SqlDataAdapter(cmd)
+                Dim dt As New DataTable
+                AdaptadorBusqueda.Fill(dt)
+                DgvDesarrollador.DataSource = dt
+
+
+            Catch ex As Exception
+                MessageBox.Show("Error al mostrar los datos " + ex.Message)
+            Finally
+                Con.Close()
+            End Try
+
+        End Using
+    End Sub
+
+    Private Sub TxtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles TxtBusqueda.TextChanged
+        If TxtBusqueda.Text = Nothing Then
+            MostrarTodoDesarrollador()
+        Else
+            BusquedaInteligenteDesarrollador()
         End If
     End Sub
 End Class

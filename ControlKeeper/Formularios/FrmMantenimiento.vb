@@ -1,5 +1,20 @@
 ﻿Imports System.Data.SqlClient
 Public Class FrmMantenimiento
+
+    Private Function ValidarMantenimiento() As Boolean
+        Dim Estado As Boolean
+        If TxtDescripcion.Text = Nothing Then
+            MsgBox("Ingrese la descripción del mantenimiento", MsgBoxStyle.Critical, "Control Keeper")
+            TxtDescripcion.Focus()
+            Estado = False
+        ElseIf CboUsuario.Text = Nothing Then
+            MsgBox("Seleccione el usuario que realizo el mantenimiento", MsgBoxStyle.Critical, "Control Keeper")
+            Estado = False
+        Else
+            Estado = True
+        End If
+        Return Estado
+    End Function
     Private Sub FrmUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         HabilitarControles(True, False, False, False, False)
         Call MostrarTodosMantenimiento()
@@ -135,10 +150,13 @@ Public Class FrmMantenimiento
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
-        Call GuardarMantenimiento()
-        Call MostrarTodosMantenimiento()
-        Call HabilitarControles(True, False, False, False, False)
-        Call Limpiar()
+        If ValidarMantenimiento() = True Then
+            Call GuardarMantenimiento()
+            Call MostrarTodosMantenimiento()
+            Call HabilitarControles(True, False, False, False, False)
+            Call Limpiar()
+        End If
+
     End Sub
     Private Sub Limpiar()
         TxtIdMantenimiento.Text = Nothing
@@ -216,16 +234,55 @@ Public Class FrmMantenimiento
 
     End Sub
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
-        Call EditarMantenimiento()
-        Call HabilitarControles(True, False, False, False, False)
-        Call Limpiar()
-        Call MostrarTodosMantenimiento()
+        If ValidarMantenimiento() = True Then
+            Call EditarMantenimiento()
+            Call HabilitarControles(True, False, False, False, False)
+            Call Limpiar()
+            Call MostrarTodosMantenimiento()
+        End If
     End Sub
     Private Sub EliminarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarToolStripMenuItem.Click
         If MessageBox.Show("¿Está seguro de eliminar el registro?", "Control Keeper",
                            MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.Yes Then
             Call EliminarMantenimiento()
             Call MostrarTodosMantenimiento()
+        End If
+    End Sub
+    Private Sub BusquedaInteligenteMantenimiento()
+        If Con.State = ConnectionState.Open Then
+            Con.Close()
+        End If
+
+        Using cmd As New SqlCommand
+            Try
+                Con.Open()
+                With cmd
+                    .CommandText = "Sp_BusquedaMantenimiento"
+                    .CommandType = CommandType.StoredProcedure
+                    .Parameters.Add("@Parametro", SqlDbType.NVarChar, 50).Value = TxtBusqueda.Text.Trim
+                    .Connection = Con
+                End With
+
+                Dim AdaptadorBusqueda As New SqlDataAdapter(cmd)
+                Dim dt As New DataTable
+                AdaptadorBusqueda.Fill(dt)
+                DgvMantenimiento.DataSource = dt
+
+
+            Catch ex As Exception
+                MessageBox.Show("Error al mostrar los datos " + ex.Message)
+            Finally
+                Con.Close()
+            End Try
+
+        End Using
+    End Sub
+
+    Private Sub TxtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles TxtBusqueda.TextChanged
+        If TxtBusqueda.Text = Nothing Then
+            MostrarTodosMantenimiento()
+        Else
+            BusquedaInteligenteMantenimiento()
         End If
     End Sub
 End Class

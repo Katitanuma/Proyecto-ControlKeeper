@@ -43,6 +43,8 @@ Partial Class FrmCiudad
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label45 = New System.Windows.Forms.Label()
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TxtBusqueda = New System.Windows.Forms.TextBox()
         CType(Me.DgvCiudad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CMSCiudad.SuspendLayout()
         Me.PnlCiudad.SuspendLayout()
@@ -58,11 +60,11 @@ Partial Class FrmCiudad
         Me.DgvCiudad.BackgroundColor = System.Drawing.Color.White
         Me.DgvCiudad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvCiudad.ContextMenuStrip = Me.CMSCiudad
-        Me.DgvCiudad.Location = New System.Drawing.Point(23, 250)
+        Me.DgvCiudad.Location = New System.Drawing.Point(23, 275)
         Me.DgvCiudad.Name = "DgvCiudad"
         Me.DgvCiudad.ReadOnly = True
         Me.DgvCiudad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvCiudad.Size = New System.Drawing.Size(479, 203)
+        Me.DgvCiudad.Size = New System.Drawing.Size(479, 207)
         Me.DgvCiudad.TabIndex = 72
         '
         'CMSCiudad
@@ -269,12 +271,31 @@ Partial Class FrmCiudad
         Me.PictureBox10.TabIndex = 39
         Me.PictureBox10.TabStop = False
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Comic Sans MS", 11.25!)
+        Me.Label2.Location = New System.Drawing.Point(20, 247)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(78, 20)
+        Me.Label2.TabIndex = 78
+        Me.Label2.Text = "Busqueda "
+        '
+        'TxtBusqueda
+        '
+        Me.TxtBusqueda.Location = New System.Drawing.Point(99, 249)
+        Me.TxtBusqueda.Name = "TxtBusqueda"
+        Me.TxtBusqueda.Size = New System.Drawing.Size(403, 20)
+        Me.TxtBusqueda.TabIndex = 77
+        '
         'FrmCiudad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(527, 467)
+        Me.ClientSize = New System.Drawing.Size(527, 494)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.TxtBusqueda)
         Me.Controls.Add(Me.BtnCancelar)
         Me.Controls.Add(Me.BtnGuardar)
         Me.Controls.Add(Me.BtnModificar)
@@ -293,6 +314,7 @@ Partial Class FrmCiudad
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -315,4 +337,6 @@ Partial Class FrmCiudad
     Friend WithEvents CMSCiudad As ContextMenuStrip
     Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label2 As Label
+    Friend WithEvents TxtBusqueda As TextBox
 End Class

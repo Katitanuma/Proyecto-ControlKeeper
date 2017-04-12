@@ -174,9 +174,9 @@ Public Class FrmSoftware
         TxtCodigoSoftware.Text = DgvSoftware.CurrentRow.Cells(0).Value
         TxtNombreSoftware.Text = DgvSoftware.CurrentRow.Cells(1).Value.ToString
         TxtDescripcion.Text = DgvSoftware.CurrentRow.Cells(2).Value.ToString
-        CboEditor.Text = DgvSoftware.CurrentRow.Cells(6).Value.ToString
+        CboEditor.Text = DgvSoftware.CurrentRow.Cells(5).Value.ToString.Trim
         TxtVersion.Text = DgvSoftware.CurrentRow.Cells(3).Value.ToString
-        CboTipoSoftware.Text = DgvSoftware.CurrentRow.Cells(5).Value.ToString
+        CboTipoSoftware.Text = DgvSoftware.CurrentRow.Cells(6).Value.ToString.Trim
         TxtTamaño.Text = DgvSoftware.CurrentRow.Cells(4).Value.ToString
     End Sub
 
@@ -245,18 +245,10 @@ Public Class FrmSoftware
 
         If ValidarSoftware() = True Then
 
-            If ExisteNombreSoftware() = False Then
-
-                Call EditarSoftware()
-                Call HabilitarControles(True, False, False, False, False)
-                Call Limpiar()
-                Call MostrarTodoSoftware()
-
-            Else
-                MessageBox.Show("Ya se encuentra registrado ese software", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-
-            End If
-
+            Call EditarSoftware()
+            Call HabilitarControles(True, False, False, False, False)
+            Call Limpiar()
+            Call MostrarTodoSoftware()
         End If
     End Sub
 
@@ -475,8 +467,48 @@ Public Class FrmSoftware
     Private Sub DgvSoftware_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvSoftware.CellDoubleClick
         If var = 1 Then
             FrmSoftwareComputadora.LlenarComboBoxSoftware()
-            FrmSoftwareComputadora.CboSerie.Text = DgvSoftware.CurrentRow.Cells(1).Value.ToString
+            FrmSoftwareComputadora.CboSoftware.Text = DgvSoftware.CurrentRow.Cells(1).Value.ToString
             Me.Close()
         End If
     End Sub
+
+    Private Sub BusquedaInteligenteSoftware()
+        If Con.State = ConnectionState.Open Then
+            Con.Close()
+        End If
+
+        Using cmd As New SqlCommand
+            Try
+                Con.Open()
+                With cmd
+                    .CommandText = "Sp_BusquedaSoftware"
+                    .CommandType = CommandType.StoredProcedure
+                    .Parameters.Add("@Parametro", SqlDbType.NVarChar, 50).Value = TxtBusqueda.Text.Trim
+                    .Connection = Con
+                End With
+
+                Dim AdaptadorBusqueda As New SqlDataAdapter(cmd)
+                Dim dt As New DataTable
+                AdaptadorBusqueda.Fill(dt)
+                DgvSoftware.DataSource = dt
+
+
+            Catch ex As Exception
+                MessageBox.Show("Error al mostrar los datos " + ex.Message)
+            Finally
+                Con.Close()
+            End Try
+
+        End Using
+    End Sub
+
+    Private Sub TxtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles TxtBusqueda.TextChanged
+        If TxtBusqueda.Text = Nothing Then
+            MostrarTodoSoftware()
+        Else
+            BusquedaInteligenteSoftware()
+        End If
+    End Sub
+
+
 End Class

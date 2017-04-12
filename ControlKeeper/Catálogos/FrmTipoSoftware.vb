@@ -191,14 +191,10 @@ Public Class FrmTipoSoftware
 
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
         If ValidarTipoSoftware() = True Then
-            If ExisteNombreTipoSoftware() = False Then
-                Call EditarTipoSoftware()
-                Call HabilitarControles(True, False, False, False, False)
-                Call Limpiar()
-                Call MostrarTodoTipoSoftware()
-            Else
-                MessageBox.Show("Ya se encuentra registrado este tipo de software", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            End If
+            Call EditarTipoSoftware()
+            Call HabilitarControles(True, False, False, False, False)
+            Call Limpiar()
+            Call MostrarTodoTipoSoftware()
         End If
     End Sub
 
@@ -250,5 +246,43 @@ Public Class FrmTipoSoftware
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
         Call HabilitarControles(True, False, False, False, False)
         Call Limpiar()
+    End Sub
+
+    Private Sub BusquedaInteligenteTipoSoftware()
+        If Con.State = ConnectionState.Open Then
+            Con.Close()
+        End If
+
+        Using cmd As New SqlCommand
+            Try
+                Con.Open()
+                With cmd
+                    .CommandText = "Sp_BusquedaTipoSoftware"
+                    .CommandType = CommandType.StoredProcedure
+                    .Parameters.Add("@Parametro", SqlDbType.NVarChar, 50).Value = TxtBusqueda.Text.Trim
+                    .Connection = Con
+                End With
+
+                Dim AdaptadorBusqueda As New SqlDataAdapter(cmd)
+                Dim dt As New DataTable
+                AdaptadorBusqueda.Fill(dt)
+                DgvTipoSoftware.DataSource = dt
+
+
+            Catch ex As Exception
+                MessageBox.Show("Error al mostrar los datos " + ex.Message)
+            Finally
+                Con.Close()
+            End Try
+
+        End Using
+    End Sub
+
+    Private Sub TxtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles TxtBusqueda.TextChanged
+        If TxtBusqueda.Text = Nothing Then
+            MostrarTodoTipoSoftware()
+        Else
+            BusquedaInteligenteTipoSoftware()
+        End If
     End Sub
 End Class

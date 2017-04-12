@@ -1,6 +1,41 @@
 ﻿Imports System.Data.SqlClient
 Public Class FrmEmpleado
     Public Var As Integer = 0
+    Private Function ValidarEmpleado() As Boolean
+        Dim Estado As Boolean
+        If Replace(MtbCodigo.Text, "-", "") = Nothing Then
+            MsgBox("Ingrese el código del empleado", MsgBoxStyle.Critical, "Control Keeper")
+            MtbCodigo.Focus()
+            Estado = False
+        ElseIf TxtNombre.Text = Nothing Then
+            MsgBox("Ingrese el nombre del empleado", MsgBoxStyle.Critical, "Control Keeper")
+            TxtNombre.Focus()
+            Estado = False
+        ElseIf TxtApellido.Text = Nothing Then
+            MsgBox("Ingrese el apellido del empleado", MsgBoxStyle.Critical, "Control Keeper")
+            TxtApellido.Focus()
+            Estado = False
+        ElseIf TxtDireccion.Text = Nothing Then
+            MsgBox("Ingrese la dirección del empleado", MsgBoxStyle.Critical, "Control Keeper")
+            TxtDireccion.Focus()
+            Estado = False
+        ElseIf CboEstadoCivil.Text = Nothing Then
+            MsgBox("Seleccione el estado civil del empleado", MsgBoxStyle.Critical, "Control Keeper")
+            Estado = False
+        ElseIf CboCiudad.Text = Nothing Then
+            MsgBox("Seleccione la ciudad del empleado", MsgBoxStyle.Critical, "Control Keeper")
+            Estado = False
+        ElseIf CboProfesion.Text = Nothing Then
+            MsgBox("Seleccione la profesion del empleado", MsgBoxStyle.Critical, "Control Keeper")
+            Estado = False
+        ElseIf CboSexo.Text = Nothing Then
+            MsgBox("Seleccione el sexo del empleado", MsgBoxStyle.Critical, "Control Keeper")
+            Estado = False
+        Else
+            Estado = True
+        End If
+        Return Estado
+    End Function
     Private Sub FrmUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         HabilitarControles(True, False, False, False, False)
         Call MostrarTodosEmpleado()
@@ -199,11 +234,13 @@ Public Class FrmEmpleado
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
+        If ValidarEmpleado() = True Then
+            Call GuardarEmpleado()
+            Call MostrarTodosEmpleado()
+            Call HabilitarControles(True, False, False, False, False)
+            Call Limpiar()
+        End If
 
-        Call GuardarEmpleado()
-        Call MostrarTodosEmpleado()
-        Call HabilitarControles(True, False, False, False, False)
-        Call Limpiar()
 
 
     End Sub
@@ -323,8 +360,7 @@ Public Class FrmEmpleado
     End Sub
 
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
-        If MessageBox.Show("¿Está seguro de eliminar el registro?", "Control Keeper",
-                           MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.Yes Then
+        If ValidarEmpleado() = True Then
             Call EditarEmpleado()
             Call HabilitarControles(True, False, False, False, False)
             Call Limpiar()
@@ -347,6 +383,44 @@ Public Class FrmEmpleado
             FrmUsuario.LlenarComboBoxNombreEmpleado()
             FrmUsuario.CboNombreEmpleado.Text = DgvEmpleado.CurrentRow.Cells(1).Value.ToString + " " + DgvEmpleado.CurrentRow.Cells(2).Value.ToString
             Me.Close()
+        End If
+    End Sub
+
+    Private Sub BusquedaInteligenteEmpleado()
+        If Con.State = ConnectionState.Open Then
+            Con.Close()
+        End If
+
+        Using cmd As New SqlCommand
+            Try
+                Con.Open()
+                With cmd
+                    .CommandText = "Sp_BusquedaEmpleado"
+                    .CommandType = CommandType.StoredProcedure
+                    .Parameters.Add("@Parametro", SqlDbType.NVarChar, 50).Value = TxtBusqueda.Text.Trim
+                    .Connection = Con
+                End With
+
+                Dim AdaptadorBusqueda As New SqlDataAdapter(cmd)
+                Dim dt As New DataTable
+                AdaptadorBusqueda.Fill(dt)
+                DgvEmpleado.DataSource = dt
+
+
+            Catch ex As Exception
+                MessageBox.Show("Error al mostrar los datos " + ex.Message)
+            Finally
+                Con.Close()
+            End Try
+
+        End Using
+    End Sub
+
+    Private Sub TxtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles TxtBusqueda.TextChanged
+        If TxtBusqueda.Text = Nothing Then
+            MostrarTodosEmpleado()
+        Else
+            BusquedaInteligenteEmpleado()
         End If
     End Sub
 End Class

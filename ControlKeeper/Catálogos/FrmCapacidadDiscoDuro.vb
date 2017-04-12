@@ -111,15 +111,11 @@ Public Class FrmCapacidadDiscoDuro
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
 
         If ValidarCapacidadDiscoDuro() = True Then
-            If ExisteCapacidadDiscoDuro() = False Then
-                Call ActualizarCapacidadDiscoDuro()
+
+            Call ActualizarCapacidadDiscoDuro()
                 Call HabilitarControles(True, False, False, False, False)
                 Call MostrarTodoCapacidadDiscoDuro()
-                Call Limpiar()
-            Else
-                MessageBox.Show("Ya se encuentra registrada esta capacidad de disco duro", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            End If
-
+            Call Limpiar()
         End If
 
     End Sub
@@ -340,5 +336,42 @@ Public Class FrmCapacidadDiscoDuro
         Return Estado
 
     End Function
+
+    Private Sub BusquedaInteligenteCapacidadDiscoDuro()
+        If Con.State = ConnectionState.Open Then
+            Con.Close()
+        End If
+
+        Using cmd As New SqlCommand
+            Try
+                Con.Open()
+                With cmd
+                    .CommandText = "Sp_BusquedaCapacidadDiscoDuro"
+                    .CommandType = CommandType.StoredProcedure
+                    .Parameters.Add("@Parametro", SqlDbType.NVarChar, 50).Value = TxtBusqueda.Text.Trim
+                    .Connection = Con
+                End With
+
+                Dim AdaptadorBusqueda As New SqlDataAdapter(cmd)
+                Dim dt As New DataTable
+                AdaptadorBusqueda.Fill(dt)
+                DgvCapacidadDiscoDuro.DataSource = dt
+
+            Catch ex As Exception
+                MessageBox.Show("Error al mostrar los datos " + ex.Message)
+            Finally
+                Con.Close()
+            End Try
+
+        End Using
+    End Sub
+
+    Private Sub TxtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles TxtBusqueda.TextChanged
+        If TxtBusqueda.Text = Nothing Then
+            MostrarTodoCapacidadDiscoDuro()
+        Else
+            BusquedaInteligenteCapacidadDiscoDuro()
+        End If
+    End Sub
 
 End Class

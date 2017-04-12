@@ -173,6 +173,9 @@ Public Class FrmModelo
             MessageBox.Show("Ingrese el modelo", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Error)
             TxtModelo.Focus()
             Estado = False
+        ElseIf CboMarca.Text = Nothing Then
+            MessageBox.Show("Seleccione la Marca", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Estado = False
         Else
             Estado = True
         End If
@@ -220,14 +223,11 @@ Public Class FrmModelo
 
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
         If ValidarModelo() = True Then
-            If ExisteNombreModelo() = False Then
-                Call EditarModelo()
-                Call MostrarTodoModelo()
-                Call HabilitarControles(True, False, False, False, False)
-                Call Limpiar()
-            Else
-                MessageBox.Show("Ya se encuentra registrado este modelo", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            End If
+
+            Call EditarModelo()
+            Call MostrarTodoModelo()
+            Call HabilitarControles(True, False, False, False, False)
+            Call Limpiar()
         End If
     End Sub
 
@@ -288,5 +288,43 @@ Public Class FrmModelo
         FrmMarca.Location = New Point(380, 110)
         FrmMarca.Show()
 
+    End Sub
+
+    Private Sub BusquedaInteligenteModelo()
+        If Con.State = ConnectionState.Open Then
+            Con.Close()
+        End If
+
+        Using cmd As New SqlCommand
+            Try
+                Con.Open()
+                With cmd
+                    .CommandText = "Sp_BusquedaModelo"
+                    .CommandType = CommandType.StoredProcedure
+                    .Parameters.Add("@Parametro", SqlDbType.NVarChar, 50).Value = TxtBusqueda.Text.Trim
+                    .Connection = Con
+                End With
+
+                Dim AdaptadorBusqueda As New SqlDataAdapter(cmd)
+                Dim dt As New DataTable
+                AdaptadorBusqueda.Fill(dt)
+                DgvModelo.DataSource = dt
+
+
+            Catch ex As Exception
+                MessageBox.Show("Error al mostrar los datos " + ex.Message)
+            Finally
+                Con.Close()
+            End Try
+
+        End Using
+    End Sub
+
+    Private Sub TxtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles TxtBusqueda.TextChanged
+        If TxtBusqueda.Text = Nothing Then
+            MostrarTodoModelo()
+        Else
+            BusquedaInteligenteModelo()
+        End If
     End Sub
 End Class

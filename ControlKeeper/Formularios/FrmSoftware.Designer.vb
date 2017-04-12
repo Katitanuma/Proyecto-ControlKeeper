@@ -50,6 +50,8 @@ Partial Class FrmSoftware
         Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.BtnModificar = New System.Windows.Forms.Button()
         Me.BtnNuevo = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TxtBusqueda = New System.Windows.Forms.TextBox()
         CType(Me.DgvSoftware, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CMSSoftware.SuspendLayout()
         Me.PnlSoftware.SuspendLayout()
@@ -65,11 +67,11 @@ Partial Class FrmSoftware
         Me.DgvSoftware.BackgroundColor = System.Drawing.Color.White
         Me.DgvSoftware.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvSoftware.ContextMenuStrip = Me.CMSSoftware
-        Me.DgvSoftware.Location = New System.Drawing.Point(24, 294)
+        Me.DgvSoftware.Location = New System.Drawing.Point(24, 325)
         Me.DgvSoftware.Name = "DgvSoftware"
         Me.DgvSoftware.ReadOnly = True
         Me.DgvSoftware.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvSoftware.Size = New System.Drawing.Size(1008, 200)
+        Me.DgvSoftware.Size = New System.Drawing.Size(1008, 190)
         Me.DgvSoftware.TabIndex = 27
         '
         'CMSSoftware
@@ -347,12 +349,31 @@ Partial Class FrmSoftware
         Me.BtnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnNuevo.UseVisualStyleBackColor = False
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Comic Sans MS", 11.25!)
+        Me.Label2.Location = New System.Drawing.Point(30, 297)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(78, 20)
+        Me.Label2.TabIndex = 80
+        Me.Label2.Text = "Busqueda "
+        '
+        'TxtBusqueda
+        '
+        Me.TxtBusqueda.Location = New System.Drawing.Point(109, 299)
+        Me.TxtBusqueda.Name = "TxtBusqueda"
+        Me.TxtBusqueda.Size = New System.Drawing.Size(480, 20)
+        Me.TxtBusqueda.TabIndex = 79
+        '
         'FrmSoftware
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1056, 508)
+        Me.ClientSize = New System.Drawing.Size(1056, 527)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.TxtBusqueda)
         Me.Controls.Add(Me.BtnCancelar)
         Me.Controls.Add(Me.BtnGuardar)
         Me.Controls.Add(Me.BtnModificar)
@@ -371,6 +392,7 @@ Partial Class FrmSoftware
         Me.Panel3.PerformLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents DgvSoftware As DataGridView
@@ -399,4 +421,6 @@ Partial Class FrmSoftware
     Friend WithEvents CMSSoftware As ContextMenuStrip
     Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label2 As Label
+    Friend WithEvents TxtBusqueda As TextBox
 End Class

@@ -58,6 +58,8 @@ Partial Class FrmEmpleado
         Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.BtnModificar = New System.Windows.Forms.Button()
         Me.BtnNuevo = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TxtBusqueda = New System.Windows.Forms.TextBox()
         CType(Me.DgvEmpleado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CmsEmpleado.SuspendLayout()
         Me.PlEmpleado.SuspendLayout()
@@ -73,7 +75,7 @@ Partial Class FrmEmpleado
         Me.DgvEmpleado.BackgroundColor = System.Drawing.Color.White
         Me.DgvEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvEmpleado.ContextMenuStrip = Me.CmsEmpleado
-        Me.DgvEmpleado.Location = New System.Drawing.Point(21, 314)
+        Me.DgvEmpleado.Location = New System.Drawing.Point(22, 338)
         Me.DgvEmpleado.MultiSelect = False
         Me.DgvEmpleado.Name = "DgvEmpleado"
         Me.DgvEmpleado.ReadOnly = True
@@ -90,13 +92,13 @@ Partial Class FrmEmpleado
         'EditarToolStripMenuItem
         '
         Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
-        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
         Me.EditarToolStripMenuItem.Text = "Editar"
         '
         'EliminarToolStripMenuItem
         '
         Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
-        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
         Me.EliminarToolStripMenuItem.Text = "Eliminar"
         '
         'PlEmpleado
@@ -444,12 +446,31 @@ Partial Class FrmEmpleado
         Me.BtnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnNuevo.UseVisualStyleBackColor = False
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Comic Sans MS", 11.25!)
+        Me.Label1.Location = New System.Drawing.Point(24, 310)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(78, 20)
+        Me.Label1.TabIndex = 80
+        Me.Label1.Text = "Busqueda "
+        '
+        'TxtBusqueda
+        '
+        Me.TxtBusqueda.Location = New System.Drawing.Point(103, 312)
+        Me.TxtBusqueda.Name = "TxtBusqueda"
+        Me.TxtBusqueda.Size = New System.Drawing.Size(533, 20)
+        Me.TxtBusqueda.TabIndex = 79
+        '
         'FrmEmpleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1067, 508)
+        Me.ClientSize = New System.Drawing.Size(1067, 526)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.TxtBusqueda)
         Me.Controls.Add(Me.BtnCancelar)
         Me.Controls.Add(Me.BtnGuardar)
         Me.Controls.Add(Me.BtnModificar)
@@ -468,6 +489,7 @@ Partial Class FrmEmpleado
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -505,4 +527,6 @@ Partial Class FrmEmpleado
     Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ChkEstado As CheckBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents TxtBusqueda As TextBox
 End Class

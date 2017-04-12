@@ -1,6 +1,36 @@
 ﻿Imports System.Data.SqlClient
 Public Class FrmComputadora
     Public Var As Integer = 0
+
+    Private Function ValidarComputadora() As Boolean
+        Dim Estado As Boolean
+        If TxtSerie.Text = Nothing Then
+            MsgBox("Ingrese la serie de la computadora", MsgBoxStyle.Critical, "Control Keeper")
+            TxtSerie.Focus()
+            Estado = False
+        ElseIf CboMarca.Text = Nothing Then
+            MsgBox("Seleccione la marca de la computadora", MsgBoxStyle.Critical, "Control Keeper")
+            Estado = False
+        ElseIf CboModelo.Text = Nothing Then
+            MsgBox("Seleccione el modelo de la computadora", MsgBoxStyle.Critical, "Control Keeper")
+            Estado = False
+        ElseIf CboAño.Text = Nothing Then
+            MsgBox("Seleccione el año de la computadora", MsgBoxStyle.Critical, "Control Keeper")
+            Estado = False
+        ElseIf CboRAM.Text = Nothing Then
+            MsgBox("Seleccione el tamaño de la memoria RAM de la computadora", MsgBoxStyle.Critical, "Control Keeper")
+            Estado = False
+        ElseIf CboTipoComputadora.Text = Nothing Then
+            MsgBox("Seleccione el tipo de computadora", MsgBoxStyle.Critical, "Control Keeper")
+            Estado = False
+        ElseIf CboCapacidadDiscoDuro.Text = Nothing Then
+            MsgBox("Seleccione la capacidad del disco duro de la computadora", MsgBoxStyle.Critical, "Control Keeper")
+            Estado = False
+        Else
+            Estado = True
+        End If
+        Return Estado
+    End Function
     Private Sub FrmUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         HabilitarControles(True, False, False, False, False)
         Call MostrarTodasComputadoras()
@@ -234,14 +264,17 @@ Public Class FrmComputadora
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
-        If ExisteIdComputadora() = False Then
-            Call GuardarComputadora()
-            Call MostrarTodasComputadoras()
-            Call HabilitarControles(True, False, False, False, False)
-            Call Limpiar()
-        Else
-            MessageBox.Show("Ya se encuentra registrado esa Computadora", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+        If ValidarComputadora() = True Then
+            If ExisteIdComputadora() = False Then
+                Call GuardarComputadora()
+                Call MostrarTodasComputadoras()
+                Call HabilitarControles(True, False, False, False, False)
+                Call Limpiar()
+            Else
+                MessageBox.Show("Ya se encuentra registrado esa Computadora", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            End If
         End If
+
 
     End Sub
     Private Sub Limpiar()
@@ -350,11 +383,14 @@ Public Class FrmComputadora
     End Sub
 
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
-        Call EditarComputadora()
-        Call HabilitarControles(True, False, False, False, False)
-        Call Limpiar()
-        Call MostrarTodasComputadoras()
-        TxtSerie.Enabled = True
+        If ValidarComputadora() = True Then
+            Call EditarComputadora()
+            Call HabilitarControles(True, False, False, False, False)
+            Call Limpiar()
+            Call MostrarTodasComputadoras()
+            TxtSerie.Enabled = True
+        End If
+
     End Sub
 
     Private Sub EliminarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarToolStripMenuItem.Click
@@ -454,6 +490,44 @@ Public Class FrmComputadora
             FrmSoftwareComputadora.LlenarComboBoxSerie()
             FrmSoftwareComputadora.CboSerie.Text = DgvComputadora.CurrentRow.Cells(0).Value.ToString
             Me.Close()
+        End If
+    End Sub
+    Private Sub BusquedaInteligenteComputadora()
+        If Con.State = ConnectionState.Open Then
+            Con.Close()
+        End If
+
+        Using cmd As New SqlCommand
+            Try
+                Con.Open()
+                With cmd
+                    .CommandText = "Sp_BusquedaComputadora"
+                    .CommandType = CommandType.StoredProcedure
+                    .Parameters.Add("@Parametro", SqlDbType.NVarChar, 50).Value = TxtBusqueda.Text.Trim
+                    .Connection = Con
+                End With
+
+                Dim AdaptadorBusqueda As New SqlDataAdapter(cmd)
+                Dim dt As New DataTable
+                AdaptadorBusqueda.Fill(dt)
+                DgvComputadora.DataSource = dt
+                DgvComputadora.Columns(9).Visible = False
+
+
+            Catch ex As Exception
+                MessageBox.Show("Error al mostrar los datos " + ex.Message)
+            Finally
+                Con.Close()
+            End Try
+
+        End Using
+    End Sub
+
+    Private Sub TxtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles TxtBusqueda.TextChanged
+        If TxtBusqueda.Text = Nothing Then
+            MostrarTodasComputadoras()
+        Else
+            BusquedaInteligenteComputadora()
         End If
     End Sub
 End Class

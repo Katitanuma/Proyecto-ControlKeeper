@@ -56,6 +56,7 @@ Partial Class MDIControlKeeper
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.RegistrosAuditoriaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.PnlDespliegue.SuspendLayout()
@@ -78,6 +79,7 @@ Partial Class MDIControlKeeper
         '
         'ArchivoToolStripMenuItem
         '
+        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RegistrosAuditoriaToolStripMenuItem})
         Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
         Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
         Me.ArchivoToolStripMenuItem.Text = "&Archivo"
@@ -442,6 +444,12 @@ Partial Class MDIControlKeeper
         Me.Label1.TabIndex = 20
         Me.Label1.Text = "Computadora"
         '
+        'RegistrosAuditoriaToolStripMenuItem
+        '
+        Me.RegistrosAuditoriaToolStripMenuItem.Name = "RegistrosAuditoriaToolStripMenuItem"
+        Me.RegistrosAuditoriaToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.RegistrosAuditoriaToolStripMenuItem.Text = "Registros Auditoria"
+        '
         'MDIControlKeeper
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -511,4 +519,5 @@ Partial Class MDIControlKeeper
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents RegistrosAuditoriaToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -40,6 +40,8 @@ Partial Class FrmCapacidadRAM
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
         Me.Label45 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TxtBusqueda = New System.Windows.Forms.TextBox()
         CType(Me.DgvCapacidadMemoriaRAM, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CMSCapacidadRAM.SuspendLayout()
         Me.PnlCapacidadMemoriaRAM.SuspendLayout()
@@ -55,7 +57,7 @@ Partial Class FrmCapacidadRAM
         Me.DgvCapacidadMemoriaRAM.BackgroundColor = System.Drawing.Color.White
         Me.DgvCapacidadMemoriaRAM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvCapacidadMemoriaRAM.ContextMenuStrip = Me.CMSCapacidadRAM
-        Me.DgvCapacidadMemoriaRAM.Location = New System.Drawing.Point(39, 245)
+        Me.DgvCapacidadMemoriaRAM.Location = New System.Drawing.Point(37, 273)
         Me.DgvCapacidadMemoriaRAM.Name = "DgvCapacidadMemoriaRAM"
         Me.DgvCapacidadMemoriaRAM.ReadOnly = True
         Me.DgvCapacidadMemoriaRAM.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -236,12 +238,31 @@ Partial Class FrmCapacidadRAM
         Me.Label45.TabIndex = 25
         Me.Label45.Text = "Capacidad de Memoria RAM"
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Comic Sans MS", 11.25!)
+        Me.Label1.Location = New System.Drawing.Point(32, 245)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(78, 20)
+        Me.Label1.TabIndex = 78
+        Me.Label1.Text = "Busqueda "
+        '
+        'TxtBusqueda
+        '
+        Me.TxtBusqueda.Location = New System.Drawing.Point(111, 247)
+        Me.TxtBusqueda.Name = "TxtBusqueda"
+        Me.TxtBusqueda.Size = New System.Drawing.Size(374, 20)
+        Me.TxtBusqueda.TabIndex = 77
+        '
         'FrmCapacidadRAM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(526, 467)
+        Me.ClientSize = New System.Drawing.Size(526, 490)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.TxtBusqueda)
         Me.Controls.Add(Me.BtnCancelar)
         Me.Controls.Add(Me.BtnGuardar)
         Me.Controls.Add(Me.BtnModificar)
@@ -260,6 +281,7 @@ Partial Class FrmCapacidadRAM
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -279,4 +301,6 @@ Partial Class FrmCapacidadRAM
     Friend WithEvents CMSCapacidadRAM As ContextMenuStrip
     Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label1 As Label
+    Friend WithEvents TxtBusqueda As TextBox
 End Class

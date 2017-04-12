@@ -40,6 +40,8 @@ Partial Class FrmCapacidadDiscoDuro
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label45 = New System.Windows.Forms.Label()
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TxtBusqueda = New System.Windows.Forms.TextBox()
         CType(Me.DgvCapacidadDiscoDuro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CMSCapacidadDiscoDuro.SuspendLayout()
         Me.PnlCapacidadDiscoDuro.SuspendLayout()
@@ -55,7 +57,7 @@ Partial Class FrmCapacidadDiscoDuro
         Me.DgvCapacidadDiscoDuro.BackgroundColor = System.Drawing.Color.White
         Me.DgvCapacidadDiscoDuro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvCapacidadDiscoDuro.ContextMenuStrip = Me.CMSCapacidadDiscoDuro
-        Me.DgvCapacidadDiscoDuro.Location = New System.Drawing.Point(24, 240)
+        Me.DgvCapacidadDiscoDuro.Location = New System.Drawing.Point(24, 283)
         Me.DgvCapacidadDiscoDuro.Name = "DgvCapacidadDiscoDuro"
         Me.DgvCapacidadDiscoDuro.ReadOnly = True
         Me.DgvCapacidadDiscoDuro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -236,12 +238,31 @@ Partial Class FrmCapacidadDiscoDuro
         Me.PictureBox10.TabIndex = 39
         Me.PictureBox10.TabStop = False
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Comic Sans MS", 11.25!)
+        Me.Label1.Location = New System.Drawing.Point(21, 255)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(78, 20)
+        Me.Label1.TabIndex = 71
+        Me.Label1.Text = "Busqueda "
+        '
+        'TxtBusqueda
+        '
+        Me.TxtBusqueda.Location = New System.Drawing.Point(100, 257)
+        Me.TxtBusqueda.Name = "TxtBusqueda"
+        Me.TxtBusqueda.Size = New System.Drawing.Size(403, 20)
+        Me.TxtBusqueda.TabIndex = 70
+        '
         'FrmCapacidadDiscoDuro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(527, 467)
+        Me.ClientSize = New System.Drawing.Size(527, 500)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.TxtBusqueda)
         Me.Controls.Add(Me.BtnCancelar)
         Me.Controls.Add(Me.BtnGuardar)
         Me.Controls.Add(Me.BtnModificar)
@@ -260,6 +281,7 @@ Partial Class FrmCapacidadDiscoDuro
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents DgvCapacidadDiscoDuro As DataGridView
@@ -278,4 +300,6 @@ Partial Class FrmCapacidadDiscoDuro
     Friend WithEvents CMSCapacidadDiscoDuro As ContextMenuStrip
     Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label1 As Label
+    Friend WithEvents TxtBusqueda As TextBox
 End Class

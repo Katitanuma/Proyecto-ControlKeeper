@@ -1,4 +1,5 @@
-﻿Imports System.Windows.Forms
+﻿Imports System.ComponentModel
+Imports System.Windows.Forms
 
 Public Class MDIControlKeeper
 
@@ -148,5 +149,17 @@ Public Class MDIControlKeeper
         PnlMenu.Hide()
         FrmProfesion.Location = New Point(330, 110)
         FrmProfesion.Show()
+    End Sub
+
+    Private Sub RegistrosAuditoriaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistrosAuditoriaToolStripMenuItem.Click
+        FrmLogAuditoria.MdiParent = Me
+        PnlMenu.Hide()
+        FrmLogAuditoria.Location = New Point(330, 110)
+
+        FrmLogAuditoria.Show()
+    End Sub
+
+    Private Sub MDIControlKeeper_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        Application.Exit()
     End Sub
 End Class

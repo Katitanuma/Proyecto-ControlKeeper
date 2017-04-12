@@ -1,5 +1,21 @@
 ﻿Imports System.Data.SqlClient
 Public Class FrmSoftwareComputadora
+    Private Function ValidarSoftwareComputadora() As Boolean
+        Dim Estado As Boolean
+        If CboSerie.Text = Nothing Then
+            MsgBox("Seleccione la serie de la computadora", MsgBoxStyle.Critical, "Control Keeper")
+            Estado = False
+        ElseIf CboSoftware.Text = Nothing Then
+            MsgBox("Seleccione el Software a instalar", MsgBoxStyle.Critical, "Control Keeper")
+            Estado = False
+        ElseIf CboUsuario.Text = Nothing Then
+            MsgBox("Seleccione el usuario de instalación del software", MsgBoxStyle.Critical, "Control Keeper")
+            Estado = False
+        Else
+            Estado = True
+        End If
+        Return Estado
+    End Function
     Private Sub FrmUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         HabilitarControles(True, False, False, False, False)
         Call MostrarTodasSoftwareComputadora()
@@ -181,14 +197,17 @@ Public Class FrmSoftwareComputadora
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
-        If ExisteIdComputadora() = False Then
-            Call GuardarComputadoraUsuario()
-            Call MostrarTodasSoftwareComputadora()
-            Call HabilitarControles(True, False, False, False, False)
-            Call Limpiar()
-        Else
-            MessageBox.Show("Ya se encuentra instalado ese software en esa Computadora", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+        If ValidarSoftwareComputadora() = True Then
+            If ExisteIdComputadora() = False Then
+                Call GuardarComputadoraUsuario()
+                Call MostrarTodasSoftwareComputadora()
+                Call HabilitarControles(True, False, False, False, False)
+                Call Limpiar()
+            Else
+                MessageBox.Show("Ya se encuentra instalado ese software en esa Computadora", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            End If
         End If
+
 
     End Sub
     Private Sub Limpiar()
@@ -292,12 +311,15 @@ Public Class FrmSoftwareComputadora
     End Sub
 
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
-        Call EditarComputadoraUsuario()
-        Call HabilitarControles(True, False, False, False, False)
-        Call Limpiar()
-        Call MostrarTodasSoftwareComputadora()
-        CboSoftware.Enabled = True
-        CboSerie.Enabled = True
+        If ValidarSoftwareComputadora() = True Then
+            Call EditarComputadoraUsuario()
+            Call HabilitarControles(True, False, False, False, False)
+            Call Limpiar()
+            Call MostrarTodasSoftwareComputadora()
+            CboSoftware.Enabled = True
+            CboSerie.Enabled = True
+        End If
+
     End Sub
 
     Private Sub EliminarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarToolStripMenuItem.Click
@@ -370,5 +392,43 @@ Public Class FrmSoftwareComputadora
         FrmUsuario.Location = New Point(330, 110)
         FrmUsuario.Show()
 
+    End Sub
+
+    Private Sub BusquedaInteligenteSoftwareComputadora()
+        If Con.State = ConnectionState.Open Then
+            Con.Close()
+        End If
+
+        Using cmd As New SqlCommand
+            Try
+                Con.Open()
+                With cmd
+                    .CommandText = "Sp_BusquedaSoftwareComputadora"
+                    .CommandType = CommandType.StoredProcedure
+                    .Parameters.Add("@Parametro", SqlDbType.NVarChar, 50).Value = TxtBusqueda.Text.Trim
+                    .Connection = Con
+                End With
+
+                Dim AdaptadorBusqueda As New SqlDataAdapter(cmd)
+                Dim dt As New DataTable
+                AdaptadorBusqueda.Fill(dt)
+                DgvInstalacionSoftware.DataSource = dt
+                DgvInstalacionSoftware.Columns(9).Visible = False
+
+            Catch ex As Exception
+                MessageBox.Show("Error al mostrar los datos " + ex.Message)
+            Finally
+                Con.Close()
+            End Try
+
+        End Using
+    End Sub
+
+    Private Sub TxtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles TxtBusqueda.TextChanged
+        If TxtBusqueda.Text = Nothing Then
+            MostrarTodasSoftwareComputadora()
+        Else
+            BusquedaInteligenteSoftwareComputadora()
+        End If
     End Sub
 End Class

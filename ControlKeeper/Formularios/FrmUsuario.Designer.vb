@@ -48,6 +48,8 @@ Partial Class FrmUsuario
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.PictureBox11 = New System.Windows.Forms.PictureBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.TxtBusqueda = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.DgvUsuario, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CmsUsuario.SuspendLayout()
         Me.PlUsuario.SuspendLayout()
@@ -63,7 +65,7 @@ Partial Class FrmUsuario
         Me.DgvUsuario.BackgroundColor = System.Drawing.Color.White
         Me.DgvUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvUsuario.ContextMenuStrip = Me.CmsUsuario
-        Me.DgvUsuario.Location = New System.Drawing.Point(14, 344)
+        Me.DgvUsuario.Location = New System.Drawing.Point(15, 372)
         Me.DgvUsuario.Name = "DgvUsuario"
         Me.DgvUsuario.ReadOnly = True
         Me.DgvUsuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -321,12 +323,31 @@ Partial Class FrmUsuario
         Me.Panel3.Size = New System.Drawing.Size(637, 68)
         Me.Panel3.TabIndex = 62
         '
+        'TxtBusqueda
+        '
+        Me.TxtBusqueda.Location = New System.Drawing.Point(96, 346)
+        Me.TxtBusqueda.Name = "TxtBusqueda"
+        Me.TxtBusqueda.Size = New System.Drawing.Size(517, 20)
+        Me.TxtBusqueda.TabIndex = 63
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Comic Sans MS", 11.25!)
+        Me.Label1.Location = New System.Drawing.Point(17, 344)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(78, 20)
+        Me.Label1.TabIndex = 64
+        Me.Label1.Text = "Busqueda "
+        '
         'FrmUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(634, 511)
+        Me.ClientSize = New System.Drawing.Size(634, 535)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.TxtBusqueda)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.DgvUsuario)
         Me.Controls.Add(Me.BtnCancelar)
@@ -345,6 +366,7 @@ Partial Class FrmUsuario
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -372,4 +394,6 @@ Partial Class FrmUsuario
     Friend WithEvents BtnModificar As Button
     Friend WithEvents BtnGuardar As Button
     Friend WithEvents BtnCancelar As Button
+    Friend WithEvents TxtBusqueda As TextBox
+    Friend WithEvents Label1 As Label
 End Class

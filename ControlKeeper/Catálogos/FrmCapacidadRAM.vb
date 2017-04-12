@@ -148,10 +148,10 @@ Public Class FrmCapacidadRAM
                     .ExecuteNonQuery()
 
                 End With
-
+                MessageBox.Show("Capacidad de memoria RAM eliminada con éxito", "Control Keeper")
 
             Catch ex As Exception
-                MessageBox.Show("Error al eliminar la Capacidad de meroria RAM", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Error al eliminar la Capacidad de meroria RAM " + ex.Message, "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Finally
                 Con.Close()
 
@@ -199,15 +199,9 @@ Public Class FrmCapacidadRAM
 
         If ValidarCapacidadMemoriaRAM() = True Then
 
-            If ExisteCapacidadMemoriaRAM() = False Then
-
-                Call ModificarCapacidadMemoriaRAM()
-                HabilitarControles(True, False, False, False, False)
-                Call MostrarTodoCapacidadMemoriaRAM()
-            Else
-                MsgBox("Ya existe es capacidad de memoria RAM")
-            End If
-
+            Call ModificarCapacidadMemoriaRAM()
+            Call HabilitarControles(True, False, False, False, False)
+            Call MostrarTodoCapacidadMemoriaRAM()
         End If
     End Sub
 
@@ -218,7 +212,7 @@ Public Class FrmCapacidadRAM
             Call EliminarCapacidadMemoriaRAM()
             Call MostrarTodoCapacidadMemoriaRAM()
 
-            MessageBox.Show("Capacidad de memoria RAM eliminada con éxito")
+
         End If
     End Sub
 
@@ -311,5 +305,41 @@ Public Class FrmCapacidadRAM
         Return Valor
     End Function
 
+    Private Sub BusquedaInteligenteCapacidadRAM()
+        If Con.State = ConnectionState.Open Then
+            Con.Close()
+        End If
+
+        Using cmd As New SqlCommand
+            Try
+                Con.Open()
+                With cmd
+                    .CommandText = "Sp_BusquedaCapacidadMemoriaRAM"
+                    .CommandType = CommandType.StoredProcedure
+                    .Parameters.Add("@Parametro", SqlDbType.NVarChar, 50).Value = TxtBusqueda.Text.Trim
+                    .Connection = Con
+                End With
+
+                Dim AdaptadorBusqueda As New SqlDataAdapter(cmd)
+                Dim dt As New DataTable
+                AdaptadorBusqueda.Fill(dt)
+                DgvCapacidadMemoriaRAM.DataSource = dt
+
+            Catch ex As Exception
+                MessageBox.Show("Error al mostrar los datos " + ex.Message)
+            Finally
+                Con.Close()
+            End Try
+
+        End Using
+    End Sub
+
+    Private Sub TxtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles TxtBusqueda.TextChanged
+        If TxtBusqueda.Text = Nothing Then
+            MostrarTodoCapacidadMemoriaRAM()
+        Else
+            BusquedaInteligenteCapacidadRAM()
+        End If
+    End Sub
 
 End Class

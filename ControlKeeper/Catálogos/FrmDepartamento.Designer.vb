@@ -40,6 +40,8 @@ Partial Class FrmDepartamento
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label45 = New System.Windows.Forms.Label()
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TxtBusqueda = New System.Windows.Forms.TextBox()
         CType(Me.DgvDepartamento, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CMSDepartamento.SuspendLayout()
         Me.PnlDepartamento.SuspendLayout()
@@ -55,7 +57,7 @@ Partial Class FrmDepartamento
         Me.DgvDepartamento.BackgroundColor = System.Drawing.Color.White
         Me.DgvDepartamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvDepartamento.ContextMenuStrip = Me.CMSDepartamento
-        Me.DgvDepartamento.Location = New System.Drawing.Point(23, 234)
+        Me.DgvDepartamento.Location = New System.Drawing.Point(23, 268)
         Me.DgvDepartamento.Name = "DgvDepartamento"
         Me.DgvDepartamento.ReadOnly = True
         Me.DgvDepartamento.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -236,12 +238,31 @@ Partial Class FrmDepartamento
         Me.PictureBox10.TabIndex = 39
         Me.PictureBox10.TabStop = False
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Comic Sans MS", 11.25!)
+        Me.Label1.Location = New System.Drawing.Point(20, 240)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(78, 20)
+        Me.Label1.TabIndex = 85
+        Me.Label1.Text = "Busqueda "
+        '
+        'TxtBusqueda
+        '
+        Me.TxtBusqueda.Location = New System.Drawing.Point(99, 242)
+        Me.TxtBusqueda.Name = "TxtBusqueda"
+        Me.TxtBusqueda.Size = New System.Drawing.Size(403, 20)
+        Me.TxtBusqueda.TabIndex = 84
+        '
         'FrmDepartamento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(527, 467)
+        Me.ClientSize = New System.Drawing.Size(527, 499)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.TxtBusqueda)
         Me.Controls.Add(Me.BtnCancelar)
         Me.Controls.Add(Me.BtnGuardar)
         Me.Controls.Add(Me.BtnModificar)
@@ -260,6 +281,7 @@ Partial Class FrmDepartamento
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -279,4 +301,6 @@ Partial Class FrmDepartamento
     Friend WithEvents CMSDepartamento As ContextMenuStrip
     Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label1 As Label
+    Friend WithEvents TxtBusqueda As TextBox
 End Class

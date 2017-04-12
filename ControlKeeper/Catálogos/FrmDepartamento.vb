@@ -277,20 +277,10 @@ Public Class FrmDepartamento
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
 
         If ValidarDepartamento() = True Then
-
-
-
-            If ExisteDepartamento() = False Then
-
-                Call ActualizarDepartamento()
-                Call MostrarTodoDepartamento()
-                Call LimpiarDepartamento()
-                Call HabilitarControles(True, False, False, False, False)
-
-            Else
-                MessageBox.Show("El departamento ya existe", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Error)
-
-            End If
+            Call ActualizarDepartamento()
+            Call MostrarTodoDepartamento()
+            Call LimpiarDepartamento()
+            Call HabilitarControles(True, False, False, False, False)
         End If
     End Sub
 
@@ -343,6 +333,44 @@ Public Class FrmDepartamento
             FrmCiudad.LlenarComboBoxDepartamento()
             FrmCiudad.CboDepartamento.Text = DgvDepartamento.CurrentRow.Cells(1).Value.ToString
             Me.Close()
+        End If
+    End Sub
+
+    Private Sub BusquedaInteligenteDepartamento()
+        If Con.State = ConnectionState.Open Then
+            Con.Close()
+        End If
+
+        Using cmd As New SqlCommand
+            Try
+                Con.Open()
+                With cmd
+                    .CommandText = "Sp_BusquedaDepartamento"
+                    .CommandType = CommandType.StoredProcedure
+                    .Parameters.Add("@Parametro", SqlDbType.NVarChar, 50).Value = TxtBusqueda.Text.Trim
+                    .Connection = Con
+                End With
+
+                Dim AdaptadorBusqueda As New SqlDataAdapter(cmd)
+                Dim dt As New DataTable
+                AdaptadorBusqueda.Fill(dt)
+                DgvDepartamento.DataSource = dt
+
+
+            Catch ex As Exception
+                MessageBox.Show("Error al mostrar los datos " + ex.Message)
+            Finally
+                Con.Close()
+            End Try
+
+        End Using
+    End Sub
+
+    Private Sub TxtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles TxtBusqueda.TextChanged
+        If TxtBusqueda.Text = Nothing Then
+            MostrarTodoDepartamento()
+        Else
+            BusquedaInteligenteDepartamento()
         End If
     End Sub
 End Class

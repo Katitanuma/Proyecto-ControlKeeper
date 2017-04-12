@@ -53,6 +53,8 @@ Partial Class FrmComputadora
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TxtBusqueda = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         CType(Me.DgvComputadora, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -176,7 +178,7 @@ Partial Class FrmComputadora
         Me.DgvComputadora.BackgroundColor = System.Drawing.Color.White
         Me.DgvComputadora.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvComputadora.ContextMenuStrip = Me.CmsComputadora
-        Me.DgvComputadora.Location = New System.Drawing.Point(12, 313)
+        Me.DgvComputadora.Location = New System.Drawing.Point(12, 353)
         Me.DgvComputadora.Name = "DgvComputadora"
         Me.DgvComputadora.ReadOnly = True
         Me.DgvComputadora.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -396,12 +398,31 @@ Partial Class FrmComputadora
         Me.Label24.TabIndex = 0
         Me.Label24.Text = "Serie Computadora"
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Comic Sans MS", 11.25!)
+        Me.Label2.Location = New System.Drawing.Point(15, 325)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(78, 20)
+        Me.Label2.TabIndex = 82
+        Me.Label2.Text = "Busqueda "
+        '
+        'TxtBusqueda
+        '
+        Me.TxtBusqueda.Location = New System.Drawing.Point(94, 327)
+        Me.TxtBusqueda.Name = "TxtBusqueda"
+        Me.TxtBusqueda.Size = New System.Drawing.Size(520, 20)
+        Me.TxtBusqueda.TabIndex = 81
+        '
         'FrmComputadora
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(636, 508)
+        Me.ClientSize = New System.Drawing.Size(636, 547)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.TxtBusqueda)
         Me.Controls.Add(Me.BtnCancelar)
         Me.Controls.Add(Me.BtnGuardar)
         Me.Controls.Add(Me.BtnModificar)
@@ -420,6 +441,7 @@ Partial Class FrmComputadora
         Me.PlComputadora.ResumeLayout(False)
         Me.PlComputadora.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents PictureBox3 As PictureBox
@@ -451,4 +473,6 @@ Partial Class FrmComputadora
     Friend WithEvents CmsComputadora As ContextMenuStrip
     Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label2 As Label
+    Friend WithEvents TxtBusqueda As TextBox
 End Class

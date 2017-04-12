@@ -68,4 +68,9 @@ Public Class FrmLogin
     End Sub
 
 
+    Private Sub PasswordTextBox_PreviewKeyDown(sender As Object, e As PreviewKeyDownEventArgs) Handles PasswordTextBox.PreviewKeyDown
+        If e.KeyCode = Keys.Enter Then
+            BtnIniciar.PerformClick()
+        End If
+    End Sub
 End Class
