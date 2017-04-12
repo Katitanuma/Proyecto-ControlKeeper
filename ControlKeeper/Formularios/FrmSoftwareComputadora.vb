@@ -16,7 +16,7 @@ Public Class FrmSoftwareComputadora
         End If
         Return Estado
     End Function
-    Private Sub FrmUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub FrmSoftwareComputadora_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         HabilitarControles(True, False, False, False, False)
         Call MostrarTodasSoftwareComputadora()
         Call LlenarComboBoxSerie()

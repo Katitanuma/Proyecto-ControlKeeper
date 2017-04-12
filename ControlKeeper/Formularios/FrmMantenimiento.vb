@@ -15,7 +15,7 @@ Public Class FrmMantenimiento
         End If
         Return Estado
     End Function
-    Private Sub FrmUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub FrmMantenimiento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         HabilitarControles(True, False, False, False, False)
         Call MostrarTodosMantenimiento()
         Call LlenarComboBoxUsuario()
