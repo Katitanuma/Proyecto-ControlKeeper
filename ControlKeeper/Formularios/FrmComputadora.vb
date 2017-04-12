@@ -492,7 +492,7 @@ Public Class FrmComputadora
             Me.Close()
         End If
     End Sub
-    Private Sub BusquedaInteligenteComputadora()
+    Private Sub BusquedaFiltradasComputadora()
         If Con.State = ConnectionState.Open Then
             Con.Close()
         End If
@@ -527,7 +527,7 @@ Public Class FrmComputadora
         If TxtBusqueda.Text = Nothing Then
             MostrarTodasComputadoras()
         Else
-            BusquedaInteligenteComputadora()
+            BusquedaFiltradasComputadora()
         End If
     End Sub
 End Class

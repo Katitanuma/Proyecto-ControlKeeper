@@ -344,7 +344,7 @@ Public Class FrmUsuario
             Me.Close()
         End If
     End Sub
-    Private Sub BusquedaInteligenteUsuario()
+    Private Sub BusquedaFiltradasUsuario()
         If Con.State = ConnectionState.Open Then
             Con.Close()
         End If
@@ -378,7 +378,7 @@ Public Class FrmUsuario
         If TxtBusqueda.Text = Nothing Then
             MostrarTodosUsuarios()
         Else
-            BusquedaInteligenteUsuario()
+            BusquedaFiltradasUsuario()
         End If
     End Sub
 End Class

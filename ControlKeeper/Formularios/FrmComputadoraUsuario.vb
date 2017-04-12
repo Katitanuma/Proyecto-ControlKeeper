@@ -335,7 +335,7 @@ Public Class FrmComputadoraUsuario
         FrmComputadora.Var = 1
     End Sub
 
-    Private Sub BusquedaInteligenteComputadoraUsuario()
+    Private Sub BusquedaFiltradasComputadoraUsuario()
         If Con.State = ConnectionState.Open Then
             Con.Close()
         End If
@@ -369,7 +369,7 @@ Public Class FrmComputadoraUsuario
         If TxtBusqueda.Text = Nothing Then
             MostrarTodasComputadorasUsuario()
         Else
-            BusquedaInteligenteComputadoraUsuario()
+            BusquedaFiltradasComputadoraUsuario()
         End If
     End Sub
 End Class

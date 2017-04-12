@@ -290,7 +290,7 @@ Public Class FrmModelo
 
     End Sub
 
-    Private Sub BusquedaInteligenteModelo()
+    Private Sub BusquedaFiltradasModelo()
         If Con.State = ConnectionState.Open Then
             Con.Close()
         End If
@@ -324,7 +324,7 @@ Public Class FrmModelo
         If TxtBusqueda.Text = Nothing Then
             MostrarTodoModelo()
         Else
-            BusquedaInteligenteModelo()
+            BusquedaFiltradasModelo()
         End If
     End Sub
 End Class

@@ -27,7 +27,7 @@ Public Class FrmLogAuditoria
 
         End Using
     End Sub
-    Private Sub BusquedaInteligenteLogAuditoria()
+    Private Sub BusquedaFiltradasLogAuditoria()
         If Con.State = ConnectionState.Open Then
             Con.Close()
         End If
@@ -61,7 +61,7 @@ Public Class FrmLogAuditoria
         If TxtBusqueda.Text = Nothing Then
             MostrarTodosLogAuditoria()
         Else
-            BusquedaInteligenteLogAuditoria()
+            BusquedaFiltradasLogAuditoria()
         End If
     End Sub
 

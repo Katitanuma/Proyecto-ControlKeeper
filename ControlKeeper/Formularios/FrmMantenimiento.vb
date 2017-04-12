@@ -248,7 +248,7 @@ Public Class FrmMantenimiento
             Call MostrarTodosMantenimiento()
         End If
     End Sub
-    Private Sub BusquedaInteligenteMantenimiento()
+    Private Sub BusquedaFiltradasMantenimiento()
         If Con.State = ConnectionState.Open Then
             Con.Close()
         End If
@@ -282,7 +282,7 @@ Public Class FrmMantenimiento
         If TxtBusqueda.Text = Nothing Then
             MostrarTodosMantenimiento()
         Else
-            BusquedaInteligenteMantenimiento()
+            BusquedaFiltradasMantenimiento()
         End If
     End Sub
 End Class

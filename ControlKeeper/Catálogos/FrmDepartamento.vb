@@ -336,7 +336,7 @@ Public Class FrmDepartamento
         End If
     End Sub
 
-    Private Sub BusquedaInteligenteDepartamento()
+    Private Sub BusquedaFiltradasDepartamento()
         If Con.State = ConnectionState.Open Then
             Con.Close()
         End If
@@ -370,7 +370,7 @@ Public Class FrmDepartamento
         If TxtBusqueda.Text = Nothing Then
             MostrarTodoDepartamento()
         Else
-            BusquedaInteligenteDepartamento()
+            BusquedaFiltradasDepartamento()
         End If
     End Sub
 End Class

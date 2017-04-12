@@ -337,7 +337,7 @@ Public Class FrmCapacidadDiscoDuro
 
     End Function
 
-    Private Sub BusquedaInteligenteCapacidadDiscoDuro()
+    Private Sub BusquedaFiltradasCapacidadDiscoDuro()
         If Con.State = ConnectionState.Open Then
             Con.Close()
         End If
@@ -370,7 +370,7 @@ Public Class FrmCapacidadDiscoDuro
         If TxtBusqueda.Text = Nothing Then
             MostrarTodoCapacidadDiscoDuro()
         Else
-            BusquedaInteligenteCapacidadDiscoDuro()
+            BusquedaFiltradasCapacidadDiscoDuro()
         End If
     End Sub
 

@@ -305,7 +305,7 @@ Public Class FrmCapacidadRAM
         Return Valor
     End Function
 
-    Private Sub BusquedaInteligenteCapacidadRAM()
+    Private Sub BusquedaFiltradasCapacidadRAM()
         If Con.State = ConnectionState.Open Then
             Con.Close()
         End If
@@ -338,7 +338,7 @@ Public Class FrmCapacidadRAM
         If TxtBusqueda.Text = Nothing Then
             MostrarTodoCapacidadMemoriaRAM()
         Else
-            BusquedaInteligenteCapacidadRAM()
+            BusquedaFiltradasCapacidadRAM()
         End If
     End Sub
 

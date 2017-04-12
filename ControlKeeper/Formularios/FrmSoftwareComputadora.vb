@@ -394,7 +394,7 @@ Public Class FrmSoftwareComputadora
 
     End Sub
 
-    Private Sub BusquedaInteligenteSoftwareComputadora()
+    Private Sub BusquedaFiltradasSoftwareComputadora()
         If Con.State = ConnectionState.Open Then
             Con.Close()
         End If
@@ -428,7 +428,7 @@ Public Class FrmSoftwareComputadora
         If TxtBusqueda.Text = Nothing Then
             MostrarTodasSoftwareComputadora()
         Else
-            BusquedaInteligenteSoftwareComputadora()
+            BusquedaFiltradasSoftwareComputadora()
         End If
     End Sub
 End Class

@@ -248,7 +248,7 @@ Public Class FrmTipoSoftware
         Call Limpiar()
     End Sub
 
-    Private Sub BusquedaInteligenteTipoSoftware()
+    Private Sub BusquedaFiltradasTipoSoftware()
         If Con.State = ConnectionState.Open Then
             Con.Close()
         End If
@@ -282,7 +282,7 @@ Public Class FrmTipoSoftware
         If TxtBusqueda.Text = Nothing Then
             MostrarTodoTipoSoftware()
         Else
-            BusquedaInteligenteTipoSoftware()
+            BusquedaFiltradasTipoSoftware()
         End If
     End Sub
 End Class

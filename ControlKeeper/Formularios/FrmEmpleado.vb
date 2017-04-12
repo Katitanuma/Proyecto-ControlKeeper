@@ -386,7 +386,7 @@ Public Class FrmEmpleado
         End If
     End Sub
 
-    Private Sub BusquedaInteligenteEmpleado()
+    Private Sub BusquedaFiltradasEmpleado()
         If Con.State = ConnectionState.Open Then
             Con.Close()
         End If
@@ -420,7 +420,7 @@ Public Class FrmEmpleado
         If TxtBusqueda.Text = Nothing Then
             MostrarTodosEmpleado()
         Else
-            BusquedaInteligenteEmpleado()
+            BusquedaFiltradasEmpleado()
         End If
     End Sub
 End Class

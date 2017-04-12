@@ -309,7 +309,7 @@ Public Class FrmCiudad
         Return Estado
     End Function
 
-    Private Sub BusquedaInteligenteCiudad()
+    Private Sub BusquedaFiltradasCiudad()
         If Con.State = ConnectionState.Open Then
             Con.Close()
         End If
@@ -343,7 +343,7 @@ Public Class FrmCiudad
         If TxtBusqueda.Text = Nothing Then
             MostrarTodociudad()
         Else
-            BusquedaInteligenteCiudad()
+            BusquedaFiltradasCiudad()
         End If
     End Sub
 End Class

@@ -338,7 +338,7 @@ Public Class FrmDesarrollador
         End If
     End Sub
 
-    Private Sub BusquedaInteligenteDesarrollador()
+    Private Sub BusquedaFiltradasDesarrollador()
         If Con.State = ConnectionState.Open Then
             Con.Close()
         End If
@@ -372,7 +372,7 @@ Public Class FrmDesarrollador
         If TxtBusqueda.Text = Nothing Then
             MostrarTodoDesarrollador()
         Else
-            BusquedaInteligenteDesarrollador()
+            BusquedaFiltradasDesarrollador()
         End If
     End Sub
 End Class

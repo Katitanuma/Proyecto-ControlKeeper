@@ -472,7 +472,7 @@ Public Class FrmSoftware
         End If
     End Sub
 
-    Private Sub BusquedaInteligenteSoftware()
+    Private Sub BusquedaFiltradasSoftware()
         If Con.State = ConnectionState.Open Then
             Con.Close()
         End If
@@ -506,7 +506,7 @@ Public Class FrmSoftware
         If TxtBusqueda.Text = Nothing Then
             MostrarTodoSoftware()
         Else
-            BusquedaInteligenteSoftware()
+            BusquedaFiltradasSoftware()
         End If
     End Sub
 

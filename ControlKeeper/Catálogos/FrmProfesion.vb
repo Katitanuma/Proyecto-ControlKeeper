@@ -247,7 +247,7 @@ Public Class FrmProfesion
         Return Estado
     End Function
 
-    Private Sub BusquedaInteligenteProfesion()
+    Private Sub BusquedaFiltradasProfesion()
         If Con.State = ConnectionState.Open Then
             Con.Close()
         End If
@@ -281,7 +281,7 @@ Public Class FrmProfesion
         If TxtBusqueda.Text = Nothing Then
             MostrarTodoProfesion()
         Else
-            BusquedaInteligenteProfesion()
+            BusquedaFiltradasProfesion()
         End If
     End Sub
 

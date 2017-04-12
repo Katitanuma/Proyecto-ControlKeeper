@@ -261,7 +261,7 @@ Public Class FrmMarca
         End If
     End Sub
 
-    Private Sub BusquedaInteligenteMarca()
+    Private Sub BusquedaFiltradasMarca()
         If Con.State = ConnectionState.Open Then
             Con.Close()
         End If
@@ -295,7 +295,7 @@ Public Class FrmMarca
         If TxtBusqueda.Text = Nothing Then
             MostrarTodoMarca()
         Else
-            BusquedaInteligenteMarca()
+            BusquedaFiltradasMarca()
         End If
     End Sub
 End Class
