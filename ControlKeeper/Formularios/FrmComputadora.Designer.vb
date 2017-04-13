@@ -277,9 +277,9 @@ Partial Class FrmComputadora
         Me.ChkEstado.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChkEstado.Location = New System.Drawing.Point(459, 84)
         Me.ChkEstado.Name = "ChkEstado"
-        Me.ChkEstado.Size = New System.Drawing.Size(112, 24)
+        Me.ChkEstado.Size = New System.Drawing.Size(94, 24)
         Me.ChkEstado.TabIndex = 32
-        Me.ChkEstado.Text = "No asignada"
+        Me.ChkEstado.Text = "No activa"
         Me.ChkEstado.UseVisualStyleBackColor = True
         '
         'CboAño

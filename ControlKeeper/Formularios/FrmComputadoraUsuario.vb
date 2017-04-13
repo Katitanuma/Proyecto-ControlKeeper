@@ -16,7 +16,7 @@ Public Class FrmComputadoraUsuario
     Private Sub FrmComputadoraUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         HabilitarControles(True, False, False, False, False)
         Call MostrarTodasComputadorasUsuario()
-        Call LlenarComboBoxSerie()
+        Call LlenarComboBoxSerie2()
         Call LlenarComboBoxUsuario()
         Call Limpiar()
     End Sub
@@ -56,12 +56,13 @@ Public Class FrmComputadoraUsuario
     End Sub
 
     Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
+        Call LlenarComboBoxSerie2()
         Call HabilitarControles(False, True, False, True, True)
         Call Limpiar()
+
     End Sub
 
-
-    Public Sub LlenarComboBoxSerie()
+    Public Sub LlenarComboBoxSerie1()
         If Con.State = ConnectionState.Open Then
             Con.Close()
         End If
@@ -71,6 +72,35 @@ Public Class FrmComputadoraUsuario
                 Con.Open()
                 With cmd
                     .CommandText = "Sp_MostrarSerieComputadora"
+                    .CommandType = CommandType.StoredProcedure
+                    .Connection = Con
+                    .ExecuteNonQuery()
+                End With
+                Dim AdaptadorComputadora As New SqlDataAdapter(cmd)
+                Dim ds As New DataSet
+                AdaptadorComputadora.Fill(ds, "Computadora")
+                CboSerie.DataSource = ds.Tables(0)
+                CboSerie.DisplayMember = ds.Tables(0).Columns("IdComputadora").ToString
+                CboSerie.ValueMember = ds.Tables(0).Columns("IdComputadora").ToString
+
+            Catch ex As Exception
+                MessageBox.Show("Error al mostrar la serie de las computadoras " + ex.Message)
+            Finally
+                Con.Close()
+            End Try
+
+        End Using
+    End Sub
+    Public Sub LlenarComboBoxSerie2()
+        If Con.State = ConnectionState.Open Then
+            Con.Close()
+        End If
+
+        Using cmd As New SqlCommand
+            Try
+                Con.Open()
+                With cmd
+                    .CommandText = "Sp_MostrarSerieComputadora2"
                     .CommandType = CommandType.StoredProcedure
                     .Connection = Con
                     .ExecuteNonQuery()
@@ -124,7 +154,7 @@ Public Class FrmComputadoraUsuario
         If ChkEstado.CheckState = CheckState.Checked Then
             var = "Asignada"
         Else
-            var = "No Asignada"
+            var = "No asignada"
         End If
         Return var
     End Function
@@ -150,6 +180,11 @@ Public Class FrmComputadoraUsuario
                     .ExecuteNonQuery()
                 End With
                 MessageBox.Show("Asignacion registrada con exito", "Control Keeper")
+                If ChkEstado.Checked = True Then
+                    Call EditarComputadora("Asignada", CboSerie.SelectedValue.ToString)
+                Else
+                    Call EditarComputadora("No asignada", CboSerie.SelectedValue.ToString)
+                End If
             Catch ex As Exception
                 MessageBox.Show("Error al guardar la Asignación " + ex.Message)
             Finally
@@ -166,6 +201,8 @@ Public Class FrmComputadoraUsuario
                 Call MostrarTodasComputadorasUsuario()
                 Call HabilitarControles(True, False, False, False, False)
                 Call Limpiar()
+
+
             Else
                 MessageBox.Show("Ya se encuentra registrada esa Computadora", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
             End If
@@ -185,6 +222,7 @@ Public Class FrmComputadoraUsuario
 
     Private Sub EditarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditarToolStripMenuItem.Click
         Call HabilitarControles(False, False, True, True, True)
+        Call LlenarComboBoxSerie1()
         CboSerie.Enabled = False
         CboSerie.Text = DgvComputadoraUsuario.CurrentRow.Cells(0).Value.ToString
         TxtObservacion.Text = DgvComputadoraUsuario.CurrentRow.Cells(1).Value.ToString
@@ -202,6 +240,7 @@ Public Class FrmComputadoraUsuario
 
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
         Call HabilitarControles(True, False, False, False, False)
+        Call LlenarComboBoxSerie2()
         Call Limpiar()
         CboSerie.Enabled = True
         CboUsuario.Enabled = True
@@ -227,8 +266,39 @@ Public Class FrmComputadoraUsuario
                     .ExecuteNonQuery()
                 End With
                 MessageBox.Show("Asignación editada con exito", "Control Keeper")
+                If ChkEstado.Checked = True Then
+                    Call EditarComputadora("Asignada", CboSerie.SelectedValue.ToString)
+                Else
+                    Call EditarComputadora("No asignada", CboSerie.SelectedValue.ToString)
+                End If
             Catch ex As Exception
                 MessageBox.Show("Error al editar la asignación " + ex.Message)
+            Finally
+                Con.Close()
+            End Try
+        End Using
+
+    End Sub
+    Private Sub EditarComputadora(ByVal EstadoAsignacion As String, ByVal Id As String)
+        If Con.State = ConnectionState.Open Then
+            Con.Close()
+        End If
+
+        Using cmd As New SqlCommand
+            Try
+                Con.Open()
+                With cmd
+                    .CommandText = "Sp_ActualizarEstadoAsignacionComputadora"
+                    .CommandType = CommandType.StoredProcedure
+                    .Connection = Con
+
+                    .Parameters.Add("@IdComputadora", SqlDbType.NVarChar, 50).Value = Id
+                    .Parameters.Add("@EstadoAsignacion", SqlDbType.NVarChar, 50).Value = EstadoAsignacion
+                    .ExecuteNonQuery()
+                End With
+
+            Catch ex As Exception
+                MessageBox.Show("Error al editar la asignación de Computadora " + ex.Message)
             Finally
                 Con.Close()
             End Try
@@ -251,6 +321,7 @@ Public Class FrmComputadoraUsuario
                     .ExecuteNonQuery()
                 End With
                 MessageBox.Show("Asignacion eliminada con exito", "Control Keeper")
+                Call EditarComputadora("No asignada", DgvComputadoraUsuario.CurrentRow.Cells(0).Value.ToString.Trim)
             Catch ex As Exception
                 MessageBox.Show("Error al eliminar la asignacion " + ex.Message)
             Finally
@@ -262,12 +333,14 @@ Public Class FrmComputadoraUsuario
 
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
         If ValidarComputadoraUsuario() = True Then
+
             Call EditarComputadoraUsuario()
             Call HabilitarControles(True, False, False, False, False)
             Call Limpiar()
             Call MostrarTodasComputadorasUsuario()
             CboUsuario.Enabled = True
             CboSerie.Enabled = True
+            Call LlenarComboBoxSerie2()
         End If
 
     End Sub

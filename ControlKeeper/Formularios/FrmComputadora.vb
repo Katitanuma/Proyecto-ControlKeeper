@@ -223,9 +223,9 @@ Public Class FrmComputadora
     Private Function IdentificarEstadoAsignacion() As String
         Dim var As String
         If ChkEstado.CheckState = CheckState.Checked Then
-            var = "Asignada"
+            var = "Activa"
         Else
-            var = "No Asignada"
+            var = "No activa"
         End If
         Return var
     End Function
@@ -251,6 +251,7 @@ Public Class FrmComputadora
                     .Parameters.Add("@Estado", SqlDbType.NVarChar, 20).Value = IdentificarEstadoAsignacion()
                     .Parameters.Add("@Mouse", SqlDbType.Bit).Value = IdentificarMouse()
                     .Parameters.Add("@Teclado", SqlDbType.Bit).Value = IdentificarTeclado()
+                    .Parameters.Add("@EstadoAsignacion", SqlDbType.NVarChar, 50).Value = "No asignada"
                     .ExecuteNonQuery()
                 End With
                 MessageBox.Show("Computadora registrada con exito", "Control Keeper")
@@ -301,7 +302,7 @@ Public Class FrmComputadora
         CboCapacidadDiscoDuro.Text = DgvComputadora.CurrentRow.Cells(3).Value.ToString
         CboRAM.Text = DgvComputadora.CurrentRow.Cells(4).Value.ToString
         CboTipoComputadora.Text = DgvComputadora.CurrentRow.Cells(5).Value.ToString
-        If DgvComputadora.CurrentRow.Cells(6).Value.ToString = "Asignada" Then
+        If DgvComputadora.CurrentRow.Cells(6).Value.ToString = "Activa" Then
             ChkEstado.Checked = True
         Else
             ChkEstado.Checked = False
@@ -464,9 +465,9 @@ Public Class FrmComputadora
 
     Private Sub ChkEstado_CheckedChanged(sender As Object, e As EventArgs) Handles ChkEstado.CheckedChanged
         If ChkEstado.CheckState = CheckState.Checked Then
-            ChkEstado.Text = "Asignada"
+            ChkEstado.Text = "Activa"
         Else
-            ChkEstado.Text = "No Asignada"
+            ChkEstado.Text = "No activa"
         End If
     End Sub
 
@@ -483,11 +484,19 @@ Public Class FrmComputadora
 
     Private Sub DgvComputadora_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvComputadora.CellDoubleClick
         If Var = 1 Then
-            FrmComputadoraUsuario.LlenarComboBoxSerie()
-            FrmComputadoraUsuario.CboSerie.Text = DgvComputadora.CurrentRow.Cells(0).Value.ToString
-            Me.Close()
+            If DgvComputadora.CurrentRow.Cells(6).Value.ToString = "No activa" Or DgvComputadora.CurrentRow.Cells(10).Value.ToString = "Asignada" Then
+                MsgBox("La computadora esta inactiva o esta asignada", MsgBoxStyle.Critical, "Control Keeper")
+            Else
+                FrmComputadoraUsuario.LlenarComboBoxSerie2()
+                FrmComputadoraUsuario.CboSerie.Text = DgvComputadora.CurrentRow.Cells(0).Value.ToString
+                If FrmComputadoraUsuario.CboSerie.Text = Nothing Then
+                    MsgBox("La computadora ya tiene un usuario reservado", MsgBoxStyle.Critical, "Control Keeper")
+                End If
+                Me.Close()
+            End If
+
         ElseIf Var = 2 Then
-            FrmSoftwareComputadora.LlenarComboBoxSerie()
+                FrmSoftwareComputadora.LlenarComboBoxSerie()
             FrmSoftwareComputadora.CboSerie.Text = DgvComputadora.CurrentRow.Cells(0).Value.ToString
             Me.Close()
         End If
