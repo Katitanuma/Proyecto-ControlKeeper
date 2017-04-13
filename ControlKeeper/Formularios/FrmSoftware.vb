@@ -444,12 +444,12 @@ Public Class FrmSoftware
 
         ElseIf CboEditor.Text = Nothing Then
 
-            MessageBox.Show("Tiene que ingresar seleccionar el editor del software", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Tiene que seleccionar el editor del software", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Estado = False
 
         ElseIf CboTipoSoftware.Text = Nothing Then
 
-            MessageBox.Show("Tiene que ingresar seleccionar el tipo de software", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Tiene que  seleccionar el tipo de software", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Estado = False
 
         Else

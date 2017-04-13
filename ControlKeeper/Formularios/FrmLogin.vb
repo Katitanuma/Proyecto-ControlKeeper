@@ -52,10 +52,10 @@ Public Class FrmLogin
                 If LectorUsuario.Read Then
                     If LectorUsuario("TipoUsuario").ToString = "Administrador" Then
                         If LectorUsuario("Estado").ToString = "Activo" Then
-                            PasswordTextBox.Clear()
-                            UsernameTextBox.Clear()
                             Me.Hide()
                             MDIControlKeeper.LblUsuario.Text = UsernameTextBox.Text.Trim
+                            PasswordTextBox.Clear()
+                            UsernameTextBox.Clear()
                             MDIControlKeeper.Show()
                         Else
                             MsgBox("Empleado Inactivo", MsgBoxStyle.Critical, "Control Keeper")

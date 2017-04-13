@@ -61,6 +61,8 @@ Public Class FrmSoftwareComputadora
 
     Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
         Call HabilitarControles(False, True, False, True, True)
+        CboSoftware.Enabled = True
+        CboSerie.Enabled = True
         Call Limpiar()
     End Sub
 
