@@ -137,9 +137,9 @@ Partial Class FrmEmpleado
         Me.ChkEstado.AutoSize = True
         Me.ChkEstado.Location = New System.Drawing.Point(550, 135)
         Me.ChkEstado.Name = "ChkEstado"
-        Me.ChkEstado.Size = New System.Drawing.Size(85, 20)
+        Me.ChkEstado.Size = New System.Drawing.Size(84, 20)
         Me.ChkEstado.TabIndex = 23
-        Me.ChkEstado.Text = "No Activo"
+        Me.ChkEstado.Text = "No activo"
         Me.ChkEstado.UseVisualStyleBackColor = True
         '
         'Label8

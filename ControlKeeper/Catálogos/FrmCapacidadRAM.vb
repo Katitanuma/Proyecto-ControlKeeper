@@ -174,7 +174,7 @@ Public Class FrmCapacidadRAM
                 Call MostrarTodoCapacidadMemoriaRAM()
                 Call LimpiarCapacidadMemoriaRAM()
                 Call InvestigarCorrelativoCapacidadMemoriaRAM()
-
+                Call LimpiarCapacidadMemoriaRAM()
 
             End If
         End If
@@ -202,6 +202,7 @@ Public Class FrmCapacidadRAM
             Call ModificarCapacidadMemoriaRAM()
             Call HabilitarControles(True, False, False, False, False)
             Call MostrarTodoCapacidadMemoriaRAM()
+            Call LimpiarCapacidadMemoriaRAM()
         End If
     End Sub
 

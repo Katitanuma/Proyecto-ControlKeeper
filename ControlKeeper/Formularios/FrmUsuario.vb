@@ -9,7 +9,7 @@ Public Class FrmUsuario
             TxtUsuario.Focus()
             Estado = False
         ElseIf TxtContrasena.Text = Nothing Then
-            MsgBox("Seleccione el contraseña", MsgBoxStyle.Critical, "Control Keeper")
+            MsgBox("Ingrese la contraseña", MsgBoxStyle.Critical, "Control Keeper")
             TxtContrasena.Focus()
             Estado = False
         ElseIf CboTipoUsuario.Text = Nothing Then
@@ -114,9 +114,9 @@ Public Class FrmUsuario
                     .Connection = Con
                     .ExecuteNonQuery()
                 End With
-                Dim AdaptadorTipoUsuario As New SqlDataAdapter(cmd)
+                Dim AdaptadorEmpleado As New SqlDataAdapter(cmd)
                 Dim ds As New DataSet
-                AdaptadorTipoUsuario.Fill(ds, "Empleado")
+                AdaptadorEmpleado.Fill(ds, "Empleado")
                 CboNombreEmpleado.DataSource = ds.Tables(0)
                 CboNombreEmpleado.DisplayMember = ds.Tables(0).Columns("NombreCompletoEmpleado").ToString
                 CboNombreEmpleado.ValueMember = ds.Tables(0).Columns("IdEmpleado").ToString
