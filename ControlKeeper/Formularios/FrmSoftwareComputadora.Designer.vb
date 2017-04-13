@@ -58,6 +58,7 @@ Partial Class FrmSoftwareComputadora
         Me.Label51 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TxtBusqueda = New System.Windows.Forms.TextBox()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DgvInstalacionSoftware, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -117,6 +118,7 @@ Partial Class FrmSoftwareComputadora
         Me.BtnCancelar.Size = New System.Drawing.Size(67, 51)
         Me.BtnCancelar.TabIndex = 89
         Me.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnCancelar, "Cancelar")
         Me.BtnCancelar.UseVisualStyleBackColor = False
         '
         'BtnGuardar
@@ -135,6 +137,7 @@ Partial Class FrmSoftwareComputadora
         Me.BtnGuardar.Size = New System.Drawing.Size(67, 51)
         Me.BtnGuardar.TabIndex = 88
         Me.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnGuardar, "Guardar")
         Me.BtnGuardar.UseVisualStyleBackColor = False
         '
         'BtnModificar
@@ -153,6 +156,7 @@ Partial Class FrmSoftwareComputadora
         Me.BtnModificar.Size = New System.Drawing.Size(67, 51)
         Me.BtnModificar.TabIndex = 87
         Me.BtnModificar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnModificar, "Modificar")
         Me.BtnModificar.UseVisualStyleBackColor = False
         '
         'BtnNuevo
@@ -171,6 +175,7 @@ Partial Class FrmSoftwareComputadora
         Me.BtnNuevo.Size = New System.Drawing.Size(67, 51)
         Me.BtnNuevo.TabIndex = 86
         Me.BtnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnNuevo, "Nuevo")
         Me.BtnNuevo.UseVisualStyleBackColor = False
         '
         'DgvInstalacionSoftware
@@ -422,17 +427,18 @@ Partial Class FrmSoftwareComputadora
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Comic Sans MS", 11.25!)
-        Me.Label7.Location = New System.Drawing.Point(15, 308)
+        Me.Label7.Location = New System.Drawing.Point(13, 308)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(78, 20)
         Me.Label7.TabIndex = 91
-        Me.Label7.Text = "Busqueda "
+        Me.Label7.Text = "Búsqueda "
         '
         'TxtBusqueda
         '
-        Me.TxtBusqueda.Location = New System.Drawing.Point(94, 310)
+        Me.TxtBusqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBusqueda.Location = New System.Drawing.Point(94, 309)
         Me.TxtBusqueda.Name = "TxtBusqueda"
-        Me.TxtBusqueda.Size = New System.Drawing.Size(529, 20)
+        Me.TxtBusqueda.Size = New System.Drawing.Size(529, 21)
         Me.TxtBusqueda.TabIndex = 90
         '
         'FrmSoftwareComputadora
@@ -450,6 +456,9 @@ Partial Class FrmSoftwareComputadora
         Me.Controls.Add(Me.DgvInstalacionSoftware)
         Me.Controls.Add(Me.PlInstalacionSoftware)
         Me.Controls.Add(Me.Panel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FrmSoftwareComputadora"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Detalle Instalación de Software"
@@ -498,4 +507,5 @@ Partial Class FrmSoftwareComputadora
     Friend WithEvents BtnAbrirFrmUsuario As Button
     Friend WithEvents Label7 As Label
     Friend WithEvents TxtBusqueda As TextBox
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

@@ -55,6 +55,7 @@ Partial Class FrmComputadora
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TxtBusqueda = New System.Windows.Forms.TextBox()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         CType(Me.DgvComputadora, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -109,11 +110,12 @@ Partial Class FrmComputadora
         Me.BtnCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnCancelar.ForeColor = System.Drawing.Color.Black
         Me.BtnCancelar.Image = Global.ControlKeeper.My.Resources.Resources.C3
-        Me.BtnCancelar.Location = New System.Drawing.Point(417, 259)
+        Me.BtnCancelar.Location = New System.Drawing.Point(419, 259)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(67, 51)
         Me.BtnCancelar.TabIndex = 80
         Me.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnCancelar, "Cancelar")
         Me.BtnCancelar.UseVisualStyleBackColor = False
         '
         'BtnGuardar
@@ -127,11 +129,12 @@ Partial Class FrmComputadora
         Me.BtnGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnGuardar.ForeColor = System.Drawing.Color.Black
         Me.BtnGuardar.Image = Global.ControlKeeper.My.Resources.Resources.G3
-        Me.BtnGuardar.Location = New System.Drawing.Point(229, 259)
+        Me.BtnGuardar.Location = New System.Drawing.Point(231, 259)
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(67, 51)
         Me.BtnGuardar.TabIndex = 79
         Me.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnGuardar, "Guardar")
         Me.BtnGuardar.UseVisualStyleBackColor = False
         '
         'BtnModificar
@@ -145,11 +148,12 @@ Partial Class FrmComputadora
         Me.BtnModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnModificar.ForeColor = System.Drawing.Color.Black
         Me.BtnModificar.Image = Global.ControlKeeper.My.Resources.Resources.A3
-        Me.BtnModificar.Location = New System.Drawing.Point(322, 260)
+        Me.BtnModificar.Location = New System.Drawing.Point(324, 260)
         Me.BtnModificar.Name = "BtnModificar"
         Me.BtnModificar.Size = New System.Drawing.Size(67, 51)
         Me.BtnModificar.TabIndex = 78
         Me.BtnModificar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnModificar, "Modificar")
         Me.BtnModificar.UseVisualStyleBackColor = False
         '
         'BtnNuevo
@@ -163,11 +167,12 @@ Partial Class FrmComputadora
         Me.BtnNuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnNuevo.ForeColor = System.Drawing.Color.Black
         Me.BtnNuevo.Image = Global.ControlKeeper.My.Resources.Resources.N3
-        Me.BtnNuevo.Location = New System.Drawing.Point(136, 259)
+        Me.BtnNuevo.Location = New System.Drawing.Point(138, 259)
         Me.BtnNuevo.Name = "BtnNuevo"
         Me.BtnNuevo.Size = New System.Drawing.Size(67, 51)
         Me.BtnNuevo.TabIndex = 77
         Me.BtnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnNuevo, "Nuevo")
         Me.BtnNuevo.UseVisualStyleBackColor = False
         '
         'DgvComputadora
@@ -295,7 +300,7 @@ Partial Class FrmComputadora
         '
         Me.Label59.AutoSize = True
         Me.Label59.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label59.Location = New System.Drawing.Point(319, 107)
+        Me.Label59.Location = New System.Drawing.Point(319, 111)
         Me.Label59.Name = "Label59"
         Me.Label59.Size = New System.Drawing.Size(134, 20)
         Me.Label59.TabIndex = 30
@@ -306,7 +311,7 @@ Partial Class FrmComputadora
         Me.CboTipoComputadora.BackColor = System.Drawing.Color.White
         Me.CboTipoComputadora.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CboTipoComputadora.FormattingEnabled = True
-        Me.CboTipoComputadora.Location = New System.Drawing.Point(459, 107)
+        Me.CboTipoComputadora.Location = New System.Drawing.Point(459, 111)
         Me.CboTipoComputadora.Name = "CboTipoComputadora"
         Me.CboTipoComputadora.Size = New System.Drawing.Size(133, 24)
         Me.CboTipoComputadora.TabIndex = 29
@@ -402,17 +407,18 @@ Partial Class FrmComputadora
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Comic Sans MS", 11.25!)
-        Me.Label2.Location = New System.Drawing.Point(15, 325)
+        Me.Label2.Location = New System.Drawing.Point(12, 325)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(78, 20)
         Me.Label2.TabIndex = 82
-        Me.Label2.Text = "Busqueda "
+        Me.Label2.Text = "Búsqueda "
         '
         'TxtBusqueda
         '
-        Me.TxtBusqueda.Location = New System.Drawing.Point(94, 327)
+        Me.TxtBusqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBusqueda.Location = New System.Drawing.Point(94, 326)
         Me.TxtBusqueda.Name = "TxtBusqueda"
-        Me.TxtBusqueda.Size = New System.Drawing.Size(520, 20)
+        Me.TxtBusqueda.Size = New System.Drawing.Size(520, 21)
         Me.TxtBusqueda.TabIndex = 81
         '
         'FrmComputadora
@@ -430,6 +436,9 @@ Partial Class FrmComputadora
         Me.Controls.Add(Me.DgvComputadora)
         Me.Controls.Add(Me.PlComputadora)
         Me.Controls.Add(Me.Panel3)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FrmComputadora"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Gestión de Computadora"
@@ -475,4 +484,5 @@ Partial Class FrmComputadora
     Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label2 As Label
     Friend WithEvents TxtBusqueda As TextBox
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

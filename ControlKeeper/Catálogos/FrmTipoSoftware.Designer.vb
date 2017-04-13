@@ -42,6 +42,7 @@ Partial Class FrmTipoSoftware
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TxtBusqueda = New System.Windows.Forms.TextBox()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.DgvTipoSoftware, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CmsTipoSoftware.SuspendLayout()
         Me.PnlTipoSoftware.SuspendLayout()
@@ -57,11 +58,11 @@ Partial Class FrmTipoSoftware
         Me.DgvTipoSoftware.BackgroundColor = System.Drawing.Color.White
         Me.DgvTipoSoftware.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvTipoSoftware.ContextMenuStrip = Me.CmsTipoSoftware
-        Me.DgvTipoSoftware.Location = New System.Drawing.Point(21, 265)
+        Me.DgvTipoSoftware.Location = New System.Drawing.Point(21, 268)
         Me.DgvTipoSoftware.Name = "DgvTipoSoftware"
         Me.DgvTipoSoftware.ReadOnly = True
         Me.DgvTipoSoftware.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvTipoSoftware.Size = New System.Drawing.Size(479, 220)
+        Me.DgvTipoSoftware.Size = New System.Drawing.Size(479, 207)
         Me.DgvTipoSoftware.TabIndex = 79
         '
         'CmsTipoSoftware
@@ -146,6 +147,7 @@ Partial Class FrmTipoSoftware
         Me.BtnCancelar.Size = New System.Drawing.Size(67, 51)
         Me.BtnCancelar.TabIndex = 83
         Me.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnCancelar, "Cancelar")
         Me.BtnCancelar.UseVisualStyleBackColor = False
         '
         'BtnGuardar
@@ -164,6 +166,7 @@ Partial Class FrmTipoSoftware
         Me.BtnGuardar.Size = New System.Drawing.Size(67, 51)
         Me.BtnGuardar.TabIndex = 82
         Me.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnGuardar, "Guardar")
         Me.BtnGuardar.UseVisualStyleBackColor = False
         '
         'BtnModificar
@@ -182,6 +185,7 @@ Partial Class FrmTipoSoftware
         Me.BtnModificar.Size = New System.Drawing.Size(67, 51)
         Me.BtnModificar.TabIndex = 81
         Me.BtnModificar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnModificar, "Modificar")
         Me.BtnModificar.UseVisualStyleBackColor = False
         '
         'BtnNuevo
@@ -200,6 +204,7 @@ Partial Class FrmTipoSoftware
         Me.BtnNuevo.Size = New System.Drawing.Size(67, 51)
         Me.BtnNuevo.TabIndex = 80
         Me.BtnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnNuevo, "Nuevo")
         Me.BtnNuevo.UseVisualStyleBackColor = False
         '
         'Panel1
@@ -242,17 +247,18 @@ Partial Class FrmTipoSoftware
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Comic Sans MS", 11.25!)
-        Me.Label1.Location = New System.Drawing.Point(18, 237)
+        Me.Label1.Location = New System.Drawing.Point(18, 240)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(78, 20)
         Me.Label1.TabIndex = 85
-        Me.Label1.Text = "Busqueda "
+        Me.Label1.Text = "Búsqueda "
         '
         'TxtBusqueda
         '
-        Me.TxtBusqueda.Location = New System.Drawing.Point(97, 239)
+        Me.TxtBusqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBusqueda.Location = New System.Drawing.Point(97, 242)
         Me.TxtBusqueda.Name = "TxtBusqueda"
-        Me.TxtBusqueda.Size = New System.Drawing.Size(403, 20)
+        Me.TxtBusqueda.Size = New System.Drawing.Size(403, 21)
         Me.TxtBusqueda.TabIndex = 84
         '
         'FrmTipoSoftware
@@ -270,6 +276,9 @@ Partial Class FrmTipoSoftware
         Me.Controls.Add(Me.DgvTipoSoftware)
         Me.Controls.Add(Me.PnlTipoSoftware)
         Me.Controls.Add(Me.Panel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FrmTipoSoftware"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Gestión de Tipo de Software"
@@ -303,4 +312,5 @@ Partial Class FrmTipoSoftware
     Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label1 As Label
     Friend WithEvents TxtBusqueda As TextBox
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

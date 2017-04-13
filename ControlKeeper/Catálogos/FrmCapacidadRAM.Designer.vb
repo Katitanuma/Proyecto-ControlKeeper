@@ -42,6 +42,7 @@ Partial Class FrmCapacidadRAM
         Me.Label45 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TxtBusqueda = New System.Windows.Forms.TextBox()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.DgvCapacidadMemoriaRAM, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CMSCapacidadRAM.SuspendLayout()
         Me.PnlCapacidadMemoriaRAM.SuspendLayout()
@@ -146,6 +147,7 @@ Partial Class FrmCapacidadRAM
         Me.BtnCancelar.Size = New System.Drawing.Size(67, 51)
         Me.BtnCancelar.TabIndex = 76
         Me.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnCancelar, "Cancelar")
         Me.BtnCancelar.UseVisualStyleBackColor = False
         '
         'BtnGuardar
@@ -164,6 +166,7 @@ Partial Class FrmCapacidadRAM
         Me.BtnGuardar.Size = New System.Drawing.Size(67, 51)
         Me.BtnGuardar.TabIndex = 75
         Me.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnGuardar, "Guardar")
         Me.BtnGuardar.UseVisualStyleBackColor = False
         '
         'BtnModificar
@@ -182,6 +185,7 @@ Partial Class FrmCapacidadRAM
         Me.BtnModificar.Size = New System.Drawing.Size(67, 51)
         Me.BtnModificar.TabIndex = 74
         Me.BtnModificar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnModificar, "Modificar")
         Me.BtnModificar.UseVisualStyleBackColor = False
         '
         'BtnNuevo
@@ -200,6 +204,7 @@ Partial Class FrmCapacidadRAM
         Me.BtnNuevo.Size = New System.Drawing.Size(67, 51)
         Me.BtnNuevo.TabIndex = 73
         Me.BtnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnNuevo, "Nuevo")
         Me.BtnNuevo.UseVisualStyleBackColor = False
         '
         'Panel1
@@ -220,9 +225,9 @@ Partial Class FrmCapacidadRAM
         Me.PictureBox10.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox10.BackgroundImage = Global.ControlKeeper.My.Resources.Resources.ram_98420_960_720
         Me.PictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox10.Location = New System.Drawing.Point(15, 0)
+        Me.PictureBox10.Location = New System.Drawing.Point(20, 0)
         Me.PictureBox10.Name = "PictureBox10"
-        Me.PictureBox10.Size = New System.Drawing.Size(83, 62)
+        Me.PictureBox10.Size = New System.Drawing.Size(73, 62)
         Me.PictureBox10.TabIndex = 39
         Me.PictureBox10.TabStop = False
         '
@@ -242,17 +247,18 @@ Partial Class FrmCapacidadRAM
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Comic Sans MS", 11.25!)
-        Me.Label1.Location = New System.Drawing.Point(32, 245)
+        Me.Label1.Location = New System.Drawing.Point(34, 245)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(78, 20)
         Me.Label1.TabIndex = 78
-        Me.Label1.Text = "Busqueda "
+        Me.Label1.Text = "Búsqueda "
         '
         'TxtBusqueda
         '
-        Me.TxtBusqueda.Location = New System.Drawing.Point(111, 247)
+        Me.TxtBusqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBusqueda.Location = New System.Drawing.Point(111, 246)
         Me.TxtBusqueda.Name = "TxtBusqueda"
-        Me.TxtBusqueda.Size = New System.Drawing.Size(374, 20)
+        Me.TxtBusqueda.Size = New System.Drawing.Size(374, 21)
         Me.TxtBusqueda.TabIndex = 77
         '
         'FrmCapacidadRAM
@@ -270,6 +276,9 @@ Partial Class FrmCapacidadRAM
         Me.Controls.Add(Me.DgvCapacidadMemoriaRAM)
         Me.Controls.Add(Me.PnlCapacidadMemoriaRAM)
         Me.Controls.Add(Me.Panel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FrmCapacidadRAM"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Gestión de Capacidad de RAM"
@@ -303,4 +312,5 @@ Partial Class FrmCapacidadRAM
     Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label1 As Label
     Friend WithEvents TxtBusqueda As TextBox
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

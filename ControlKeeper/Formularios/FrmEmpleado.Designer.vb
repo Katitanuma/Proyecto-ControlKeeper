@@ -60,6 +60,7 @@ Partial Class FrmEmpleado
         Me.BtnNuevo = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TxtBusqueda = New System.Windows.Forms.TextBox()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.DgvEmpleado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CmsEmpleado.SuspendLayout()
         Me.PlEmpleado.SuspendLayout()
@@ -75,12 +76,12 @@ Partial Class FrmEmpleado
         Me.DgvEmpleado.BackgroundColor = System.Drawing.Color.White
         Me.DgvEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvEmpleado.ContextMenuStrip = Me.CmsEmpleado
-        Me.DgvEmpleado.Location = New System.Drawing.Point(22, 338)
+        Me.DgvEmpleado.Location = New System.Drawing.Point(22, 341)
         Me.DgvEmpleado.MultiSelect = False
         Me.DgvEmpleado.Name = "DgvEmpleado"
         Me.DgvEmpleado.ReadOnly = True
         Me.DgvEmpleado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvEmpleado.Size = New System.Drawing.Size(1021, 176)
+        Me.DgvEmpleado.Size = New System.Drawing.Size(1021, 169)
         Me.DgvEmpleado.TabIndex = 12
         '
         'CmsEmpleado
@@ -135,7 +136,7 @@ Partial Class FrmEmpleado
         'ChkEstado
         '
         Me.ChkEstado.AutoSize = True
-        Me.ChkEstado.Location = New System.Drawing.Point(550, 135)
+        Me.ChkEstado.Location = New System.Drawing.Point(550, 136)
         Me.ChkEstado.Name = "ChkEstado"
         Me.ChkEstado.Size = New System.Drawing.Size(84, 20)
         Me.ChkEstado.TabIndex = 23
@@ -390,6 +391,7 @@ Partial Class FrmEmpleado
         Me.BtnCancelar.Size = New System.Drawing.Size(67, 51)
         Me.BtnCancelar.TabIndex = 78
         Me.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnCancelar, "Cancelar")
         Me.BtnCancelar.UseVisualStyleBackColor = False
         '
         'BtnGuardar
@@ -408,6 +410,7 @@ Partial Class FrmEmpleado
         Me.BtnGuardar.Size = New System.Drawing.Size(67, 51)
         Me.BtnGuardar.TabIndex = 77
         Me.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnGuardar, "Guardar")
         Me.BtnGuardar.UseVisualStyleBackColor = False
         '
         'BtnModificar
@@ -426,6 +429,7 @@ Partial Class FrmEmpleado
         Me.BtnModificar.Size = New System.Drawing.Size(67, 51)
         Me.BtnModificar.TabIndex = 76
         Me.BtnModificar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnModificar, "Modificar")
         Me.BtnModificar.UseVisualStyleBackColor = False
         '
         'BtnNuevo
@@ -444,23 +448,25 @@ Partial Class FrmEmpleado
         Me.BtnNuevo.Size = New System.Drawing.Size(67, 51)
         Me.BtnNuevo.TabIndex = 75
         Me.BtnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnNuevo, "Nuevo")
         Me.BtnNuevo.UseVisualStyleBackColor = False
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Comic Sans MS", 11.25!)
-        Me.Label1.Location = New System.Drawing.Point(24, 310)
+        Me.Label1.Location = New System.Drawing.Point(24, 313)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(78, 20)
         Me.Label1.TabIndex = 80
-        Me.Label1.Text = "Busqueda "
+        Me.Label1.Text = "Búsqueda "
         '
         'TxtBusqueda
         '
-        Me.TxtBusqueda.Location = New System.Drawing.Point(103, 312)
+        Me.TxtBusqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBusqueda.Location = New System.Drawing.Point(103, 315)
         Me.TxtBusqueda.Name = "TxtBusqueda"
-        Me.TxtBusqueda.Size = New System.Drawing.Size(533, 20)
+        Me.TxtBusqueda.Size = New System.Drawing.Size(533, 21)
         Me.TxtBusqueda.TabIndex = 79
         '
         'FrmEmpleado
@@ -478,6 +484,9 @@ Partial Class FrmEmpleado
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.DgvEmpleado)
         Me.Controls.Add(Me.PlEmpleado)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FrmEmpleado"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Empleado"
@@ -529,4 +538,5 @@ Partial Class FrmEmpleado
     Friend WithEvents ChkEstado As CheckBox
     Friend WithEvents Label1 As Label
     Friend WithEvents TxtBusqueda As TextBox
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

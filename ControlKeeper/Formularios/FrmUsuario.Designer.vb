@@ -123,7 +123,7 @@ Partial Class FrmUsuario
         '
         'BtnAbrirFrmEmpleado
         '
-        Me.BtnAbrirFrmEmpleado.Location = New System.Drawing.Point(544, 147)
+        Me.BtnAbrirFrmEmpleado.Location = New System.Drawing.Point(554, 147)
         Me.BtnAbrirFrmEmpleado.Name = "BtnAbrirFrmEmpleado"
         Me.BtnAbrirFrmEmpleado.Size = New System.Drawing.Size(36, 27)
         Me.BtnAbrirFrmEmpleado.TabIndex = 58
@@ -135,7 +135,7 @@ Partial Class FrmUsuario
         Me.CboNombreEmpleado.BackColor = System.Drawing.Color.White
         Me.CboNombreEmpleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CboNombreEmpleado.FormattingEnabled = True
-        Me.CboNombreEmpleado.Location = New System.Drawing.Point(150, 150)
+        Me.CboNombreEmpleado.Location = New System.Drawing.Point(160, 150)
         Me.CboNombreEmpleado.Name = "CboNombreEmpleado"
         Me.CboNombreEmpleado.Size = New System.Drawing.Size(388, 21)
         Me.CboNombreEmpleado.TabIndex = 57
@@ -144,25 +144,25 @@ Partial Class FrmUsuario
         '
         Me.Label65.AutoSize = True
         Me.Label65.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label65.Location = New System.Drawing.Point(12, 152)
+        Me.Label65.Location = New System.Drawing.Point(3, 149)
         Me.Label65.Name = "Label65"
-        Me.Label65.Size = New System.Drawing.Size(133, 20)
+        Me.Label65.Size = New System.Drawing.Size(154, 20)
         Me.Label65.TabIndex = 54
-        Me.Label65.Text = "Nombre Empleado"
+        Me.Label65.Text = "Nombre de Empleado"
         '
         'CboTipoUsuario
         '
         Me.CboTipoUsuario.BackColor = System.Drawing.Color.White
         Me.CboTipoUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CboTipoUsuario.FormattingEnabled = True
-        Me.CboTipoUsuario.Location = New System.Drawing.Point(150, 114)
+        Me.CboTipoUsuario.Location = New System.Drawing.Point(160, 114)
         Me.CboTipoUsuario.Name = "CboTipoUsuario"
         Me.CboTipoUsuario.Size = New System.Drawing.Size(263, 21)
         Me.CboTipoUsuario.TabIndex = 51
         '
         'TxtContrasena
         '
-        Me.TxtContrasena.Location = New System.Drawing.Point(150, 80)
+        Me.TxtContrasena.Location = New System.Drawing.Point(160, 80)
         Me.TxtContrasena.Name = "TxtContrasena"
         Me.TxtContrasena.Size = New System.Drawing.Size(301, 20)
         Me.TxtContrasena.TabIndex = 49
@@ -170,7 +170,7 @@ Partial Class FrmUsuario
         '
         'TxtUsuario
         '
-        Me.TxtUsuario.Location = New System.Drawing.Point(150, 46)
+        Me.TxtUsuario.Location = New System.Drawing.Point(160, 46)
         Me.TxtUsuario.Name = "TxtUsuario"
         Me.TxtUsuario.Size = New System.Drawing.Size(301, 20)
         Me.TxtUsuario.TabIndex = 48
@@ -179,7 +179,7 @@ Partial Class FrmUsuario
         '
         Me.Label60.AutoSize = True
         Me.Label60.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label60.Location = New System.Drawing.Point(49, 116)
+        Me.Label60.Location = New System.Drawing.Point(62, 113)
         Me.Label60.Name = "Label60"
         Me.Label60.Size = New System.Drawing.Size(96, 20)
         Me.Label60.TabIndex = 47
@@ -189,7 +189,7 @@ Partial Class FrmUsuario
         '
         Me.Label62.AutoSize = True
         Me.Label62.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label62.Location = New System.Drawing.Point(57, 82)
+        Me.Label62.Location = New System.Drawing.Point(70, 79)
         Me.Label62.Name = "Label62"
         Me.Label62.Size = New System.Drawing.Size(87, 20)
         Me.Label62.TabIndex = 45
@@ -199,7 +199,7 @@ Partial Class FrmUsuario
         '
         Me.Label63.AutoSize = True
         Me.Label63.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label63.Location = New System.Drawing.Point(84, 47)
+        Me.Label63.Location = New System.Drawing.Point(97, 44)
         Me.Label63.Name = "Label63"
         Me.Label63.Size = New System.Drawing.Size(62, 20)
         Me.Label63.TabIndex = 44
@@ -207,7 +207,7 @@ Partial Class FrmUsuario
         '
         'TxtIdUsuario
         '
-        Me.TxtIdUsuario.Location = New System.Drawing.Point(150, 12)
+        Me.TxtIdUsuario.Location = New System.Drawing.Point(160, 12)
         Me.TxtIdUsuario.Name = "TxtIdUsuario"
         Me.TxtIdUsuario.ReadOnly = True
         Me.TxtIdUsuario.Size = New System.Drawing.Size(177, 20)
@@ -217,7 +217,7 @@ Partial Class FrmUsuario
         '
         Me.Label64.AutoSize = True
         Me.Label64.Font = New System.Drawing.Font("Comic Sans MS", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label64.Location = New System.Drawing.Point(35, 14)
+        Me.Label64.Location = New System.Drawing.Point(48, 9)
         Me.Label64.Name = "Label64"
         Me.Label64.Size = New System.Drawing.Size(112, 20)
         Me.Label64.TabIndex = 42
@@ -234,7 +234,7 @@ Partial Class FrmUsuario
         Me.BtnNuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnNuevo.ForeColor = System.Drawing.Color.Black
         Me.BtnNuevo.Image = Global.ControlKeeper.My.Resources.Resources.N3
-        Me.BtnNuevo.Location = New System.Drawing.Point(126, 286)
+        Me.BtnNuevo.Location = New System.Drawing.Point(128, 283)
         Me.BtnNuevo.Name = "BtnNuevo"
         Me.BtnNuevo.Size = New System.Drawing.Size(67, 51)
         Me.BtnNuevo.TabIndex = 53
@@ -253,7 +253,7 @@ Partial Class FrmUsuario
         Me.BtnModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnModificar.ForeColor = System.Drawing.Color.Black
         Me.BtnModificar.Image = Global.ControlKeeper.My.Resources.Resources.A3
-        Me.BtnModificar.Location = New System.Drawing.Point(323, 286)
+        Me.BtnModificar.Location = New System.Drawing.Point(325, 283)
         Me.BtnModificar.Name = "BtnModificar"
         Me.BtnModificar.Size = New System.Drawing.Size(67, 51)
         Me.BtnModificar.TabIndex = 54
@@ -272,7 +272,7 @@ Partial Class FrmUsuario
         Me.BtnGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnGuardar.ForeColor = System.Drawing.Color.Black
         Me.BtnGuardar.Image = Global.ControlKeeper.My.Resources.Resources.G3
-        Me.BtnGuardar.Location = New System.Drawing.Point(225, 286)
+        Me.BtnGuardar.Location = New System.Drawing.Point(227, 283)
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(67, 51)
         Me.BtnGuardar.TabIndex = 55
@@ -291,7 +291,7 @@ Partial Class FrmUsuario
         Me.BtnCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnCancelar.ForeColor = System.Drawing.Color.Black
         Me.BtnCancelar.Image = Global.ControlKeeper.My.Resources.Resources.C3
-        Me.BtnCancelar.Location = New System.Drawing.Point(424, 286)
+        Me.BtnCancelar.Location = New System.Drawing.Point(426, 283)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(67, 51)
         Me.BtnCancelar.TabIndex = 56
@@ -325,9 +325,10 @@ Partial Class FrmUsuario
         '
         'TxtBusqueda
         '
+        Me.TxtBusqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtBusqueda.Location = New System.Drawing.Point(96, 346)
         Me.TxtBusqueda.Name = "TxtBusqueda"
-        Me.TxtBusqueda.Size = New System.Drawing.Size(517, 20)
+        Me.TxtBusqueda.Size = New System.Drawing.Size(517, 21)
         Me.TxtBusqueda.TabIndex = 63
         '
         'Label1
@@ -338,7 +339,7 @@ Partial Class FrmUsuario
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(78, 20)
         Me.Label1.TabIndex = 64
-        Me.Label1.Text = "Busqueda "
+        Me.Label1.Text = "Búsqueda "
         '
         'FrmUsuario
         '
@@ -355,6 +356,9 @@ Partial Class FrmUsuario
         Me.Controls.Add(Me.BtnModificar)
         Me.Controls.Add(Me.BtnNuevo)
         Me.Controls.Add(Me.PlUsuario)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FrmUsuario"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Gestión de Usuario"

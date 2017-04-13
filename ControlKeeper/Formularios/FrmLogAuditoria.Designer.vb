@@ -22,6 +22,7 @@ Partial Class FrmLogAuditoria
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmLogAuditoria))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TxtBusqueda = New System.Windows.Forms.TextBox()
         Me.DgvLogAuditoria = New System.Windows.Forms.DataGridView()
@@ -37,15 +38,15 @@ Partial Class FrmLogAuditoria
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Comic Sans MS", 11.25!)
-        Me.Label1.Location = New System.Drawing.Point(8, 103)
+        Me.Label1.Location = New System.Drawing.Point(8, 96)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(78, 20)
         Me.Label1.TabIndex = 83
-        Me.Label1.Text = "Busqueda "
+        Me.Label1.Text = "Búsqueda "
         '
         'TxtBusqueda
         '
-        Me.TxtBusqueda.Location = New System.Drawing.Point(87, 105)
+        Me.TxtBusqueda.Location = New System.Drawing.Point(87, 98)
         Me.TxtBusqueda.Name = "TxtBusqueda"
         Me.TxtBusqueda.Size = New System.Drawing.Size(402, 20)
         Me.TxtBusqueda.TabIndex = 82
@@ -57,7 +58,7 @@ Partial Class FrmLogAuditoria
         Me.DgvLogAuditoria.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DgvLogAuditoria.BackgroundColor = System.Drawing.Color.White
         Me.DgvLogAuditoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvLogAuditoria.Location = New System.Drawing.Point(12, 131)
+        Me.DgvLogAuditoria.Location = New System.Drawing.Point(12, 124)
         Me.DgvLogAuditoria.Name = "DgvLogAuditoria"
         Me.DgvLogAuditoria.ReadOnly = True
         Me.DgvLogAuditoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -83,18 +84,18 @@ Partial Class FrmLogAuditoria
         Me.Label26.BackColor = System.Drawing.Color.Transparent
         Me.Label26.Font = New System.Drawing.Font("Comic Sans MS", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label26.ForeColor = System.Drawing.Color.Navy
-        Me.Label26.Location = New System.Drawing.Point(185, 10)
+        Me.Label26.Location = New System.Drawing.Point(252, 10)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(313, 38)
+        Me.Label26.Size = New System.Drawing.Size(138, 38)
         Me.Label26.TabIndex = 33
-        Me.Label26.Text = "Registros de Auditoria"
+        Me.Label26.Text = "Auditoría"
         '
         'PictureBox5
         '
         Me.PictureBox5.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox5.BackgroundImage = Global.ControlKeeper.My.Resources.Resources.software
+        Me.PictureBox5.BackgroundImage = Global.ControlKeeper.My.Resources.Resources.iconohombreauxiliar
         Me.PictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox5.Location = New System.Drawing.Point(112, 3)
+        Me.PictureBox5.Location = New System.Drawing.Point(193, 2)
         Me.PictureBox5.Name = "PictureBox5"
         Me.PictureBox5.Size = New System.Drawing.Size(55, 57)
         Me.PictureBox5.TabIndex = 35
@@ -110,9 +111,12 @@ Partial Class FrmLogAuditoria
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TxtBusqueda)
         Me.Controls.Add(Me.DgvLogAuditoria)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FrmLogAuditoria"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
-        Me.Text = "Registro de Auditoria"
+        Me.Text = "Auditoría"
         CType(Me.DgvLogAuditoria, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()

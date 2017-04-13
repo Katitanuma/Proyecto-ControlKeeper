@@ -49,6 +49,7 @@ Partial Class FrmComputadoraUsuario
         Me.Label51 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TxtBusqueda = New System.Windows.Forms.TextBox()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DgvComputadoraUsuario, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -103,11 +104,12 @@ Partial Class FrmComputadoraUsuario
         Me.BtnCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnCancelar.ForeColor = System.Drawing.Color.Black
         Me.BtnCancelar.Image = Global.ControlKeeper.My.Resources.Resources.C3
-        Me.BtnCancelar.Location = New System.Drawing.Point(416, 238)
+        Me.BtnCancelar.Location = New System.Drawing.Point(419, 235)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(67, 51)
         Me.BtnCancelar.TabIndex = 82
         Me.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnCancelar, "Cancelar")
         Me.BtnCancelar.UseVisualStyleBackColor = False
         '
         'BtnGuardar
@@ -121,11 +123,12 @@ Partial Class FrmComputadoraUsuario
         Me.BtnGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnGuardar.ForeColor = System.Drawing.Color.Black
         Me.BtnGuardar.Image = Global.ControlKeeper.My.Resources.Resources.G3
-        Me.BtnGuardar.Location = New System.Drawing.Point(229, 238)
+        Me.BtnGuardar.Location = New System.Drawing.Point(232, 235)
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(67, 51)
         Me.BtnGuardar.TabIndex = 81
         Me.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnGuardar, "Guardar")
         Me.BtnGuardar.UseVisualStyleBackColor = False
         '
         'BtnModificar
@@ -139,11 +142,12 @@ Partial Class FrmComputadoraUsuario
         Me.BtnModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnModificar.ForeColor = System.Drawing.Color.Black
         Me.BtnModificar.Image = Global.ControlKeeper.My.Resources.Resources.A3
-        Me.BtnModificar.Location = New System.Drawing.Point(321, 238)
+        Me.BtnModificar.Location = New System.Drawing.Point(324, 235)
         Me.BtnModificar.Name = "BtnModificar"
         Me.BtnModificar.Size = New System.Drawing.Size(67, 51)
         Me.BtnModificar.TabIndex = 80
         Me.BtnModificar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnModificar, "Modificar")
         Me.BtnModificar.UseVisualStyleBackColor = False
         '
         'BtnNuevo
@@ -157,11 +161,12 @@ Partial Class FrmComputadoraUsuario
         Me.BtnNuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnNuevo.ForeColor = System.Drawing.Color.Black
         Me.BtnNuevo.Image = Global.ControlKeeper.My.Resources.Resources.N3
-        Me.BtnNuevo.Location = New System.Drawing.Point(135, 238)
+        Me.BtnNuevo.Location = New System.Drawing.Point(138, 235)
         Me.BtnNuevo.Name = "BtnNuevo"
         Me.BtnNuevo.Size = New System.Drawing.Size(67, 51)
         Me.BtnNuevo.TabIndex = 79
         Me.BtnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnNuevo, "Nuevo")
         Me.BtnNuevo.UseVisualStyleBackColor = False
         '
         'DgvComputadoraUsuario
@@ -323,17 +328,18 @@ Partial Class FrmComputadoraUsuario
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Comic Sans MS", 11.25!)
-        Me.Label3.Location = New System.Drawing.Point(15, 295)
+        Me.Label3.Location = New System.Drawing.Point(13, 295)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(78, 20)
         Me.Label3.TabIndex = 84
-        Me.Label3.Text = "Busqueda "
+        Me.Label3.Text = "Búsqueda "
         '
         'TxtBusqueda
         '
+        Me.TxtBusqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtBusqueda.Location = New System.Drawing.Point(94, 297)
         Me.TxtBusqueda.Name = "TxtBusqueda"
-        Me.TxtBusqueda.Size = New System.Drawing.Size(530, 20)
+        Me.TxtBusqueda.Size = New System.Drawing.Size(530, 21)
         Me.TxtBusqueda.TabIndex = 83
         '
         'FrmComputadoraUsuario
@@ -351,6 +357,9 @@ Partial Class FrmComputadoraUsuario
         Me.Controls.Add(Me.DgvComputadoraUsuario)
         Me.Controls.Add(Me.PlComputadoraUsuario)
         Me.Controls.Add(Me.Panel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FrmComputadoraUsuario"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Detalle Asignación de Computadora"
@@ -390,4 +399,5 @@ Partial Class FrmComputadoraUsuario
     Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label3 As Label
     Friend WithEvents TxtBusqueda As TextBox
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

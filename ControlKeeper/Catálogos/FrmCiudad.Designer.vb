@@ -45,6 +45,7 @@ Partial Class FrmCiudad
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TxtBusqueda = New System.Windows.Forms.TextBox()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.DgvCiudad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CMSCiudad.SuspendLayout()
         Me.PnlCiudad.SuspendLayout()
@@ -60,11 +61,11 @@ Partial Class FrmCiudad
         Me.DgvCiudad.BackgroundColor = System.Drawing.Color.White
         Me.DgvCiudad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvCiudad.ContextMenuStrip = Me.CMSCiudad
-        Me.DgvCiudad.Location = New System.Drawing.Point(23, 275)
+        Me.DgvCiudad.Location = New System.Drawing.Point(23, 282)
         Me.DgvCiudad.Name = "DgvCiudad"
         Me.DgvCiudad.ReadOnly = True
         Me.DgvCiudad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvCiudad.Size = New System.Drawing.Size(479, 207)
+        Me.DgvCiudad.Size = New System.Drawing.Size(479, 197)
         Me.DgvCiudad.TabIndex = 72
         '
         'CMSCiudad
@@ -180,6 +181,7 @@ Partial Class FrmCiudad
         Me.BtnCancelar.Size = New System.Drawing.Size(67, 51)
         Me.BtnCancelar.TabIndex = 76
         Me.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnCancelar, "Cancelar")
         Me.BtnCancelar.UseVisualStyleBackColor = False
         '
         'BtnGuardar
@@ -198,6 +200,7 @@ Partial Class FrmCiudad
         Me.BtnGuardar.Size = New System.Drawing.Size(67, 51)
         Me.BtnGuardar.TabIndex = 75
         Me.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnGuardar, "Guardar")
         Me.BtnGuardar.UseVisualStyleBackColor = False
         '
         'BtnModificar
@@ -216,6 +219,7 @@ Partial Class FrmCiudad
         Me.BtnModificar.Size = New System.Drawing.Size(67, 51)
         Me.BtnModificar.TabIndex = 74
         Me.BtnModificar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnModificar, "Modificar")
         Me.BtnModificar.UseVisualStyleBackColor = False
         '
         'BtnNuevo
@@ -234,6 +238,7 @@ Partial Class FrmCiudad
         Me.BtnNuevo.Size = New System.Drawing.Size(67, 51)
         Me.BtnNuevo.TabIndex = 73
         Me.BtnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnNuevo, "Nuevo")
         Me.BtnNuevo.UseVisualStyleBackColor = False
         '
         'Panel1
@@ -275,17 +280,18 @@ Partial Class FrmCiudad
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Comic Sans MS", 11.25!)
-        Me.Label2.Location = New System.Drawing.Point(20, 247)
+        Me.Label2.Location = New System.Drawing.Point(20, 254)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(78, 20)
         Me.Label2.TabIndex = 78
-        Me.Label2.Text = "Busqueda "
+        Me.Label2.Text = "Búsqueda "
         '
         'TxtBusqueda
         '
-        Me.TxtBusqueda.Location = New System.Drawing.Point(99, 249)
+        Me.TxtBusqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBusqueda.Location = New System.Drawing.Point(99, 256)
         Me.TxtBusqueda.Name = "TxtBusqueda"
-        Me.TxtBusqueda.Size = New System.Drawing.Size(403, 20)
+        Me.TxtBusqueda.Size = New System.Drawing.Size(403, 21)
         Me.TxtBusqueda.TabIndex = 77
         '
         'FrmCiudad
@@ -303,6 +309,9 @@ Partial Class FrmCiudad
         Me.Controls.Add(Me.DgvCiudad)
         Me.Controls.Add(Me.PnlCiudad)
         Me.Controls.Add(Me.Panel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FrmCiudad"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Gestión de Ciudad"
@@ -339,4 +348,5 @@ Partial Class FrmCiudad
     Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label2 As Label
     Friend WithEvents TxtBusqueda As TextBox
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

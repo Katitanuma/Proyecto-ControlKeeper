@@ -52,6 +52,7 @@ Partial Class FrmSoftware
         Me.BtnNuevo = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TxtBusqueda = New System.Windows.Forms.TextBox()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.DgvSoftware, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CMSSoftware.SuspendLayout()
         Me.PnlSoftware.SuspendLayout()
@@ -293,6 +294,7 @@ Partial Class FrmSoftware
         Me.BtnCancelar.Size = New System.Drawing.Size(67, 51)
         Me.BtnCancelar.TabIndex = 78
         Me.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnCancelar, "Cancelar")
         Me.BtnCancelar.UseVisualStyleBackColor = False
         '
         'BtnGuardar
@@ -311,6 +313,7 @@ Partial Class FrmSoftware
         Me.BtnGuardar.Size = New System.Drawing.Size(67, 51)
         Me.BtnGuardar.TabIndex = 77
         Me.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnGuardar, "Guardar")
         Me.BtnGuardar.UseVisualStyleBackColor = False
         '
         'BtnModificar
@@ -329,6 +332,7 @@ Partial Class FrmSoftware
         Me.BtnModificar.Size = New System.Drawing.Size(67, 51)
         Me.BtnModificar.TabIndex = 76
         Me.BtnModificar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnModificar, "Modificar")
         Me.BtnModificar.UseVisualStyleBackColor = False
         '
         'BtnNuevo
@@ -347,23 +351,25 @@ Partial Class FrmSoftware
         Me.BtnNuevo.Size = New System.Drawing.Size(67, 51)
         Me.BtnNuevo.TabIndex = 75
         Me.BtnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnNuevo, "Nuevo")
         Me.BtnNuevo.UseVisualStyleBackColor = False
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Comic Sans MS", 11.25!)
-        Me.Label2.Location = New System.Drawing.Point(30, 297)
+        Me.Label2.Location = New System.Drawing.Point(26, 297)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(78, 20)
         Me.Label2.TabIndex = 80
-        Me.Label2.Text = "Busqueda "
+        Me.Label2.Text = "Búsqueda "
         '
         'TxtBusqueda
         '
+        Me.TxtBusqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtBusqueda.Location = New System.Drawing.Point(109, 299)
         Me.TxtBusqueda.Name = "TxtBusqueda"
-        Me.TxtBusqueda.Size = New System.Drawing.Size(480, 20)
+        Me.TxtBusqueda.Size = New System.Drawing.Size(480, 21)
         Me.TxtBusqueda.TabIndex = 79
         '
         'FrmSoftware
@@ -381,6 +387,9 @@ Partial Class FrmSoftware
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.DgvSoftware)
         Me.Controls.Add(Me.PnlSoftware)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FrmSoftware"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Software"
@@ -423,4 +432,5 @@ Partial Class FrmSoftware
     Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label2 As Label
     Friend WithEvents TxtBusqueda As TextBox
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

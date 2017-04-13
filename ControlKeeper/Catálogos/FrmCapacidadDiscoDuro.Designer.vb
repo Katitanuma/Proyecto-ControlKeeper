@@ -42,6 +42,7 @@ Partial Class FrmCapacidadDiscoDuro
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TxtBusqueda = New System.Windows.Forms.TextBox()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.DgvCapacidadDiscoDuro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CMSCapacidadDiscoDuro.SuspendLayout()
         Me.PnlCapacidadDiscoDuro.SuspendLayout()
@@ -57,7 +58,7 @@ Partial Class FrmCapacidadDiscoDuro
         Me.DgvCapacidadDiscoDuro.BackgroundColor = System.Drawing.Color.White
         Me.DgvCapacidadDiscoDuro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvCapacidadDiscoDuro.ContextMenuStrip = Me.CMSCapacidadDiscoDuro
-        Me.DgvCapacidadDiscoDuro.Location = New System.Drawing.Point(24, 283)
+        Me.DgvCapacidadDiscoDuro.Location = New System.Drawing.Point(24, 274)
         Me.DgvCapacidadDiscoDuro.Name = "DgvCapacidadDiscoDuro"
         Me.DgvCapacidadDiscoDuro.ReadOnly = True
         Me.DgvCapacidadDiscoDuro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -146,6 +147,7 @@ Partial Class FrmCapacidadDiscoDuro
         Me.BtnCancelar.Size = New System.Drawing.Size(67, 51)
         Me.BtnCancelar.TabIndex = 69
         Me.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnCancelar, "Cancelar")
         Me.BtnCancelar.UseVisualStyleBackColor = False
         '
         'BtnGuardar
@@ -164,6 +166,7 @@ Partial Class FrmCapacidadDiscoDuro
         Me.BtnGuardar.Size = New System.Drawing.Size(67, 51)
         Me.BtnGuardar.TabIndex = 68
         Me.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnGuardar, "Guardar")
         Me.BtnGuardar.UseVisualStyleBackColor = False
         '
         'BtnModificar
@@ -182,6 +185,7 @@ Partial Class FrmCapacidadDiscoDuro
         Me.BtnModificar.Size = New System.Drawing.Size(67, 51)
         Me.BtnModificar.TabIndex = 67
         Me.BtnModificar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnModificar, "Modificar")
         Me.BtnModificar.UseVisualStyleBackColor = False
         '
         'BtnNuevo
@@ -200,6 +204,7 @@ Partial Class FrmCapacidadDiscoDuro
         Me.BtnNuevo.Size = New System.Drawing.Size(67, 51)
         Me.BtnNuevo.TabIndex = 66
         Me.BtnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnNuevo, "Nuevo")
         Me.BtnNuevo.UseVisualStyleBackColor = False
         '
         'Panel1
@@ -242,17 +247,18 @@ Partial Class FrmCapacidadDiscoDuro
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Comic Sans MS", 11.25!)
-        Me.Label1.Location = New System.Drawing.Point(21, 255)
+        Me.Label1.Location = New System.Drawing.Point(21, 246)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(78, 20)
         Me.Label1.TabIndex = 71
-        Me.Label1.Text = "Busqueda "
+        Me.Label1.Text = "Búsqueda "
         '
         'TxtBusqueda
         '
-        Me.TxtBusqueda.Location = New System.Drawing.Point(100, 257)
+        Me.TxtBusqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBusqueda.Location = New System.Drawing.Point(100, 247)
         Me.TxtBusqueda.Name = "TxtBusqueda"
-        Me.TxtBusqueda.Size = New System.Drawing.Size(403, 20)
+        Me.TxtBusqueda.Size = New System.Drawing.Size(403, 21)
         Me.TxtBusqueda.TabIndex = 70
         '
         'FrmCapacidadDiscoDuro
@@ -270,6 +276,9 @@ Partial Class FrmCapacidadDiscoDuro
         Me.Controls.Add(Me.DgvCapacidadDiscoDuro)
         Me.Controls.Add(Me.PnlCapacidadDiscoDuro)
         Me.Controls.Add(Me.Panel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FrmCapacidadDiscoDuro"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Gestión de Capacidad de Disco Duro"
@@ -302,4 +311,5 @@ Partial Class FrmCapacidadDiscoDuro
     Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label1 As Label
     Friend WithEvents TxtBusqueda As TextBox
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

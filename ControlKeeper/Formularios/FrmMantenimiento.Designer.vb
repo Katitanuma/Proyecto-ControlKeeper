@@ -50,6 +50,7 @@ Partial Class FrmMantenimiento
         Me.BtnNuevo = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TxtBusqueda = New System.Windows.Forms.TextBox()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.DgvMantenimiento, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CmsMantenimiento.SuspendLayout()
         Me.PlMantemiento.SuspendLayout()
@@ -237,7 +238,7 @@ Partial Class FrmMantenimiento
         Me.PictureBox5.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox5.BackgroundImage = Global.ControlKeeper.My.Resources.Resources.software
         Me.PictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox5.Location = New System.Drawing.Point(207, 2)
+        Me.PictureBox5.Location = New System.Drawing.Point(217, 2)
         Me.PictureBox5.Name = "PictureBox5"
         Me.PictureBox5.Size = New System.Drawing.Size(55, 57)
         Me.PictureBox5.TabIndex = 35
@@ -272,6 +273,7 @@ Partial Class FrmMantenimiento
         Me.BtnCancelar.Size = New System.Drawing.Size(67, 51)
         Me.BtnCancelar.TabIndex = 78
         Me.BtnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnCancelar, "Cancelar")
         Me.BtnCancelar.UseVisualStyleBackColor = False
         '
         'BtnGuardar
@@ -290,6 +292,7 @@ Partial Class FrmMantenimiento
         Me.BtnGuardar.Size = New System.Drawing.Size(67, 51)
         Me.BtnGuardar.TabIndex = 77
         Me.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnGuardar, "Guardar")
         Me.BtnGuardar.UseVisualStyleBackColor = False
         '
         'BtnModificar
@@ -308,6 +311,7 @@ Partial Class FrmMantenimiento
         Me.BtnModificar.Size = New System.Drawing.Size(67, 51)
         Me.BtnModificar.TabIndex = 76
         Me.BtnModificar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnModificar, "Modificar")
         Me.BtnModificar.UseVisualStyleBackColor = False
         '
         'BtnNuevo
@@ -326,6 +330,7 @@ Partial Class FrmMantenimiento
         Me.BtnNuevo.Size = New System.Drawing.Size(67, 51)
         Me.BtnNuevo.TabIndex = 75
         Me.BtnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.ToolTip1.SetToolTip(Me.BtnNuevo, "Nuevo")
         Me.BtnNuevo.UseVisualStyleBackColor = False
         '
         'Label1
@@ -336,13 +341,14 @@ Partial Class FrmMantenimiento
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(78, 20)
         Me.Label1.TabIndex = 80
-        Me.Label1.Text = "Busqueda "
+        Me.Label1.Text = "Búsqueda "
         '
         'TxtBusqueda
         '
+        Me.TxtBusqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtBusqueda.Location = New System.Drawing.Point(95, 295)
         Me.TxtBusqueda.Name = "TxtBusqueda"
-        Me.TxtBusqueda.Size = New System.Drawing.Size(612, 20)
+        Me.TxtBusqueda.Size = New System.Drawing.Size(612, 21)
         Me.TxtBusqueda.TabIndex = 79
         '
         'FrmMantenimiento
@@ -360,6 +366,9 @@ Partial Class FrmMantenimiento
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.DgvMantenimiento)
         Me.Controls.Add(Me.PlMantemiento)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FrmMantenimiento"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Mantenimiento"
@@ -400,4 +409,5 @@ Partial Class FrmMantenimiento
     Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label1 As Label
     Friend WithEvents TxtBusqueda As TextBox
+    Friend WithEvents ToolTip1 As ToolTip
 End Class
