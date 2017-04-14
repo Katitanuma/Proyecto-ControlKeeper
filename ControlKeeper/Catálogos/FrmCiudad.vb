@@ -44,8 +44,8 @@ Public Class FrmCiudad
 
     Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
         Call HabilitarControles(False, True, False, True, True)
-        Call InvestigarCorrelativoUsuario()
-        End Sub
+        Call InvestigarCorrelativoCiudad()
+    End Sub
     Public Sub LlenarComboBoxDepartamento()
         If Con.State = ConnectionState.Open Then
             Con.Close()
@@ -136,15 +136,15 @@ Public Class FrmCiudad
             Call HabilitarControles(True, False, False, False, False)
             Call Limpiar()
         End Sub
-        Private Sub EditarUsuario()
-            If Con.State = ConnectionState.Open Then
-                Con.Close()
-            End If
+    Private Sub EditarCiudad()
+        If Con.State = ConnectionState.Open Then
+            Con.Close()
+        End If
 
-            Using cmd As New SqlCommand
-                Try
-                    Con.Open()
-                    With cmd
+        Using cmd As New SqlCommand
+            Try
+                Con.Open()
+                With cmd
                     .CommandText = "Sp_ActualizarCiudad"
                     .CommandType = CommandType.StoredProcedure
                     .Connection = Con
@@ -153,16 +153,16 @@ Public Class FrmCiudad
                     .Parameters.Add("@Ciudad", SqlDbType.NVarChar, 50).Value = TxtCiudad.Text.Trim
                     .Parameters.Add("@IdDepartamento", SqlDbType.Int).Value = CInt(CboDepartamento.SelectedValue)
                     .ExecuteNonQuery()
-                    End With
+                End With
                 MessageBox.Show("Departamento editado con éxito", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Catch ex As Exception
                 MessageBox.Show("Error al editar el departamento" + ex.Message)
             Finally
-                    Con.Close()
-                End Try
-            End Using
+                Con.Close()
+            End Try
+        End Using
 
-        End Sub
+    End Sub
     Private Sub EliminarCiudad()
         If Con.State = ConnectionState.Open Then
             Con.Close()
@@ -194,8 +194,8 @@ Public Class FrmCiudad
         If ValidarCiudad() = True Then
 
 
-            Call EditarUsuario()
-                Call HabilitarControles(True, False, False, False, False)
+            Call EditarCiudad()
+            Call HabilitarControles(True, False, False, False, False)
                 Call Limpiar()
             Call MostrarTodociudad()
         End If
@@ -212,35 +212,35 @@ Public Class FrmCiudad
         End If
     End Sub
 
-        Private Sub InvestigarCorrelativoUsuario()
-            If Con.State = ConnectionState.Open Then
-                Con.Close()
-            End If
-            Using cmd As New SqlCommand
-                Try
-                    Con.Open()
-                    With cmd
+    Private Sub InvestigarCorrelativoCiudad()
+        If Con.State = ConnectionState.Open Then
+            Con.Close()
+        End If
+        Using cmd As New SqlCommand
+            Try
+                Con.Open()
+                With cmd
                     .CommandText = "Sp_CorrelativoCiudad"
                     .CommandType = CommandType.StoredProcedure
-                        .Connection = Con
-                    End With
-                    Dim LectorCorrelativo As SqlDataReader
-                    LectorCorrelativo = cmd.ExecuteReader
+                    .Connection = Con
+                End With
+                Dim LectorCorrelativo As SqlDataReader
+                LectorCorrelativo = cmd.ExecuteReader
 
-                    If LectorCorrelativo.Read Then
-                        If LectorCorrelativo("Id") Is DBNull.Value Then
+                If LectorCorrelativo.Read Then
+                    If LectorCorrelativo("Id") Is DBNull.Value Then
                         TxtIdCiudad.Text = 1
                     Else
                         TxtIdCiudad.Text = LectorCorrelativo("Id").ToString
                     End If
-                    End If
-                Catch ex As Exception
-                    MsgBox(ex.Message)
-                Finally
-                    Con.Close()
-                End Try
-            End Using
-        End Sub
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            Finally
+                Con.Close()
+            End Try
+        End Using
+    End Sub
     Private Function ExisteCiudad() As Boolean
         If Con.State = ConnectionState.Open Then
             Con.Close()

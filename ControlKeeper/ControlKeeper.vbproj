@@ -80,10 +80,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formularios\FrmLogAuditoria.Designer.vb">
+    <Compile Include="Transaccionales\FrmLogAuditoria.Designer.vb">
       <DependentUpon>FrmLogAuditoria.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmLogAuditoria.vb">
+    <Compile Include="Transaccionales\FrmLogAuditoria.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Conexion.vb" />
@@ -111,16 +111,16 @@
     <Compile Include="Catálogos\FrmCiudad.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmComputadora.Designer.vb">
+    <Compile Include="Transaccionales\FrmComputadora.Designer.vb">
       <DependentUpon>FrmComputadora.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmComputadora.vb">
+    <Compile Include="Transaccionales\FrmComputadora.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmComputadoraUsuario.Designer.vb">
+    <Compile Include="Transaccionales\FrmComputadoraUsuario.Designer.vb">
       <DependentUpon>FrmComputadoraUsuario.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmComputadoraUsuario.vb">
+    <Compile Include="Transaccionales\FrmComputadoraUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Catálogos\FrmDesarrollador.Designer.vb">
@@ -129,22 +129,22 @@
     <Compile Include="Catálogos\FrmDesarrollador.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmEmpleado.Designer.vb">
+    <Compile Include="Transaccionales\FrmEmpleado.Designer.vb">
       <DependentUpon>FrmEmpleado.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmEmpleado.vb">
+    <Compile Include="Transaccionales\FrmEmpleado.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmLogin.Designer.vb">
+    <Compile Include="Transaccionales\FrmLogin.Designer.vb">
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmLogin.vb">
+    <Compile Include="Transaccionales\FrmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmMantenimiento.Designer.vb">
+    <Compile Include="Transaccionales\FrmMantenimiento.Designer.vb">
       <DependentUpon>FrmMantenimiento.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmMantenimiento.vb">
+    <Compile Include="Transaccionales\FrmMantenimiento.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Catálogos\FrmMarca.Designer.vb">
@@ -165,16 +165,16 @@
     <Compile Include="Catálogos\FrmProfesion.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmSoftware.Designer.vb">
+    <Compile Include="Transaccionales\FrmSoftware.Designer.vb">
       <DependentUpon>FrmSoftware.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmSoftware.vb">
+    <Compile Include="Transaccionales\FrmSoftware.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmSoftwareComputadora.Designer.vb">
+    <Compile Include="Transaccionales\FrmSoftwareComputadora.Designer.vb">
       <DependentUpon>FrmSoftwareComputadora.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmSoftwareComputadora.vb">
+    <Compile Include="Transaccionales\FrmSoftwareComputadora.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Catálogos\FrmTipoSoftware.Designer.vb">
@@ -183,22 +183,22 @@
     <Compile Include="Catálogos\FrmTipoSoftware.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmUsuario.Designer.vb">
+    <Compile Include="Transaccionales\FrmUsuario.Designer.vb">
       <DependentUpon>FrmUsuario.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmUsuario.vb">
+    <Compile Include="Transaccionales\FrmUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\MDIControlKeeper.Designer.vb">
+    <Compile Include="Transaccionales\MDIControlKeeper.Designer.vb">
       <DependentUpon>MDIControlKeeper.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\MDIControlKeeper.vb">
+    <Compile Include="Transaccionales\MDIControlKeeper.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Splash.Designer.vb">
+    <Compile Include="Transaccionales\Splash.Designer.vb">
       <DependentUpon>Splash.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Splash.vb">
+    <Compile Include="Transaccionales\Splash.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -230,25 +230,25 @@
     <EmbeddedResource Include="Catálogos\FrmCiudad.resx">
       <DependentUpon>FrmCiudad.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmComputadora.resx">
+    <EmbeddedResource Include="Transaccionales\FrmComputadora.resx">
       <DependentUpon>FrmComputadora.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmComputadoraUsuario.resx">
+    <EmbeddedResource Include="Transaccionales\FrmComputadoraUsuario.resx">
       <DependentUpon>FrmComputadoraUsuario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Catálogos\FrmDesarrollador.resx">
       <DependentUpon>FrmDesarrollador.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmEmpleado.resx">
+    <EmbeddedResource Include="Transaccionales\FrmEmpleado.resx">
       <DependentUpon>FrmEmpleado.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmLogAuditoria.resx">
+    <EmbeddedResource Include="Transaccionales\FrmLogAuditoria.resx">
       <DependentUpon>FrmLogAuditoria.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmLogin.resx">
+    <EmbeddedResource Include="Transaccionales\FrmLogin.resx">
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmMantenimiento.resx">
+    <EmbeddedResource Include="Transaccionales\FrmMantenimiento.resx">
       <DependentUpon>FrmMantenimiento.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Catálogos\FrmMarca.resx">
@@ -260,22 +260,22 @@
     <EmbeddedResource Include="Catálogos\FrmProfesion.resx">
       <DependentUpon>FrmProfesion.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmSoftware.resx">
+    <EmbeddedResource Include="Transaccionales\FrmSoftware.resx">
       <DependentUpon>FrmSoftware.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmSoftwareComputadora.resx">
+    <EmbeddedResource Include="Transaccionales\FrmSoftwareComputadora.resx">
       <DependentUpon>FrmSoftwareComputadora.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Catálogos\FrmTipoSoftware.resx">
       <DependentUpon>FrmTipoSoftware.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmUsuario.resx">
+    <EmbeddedResource Include="Transaccionales\FrmUsuario.resx">
       <DependentUpon>FrmUsuario.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\MDIControlKeeper.resx">
+    <EmbeddedResource Include="Transaccionales\MDIControlKeeper.resx">
       <DependentUpon>MDIControlKeeper.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Splash.resx">
+    <EmbeddedResource Include="Transaccionales\Splash.resx">
       <DependentUpon>Splash.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
