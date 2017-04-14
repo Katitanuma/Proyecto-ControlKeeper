@@ -81,7 +81,7 @@ Public Class FrmSoftware
         End Using
     End Sub
 
-    Private Sub GuardarSfotware()
+    Private Sub GuardarSoftware()
         If Con.State = ConnectionState.Open Then
             Con.Close()
         End If
@@ -149,7 +149,7 @@ Public Class FrmSoftware
         If ValidarSoftware() = True Then
 
             If ExisteNombreSoftware() = False Then
-                Call GuardarSfotware()
+                Call GuardarSoftware()
                 Call MostrarTodoSoftware()
                 Call HabilitarControles(True, False, False, False, False)
                 Call Limpiar()

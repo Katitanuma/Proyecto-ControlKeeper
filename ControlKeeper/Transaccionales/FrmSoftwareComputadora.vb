@@ -164,7 +164,7 @@ Public Class FrmSoftwareComputadora
         End Using
     End Sub
 
-    Private Sub GuardarComputadoraUsuario()
+    Private Sub GuardarSoftwareComputadora()
         If Con.State = ConnectionState.Open Then
             Con.Close()
         End If
@@ -201,7 +201,7 @@ Public Class FrmSoftwareComputadora
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
         If ValidarSoftwareComputadora() = True Then
             If ExisteIdComputadora() = False Then
-                Call GuardarComputadoraUsuario()
+                Call GuardarSoftwareComputadora()
                 Call MostrarTodasSoftwareComputadora()
                 Call HabilitarControles(True, False, False, False, False)
                 Call Limpiar()
@@ -254,7 +254,7 @@ Public Class FrmSoftwareComputadora
         CboSerie.Enabled = True
 
     End Sub
-    Private Sub EditarComputadoraUsuario()
+    Private Sub EditarSoftwareComputadora()
         If Con.State = ConnectionState.Open Then
             Con.Close()
         End If
@@ -286,7 +286,7 @@ Public Class FrmSoftwareComputadora
             End Try
         End Using
     End Sub
-    Private Sub EliminarComputadoraUsuario()
+    Private Sub EliminarSoftwareComputadora()
         If Con.State = ConnectionState.Open Then
             Con.Close()
         End If
@@ -314,7 +314,7 @@ Public Class FrmSoftwareComputadora
 
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
         If ValidarSoftwareComputadora() = True Then
-            Call EditarComputadoraUsuario()
+            Call EditarSoftwareComputadora()
             Call HabilitarControles(True, False, False, False, False)
             Call Limpiar()
             Call MostrarTodasSoftwareComputadora()
@@ -327,7 +327,7 @@ Public Class FrmSoftwareComputadora
     Private Sub EliminarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarToolStripMenuItem.Click
         If MessageBox.Show("¿Está seguro de eliminar el registro?", "Control Keeper",
                            MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.Yes Then
-            Call EliminarComputadoraUsuario()
+            Call EliminarSoftwareComputadora()
             Call MostrarTodasSoftwareComputadora()
         End If
     End Sub
