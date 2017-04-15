@@ -51,6 +51,7 @@ Partial Class MDIControlKeeper
         Me.BtnTipoSoftware = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.PnlDespliegue = New System.Windows.Forms.Panel()
+        Me.PnlInteraccion = New System.Windows.Forms.Panel()
         Me.PbMenu = New System.Windows.Forms.PictureBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -65,7 +66,6 @@ Partial Class MDIControlKeeper
         Me.LblSoftware = New System.Windows.Forms.Label()
         Me.LblComputadora = New System.Windows.Forms.Label()
         Me.PnlLogo = New System.Windows.Forms.Panel()
-        Me.PnlInteraccion = New System.Windows.Forms.Panel()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.PnlDespliegue.SuspendLayout()
@@ -375,6 +375,14 @@ Partial Class MDIControlKeeper
         Me.PnlDespliegue.Size = New System.Drawing.Size(36, 729)
         Me.PnlDespliegue.TabIndex = 0
         '
+        'PnlInteraccion
+        '
+        Me.PnlInteraccion.BackColor = System.Drawing.Color.Transparent
+        Me.PnlInteraccion.Location = New System.Drawing.Point(7, 276)
+        Me.PnlInteraccion.Name = "PnlInteraccion"
+        Me.PnlInteraccion.Size = New System.Drawing.Size(22, 438)
+        Me.PnlInteraccion.TabIndex = 17
+        '
         'PbMenu
         '
         Me.PbMenu.BackColor = System.Drawing.Color.Transparent
@@ -547,14 +555,6 @@ Partial Class MDIControlKeeper
         Me.PnlLogo.Name = "PnlLogo"
         Me.PnlLogo.Size = New System.Drawing.Size(342, 379)
         Me.PnlLogo.TabIndex = 15
-        '
-        'PnlInteraccion
-        '
-        Me.PnlInteraccion.BackColor = System.Drawing.Color.Transparent
-        Me.PnlInteraccion.Location = New System.Drawing.Point(7, 276)
-        Me.PnlInteraccion.Name = "PnlInteraccion"
-        Me.PnlInteraccion.Size = New System.Drawing.Size(22, 438)
-        Me.PnlInteraccion.TabIndex = 17
         '
         'MDIControlKeeper
         '
