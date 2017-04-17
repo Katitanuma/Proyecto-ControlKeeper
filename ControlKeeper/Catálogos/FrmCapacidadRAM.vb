@@ -117,7 +117,7 @@ Public Class FrmCapacidadRAM
 
                 End With
 
-                MessageBox.Show("Capacidad de meroria RAM editada con éxito", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Capacidad de memoria RAM editada con éxito", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             Catch ex As Exception
                 MessageBox.Show("Error al editar la Capacidad de meroria RAM" + ex.Message)
@@ -148,10 +148,10 @@ Public Class FrmCapacidadRAM
                     .ExecuteNonQuery()
 
                 End With
-                MessageBox.Show("Capacidad de memoria RAM eliminada con éxito", "Control Keeper")
+                MessageBox.Show("Capacidad de memoria RAM eliminada con éxito", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             Catch ex As Exception
-                MessageBox.Show("Error al eliminar la Capacidad de meroria RAM " + ex.Message, "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Error al eliminar la Capacidad de meroria RAM " + ex.Message)
             Finally
                 Con.Close()
 
@@ -175,6 +175,9 @@ Public Class FrmCapacidadRAM
                 Call LimpiarCapacidadMemoriaRAM()
                 Call InvestigarCorrelativoCapacidadMemoriaRAM()
                 Call LimpiarCapacidadMemoriaRAM()
+
+            Else
+                MessageBox.Show("Ya existe esa Capacidad memoria RAM", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
             End If
         End If

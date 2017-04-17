@@ -28,13 +28,13 @@ Public Class FrmCiudad
                     .Connection = Con
                 End With
 
-                Dim AdaptadorUsuario As New SqlDataAdapter(cmd)
+                Dim AdaptadorCiudad As New SqlDataAdapter(cmd)
                 Dim dt As New DataTable
-                AdaptadorUsuario.Fill(dt)
+                AdaptadorCiudad.Fill(dt)
                 DgvCiudad.DataSource = dt
 
             Catch ex As Exception
-                MessageBox.Show("Error al mostrar los datos de los usuarios " + ex.Message)
+                MessageBox.Show("Error al mostrar los datos de las ciudades" + ex.Message)
             Finally
                 Con.Close()
             End Try
@@ -106,7 +106,6 @@ Public Class FrmCiudad
 
         If ValidarCiudad() = True Then
 
-
             If ExisteCiudad() = False Then
                 Call GuardarCiudad()
                 Call MostrarTodociudad()
@@ -154,9 +153,9 @@ Public Class FrmCiudad
                     .Parameters.Add("@IdDepartamento", SqlDbType.Int).Value = CInt(CboDepartamento.SelectedValue)
                     .ExecuteNonQuery()
                 End With
-                MessageBox.Show("Departamento editado con éxito", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Ciudad editada con éxito", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Catch ex As Exception
-                MessageBox.Show("Error al editar el departamento" + ex.Message)
+                MessageBox.Show("Error al editar la ciudad" + ex.Message)
             Finally
                 Con.Close()
             End Try
@@ -181,7 +180,7 @@ Public Class FrmCiudad
                 End With
                 MessageBox.Show("Ciudad eliminada con éxito", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Catch ex As Exception
-                MessageBox.Show("Error al eliminar el usuario " + ex.Message)
+                MessageBox.Show("Error al eliminar la ciudad" + ex.Message)
             Finally
                 Con.Close()
             End Try

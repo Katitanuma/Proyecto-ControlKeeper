@@ -23,7 +23,7 @@ Public Class FrmCapacidadDiscoDuro
 
                     .Parameters.Add("@CapacidadDiscoDuro", SqlDbType.NVarChar, 20).Value = TxtCapacidadDiscoDuro.Text
                     .ExecuteNonQuery()
-                    MessageBox.Show("Registro almacenado con éxito", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show("Capacidad disco duro almacenada con éxito", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
 
                 End With
@@ -60,7 +60,7 @@ Public Class FrmCapacidadDiscoDuro
                     .Parameters.Add("@IdCapacidadDiscoDuro", SqlDbType.Int).Value = DgvCapacidadDiscoDuro.CurrentRow.Cells(0).Value
                     .ExecuteNonQuery()
                 End With
-                MessageBox.Show("Registro eliminado con éxito", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Capacidad disco duro eliminada con éxito", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End Using
 
         Catch ex As Exception
@@ -91,7 +91,7 @@ Public Class FrmCapacidadDiscoDuro
                     .Parameters.Add("@IdCapacidadDiscoDuro", SqlDbType.Int).Value = Trim(TxtIdCapacidadDiscoDuro.Text)
                     .Parameters.Add("@CapacidadDiscoDuro", SqlDbType.NVarChar, 20).Value = Trim(TxtCapacidadDiscoDuro.Text)
                     .ExecuteNonQuery()
-                    MessageBox.Show("Registro actualizado con éxito", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show("Capacidad disco duro actualizada con éxito", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
 
                 End With
@@ -142,7 +142,6 @@ Public Class FrmCapacidadDiscoDuro
 
                     AdaptadorCapacidadDiscoDuro.Fill(Dt)
                     DgvCapacidadDiscoDuro.DataSource = Dt
-                    'gvCapacidadDiscoDuro.Columns(2).Visible = True
 
 
                 End With
@@ -247,7 +246,6 @@ Public Class FrmCapacidadDiscoDuro
 
         End If
 
-
         Dim Valor As Boolean
         Using Cmd As New SqlCommand
 
@@ -261,8 +259,6 @@ Public Class FrmCapacidadDiscoDuro
 
                     .Parameters.Add("@CapacidadDiscoDuro", SqlDbType.NVarChar, 20).Value = TxtCapacidadDiscoDuro.Text.Trim
 
-
-
                 End With
 
                 Dim Existe As Integer = Cmd.ExecuteScalar
@@ -271,7 +267,6 @@ Public Class FrmCapacidadDiscoDuro
                     Valor = False
                 Else
                     Valor = True
-
 
                 End If
 

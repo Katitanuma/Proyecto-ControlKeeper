@@ -63,7 +63,6 @@ Public Class FrmDepartamento
 
         If ValidarDepartamento() = True Then
 
-
             If ExisteDepartamento() = False Then
 
                 Call HabilitarControles(True, False, False, False, False)
@@ -72,7 +71,7 @@ Public Class FrmDepartamento
                 Call LimpiarDepartamento()
 
             Else
-                MessageBox.Show("Ya Existe el departamento", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Ya existe ese departamento", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
             End If
         End If
@@ -141,7 +140,7 @@ Public Class FrmDepartamento
                     .ExecuteNonQuery()
                 End With
 
-                MessageBox.Show("Departamento Almacenado con éxtio", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Departamento almacenado con éxtio", "Control Keeper", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             Catch ex As Exception
 
@@ -242,7 +241,7 @@ Public Class FrmDepartamento
                 Con.Open()
 
                 With Cmd
-                    .CommandText = "Sp_MostrarTododepartamento"
+                    .CommandText = "Sp_MostrarTodoDepartamento"
                     .CommandType = CommandType.StoredProcedure
                     .Connection = Con
 
